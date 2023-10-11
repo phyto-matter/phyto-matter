@@ -2,7 +2,7 @@ import csvToJson from "csvtojson";
 import fs from "fs";
 import path from "path";
 
-const DATA_ROOT = path.join(__dirname, "../data");
+const DATA_ROOT = path.join(__dirname, "./data");
 const TARGET = path.join(__dirname, "src/converted.ts");
 const CSV_PREFIX = ".csv";
 const csvFiles = fs
