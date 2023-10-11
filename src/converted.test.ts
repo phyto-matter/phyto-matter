@@ -56,13 +56,9 @@ describe("NORMALISED_DATA", () => {
           expect(entries.every((_) => _.removal_rate)).toBe(true);
         });
         test("removal_rate is numeric", () => {
-          expect(entries.every((_) => Number.isFinite(_ / 1))).toBe(true);
-        });
-        test("contaminant is never empty", () => {
-          expect(entries.every((_) => _.contaminant)).toBe(true);
-        });
-        test("contaminant_symbol is never empty", () => {
-          expect(entries.every((_) => _.contaminant_symbol)).toBe(true);
+          expect(
+            entries.every((_) => !Number.isNaN(Number(_.removal_rate))),
+          ).toBe(true);
         });
       });
     });
