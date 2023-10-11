@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.11",
@@ -31,7 +32,7 @@
   "scripts": {
     "start": "npm run parse && react-scripts start",
     "build": "npm run parse && react-scripts build",
-    "test": "npm run parse && react-scripts test",
+    "test": "npm run parse && react-scripts test --env=node",
     "eject": "react-scripts eject",
     "parse": "node -r esm ./parse-data.js"
   },
