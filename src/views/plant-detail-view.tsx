@@ -49,7 +49,16 @@ export function PlantDetailView() {
   }
 
   return (
-    <Container sx={{ padding: 3 }}>
+    <Container
+      sx={{
+        padding: 3,
+      }}
+      style={{
+        backgroundColor: "#14A14A",
+        paddingTop: 150,
+        minHeight: "100vh",
+      }}
+    >
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           <Typography variant="h4" gutterBottom>

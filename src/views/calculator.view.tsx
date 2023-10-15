@@ -82,7 +82,13 @@ export function CalculatorView() {
   );
 
   return (
-    <Container>
+    <Container
+      sx={{ padding: 3 }}
+      style={{
+        paddingTop: 150,
+        minHeight: "100vh",
+      }}
+    >
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           <TableContainer component={Paper}>

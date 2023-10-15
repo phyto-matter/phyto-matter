@@ -13,6 +13,7 @@ import {
   Select,
   Switch,
   TextField,
+  Typography,
 } from "@mui/material";
 import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
@@ -80,7 +81,13 @@ export function ContaminantsView() {
   );
 
   return (
-    <>
+    <div
+      style={{
+        backgroundColor: "#EDBD16",
+        paddingTop: 150,
+        minHeight: "100vh",
+      }}
+    >
       <Container>
         <Controls
           filters={filters}
@@ -117,13 +124,10 @@ export function ContaminantsView() {
                   <ListItem>
                     <ListItemText
                       primary={
-                        <Chip label={capitalize(contaminants[0].category)} />
+                        <Typography variant="h5" sx={{ font: "vollkorn" }}>
+                          {capitalize(contaminants[0].category)}
+                        </Typography>
                       }
-                    />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText
-                      primary={`${contaminants.length} contaminant(s)`}
                     />
                   </ListItem>
                 </List>
@@ -132,10 +136,7 @@ export function ContaminantsView() {
           </Grid>
         ) : (
           [...byType].map(([contType, contaminants]) => (
-            <List
-              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-              key={contType}
-            >
+            <List sx={{ width: "100%" }} key={contType}>
               {contaminants.map((contaminant, index) => (
                 <ListItem disablePadding key={contaminant.id}>
                   <ListItemIcon>
@@ -164,7 +165,7 @@ export function ContaminantsView() {
           ))
         )}
       </Container>
-    </>
+    </div>
   );
 }
 

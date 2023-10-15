@@ -11,29 +11,53 @@ export function TopMenu() {
   const navigate = useNavigate();
 
   return (
-    <Container style={{ marginTop: 20 }}>
+    <Container
+      style={{
+        padding: 20,
+        height: 130,
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        backgroundColor: "white",
+        zIndex: 2,
+      }}
+    >
       <Grid container spacing={2} alignItems="center" justifyContent="center">
         <Grid>
           <Link to="/">
             <img
               alt={""}
               style={{ width: 200, marginRight: 50 }}
-              src={"/pm-logo.png"}
+              src={"/icons/logo.png"}
             />
           </Link>
         </Grid>
         <Grid>
-          <StyledButton variant="outlined" onClick={() => navigate("/plants")}>
-            PLANTS
-          </StyledButton>
+          <StyledButton
+            variant="text"
+            onClick={() => navigate("/plants")}
+            style={{
+              height: 36,
+              width: 100,
+              backgroundImage: "url(/icons/plants.png)",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          ></StyledButton>
         </Grid>
         <Grid>
           <StyledButton
-            variant="outlined"
+            variant="text"
             onClick={() => navigate("/contaminants")}
-          >
-            CONTAMINANTS
-          </StyledButton>
+            style={{
+              height: 36,
+              width: 180,
+              backgroundImage: "url(/icons/contam.png)",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          ></StyledButton>
         </Grid>
         {/*<Grid>
           <StyledButton variant="outlined"  onClick={() => navigate("/materials")}>
@@ -42,21 +66,15 @@ export function TopMenu() {
         </Grid>*/}
         <Grid>
           <StyledButton
-            variant="outlined"
+            variant="text"
             onClick={() => navigate("/calculator")}
             style={{
-              borderRadius: "50%",
               height: 65,
+              backgroundImage: "url(/icons/calculator.png)",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
             }}
-          >
-            <img
-              alt={""}
-              style={{
-                width: 35,
-              }}
-              src={"/calculator.png"}
-            />
-          </StyledButton>
+          ></StyledButton>
         </Grid>
       </Grid>
     </Container>

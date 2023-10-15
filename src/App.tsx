@@ -7,8 +7,8 @@ import { PlantsView } from "./views/plants.view";
 import { ContaminantsView } from "./views/contaminants.view";
 import { MaterialsView } from "./views/materials.view";
 import { TopMenu } from "./components/topMenu";
-import { PlantDetailView } from "./components/plant-detail-view";
-import { ContaminantDetailView } from "./components/contaminant-detail-view";
+import { PlantDetailView } from "./views/plant-detail-view";
+import { ContaminantDetailView } from "./views/contaminant-detail-view";
 
 function App() {
   return (

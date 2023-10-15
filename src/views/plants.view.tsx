@@ -22,7 +22,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { NORMALISED_DATA, PlantEntry } from "../utils/get-normalised-data";
 
 const IconStyle = styled("img")({
-  width: 50,
+  width: 150,
   marginRight: 50,
   marginLeft: 50,
 });
@@ -89,7 +89,13 @@ export function PlantsView() {
   );
 
   return (
-    <>
+    <div
+      style={{
+        backgroundColor: "#14A14A",
+        paddingTop: 150,
+        minHeight: "100vh",
+      }}
+    >
       <Container>
         <Controls
           displayData={displayData}
@@ -122,26 +128,20 @@ export function PlantsView() {
                   }}
                 >
                   <ListItemIcon>
-                    <IconStyle src={`/${vegType}.png`} />
+                    <IconStyle src={`/icons/${vegType}.png`} />
                   </ListItemIcon>
-                  <ListItem>
-                    <ListItemText primary={`${plants.length} plant(s)`} />
-                  </ListItem>
                 </List>
               </Grid>
             ))}
           </Grid>
         ) : (
           [...byVegetationType].map(([vegType, plants]) => (
-            <List
-              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-              key={vegType}
-            >
+            <List sx={{ width: "100%" }} key={vegType}>
               {plants.map((plant, index) => (
                 <ListItem disablePadding key={plant.id}>
                   <ListItemIcon>
                     {index === 0 ? (
-                      <IconStyle src={`/${lowerCase(vegType)}.png`} />
+                      <IconStyle src={`/icons/${lowerCase(vegType)}.png`} />
                     ) : (
                       <IconStyle
                         style={{ visibility: "hidden" }}
@@ -162,7 +162,7 @@ export function PlantsView() {
           ))
         )}
       </Container>
-    </>
+    </div>
   );
 }
 
