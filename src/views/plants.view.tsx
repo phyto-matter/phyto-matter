@@ -143,24 +143,9 @@ export function PlantsView() {
           </Grid>
         ) : (
           [...byVegetationType].map(([vegType, plants]) => (
-            <Grid container spacing={2}>
-              <Grid item xs={2}>
-                <List sx={{ width: "100%" }} key={vegType}>
-                  {plants.map((plant, index) => (
-                    <ListItem disablePadding key={plant.id}>
-                      <ListItemIcon>
-                        {index === 0 ? (
-                          <IconStyle src={`/icons/${lowerCase(vegType)}.png`} />
-                        ) : (
-                          <IconStyle
-                            style={{ visibility: "hidden" }}
-                            src={`/${lowerCase(vegType)}.png`}
-                          />
-                        )}
-                      </ListItemIcon>
-                    </ListItem>
-                  ))}
-                </List>
+            <Grid container spacing={2} sx={{ mb: 5 }}>
+              <Grid item xs={2} justifyContent={"flex-start"}>
+                <IconStyle src={`/icons/${lowerCase(vegType)}.png`} />
               </Grid>
               <Grid item xs={10}>
                 <List sx={{ width: "100%", paddingLeft: 10 }} key={vegType}>
