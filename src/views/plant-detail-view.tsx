@@ -25,6 +25,7 @@ import WaterfallChartIcon from "@mui/icons-material/WaterfallChart";
 import { Link, useParams } from "react-router-dom";
 import { NORMALISED_PHYTO_DATA } from "../utils/get-normalised-phyto-data";
 import { capitalize, keyBy } from "lodash";
+import {phytoMatterGreenColor} from "../global-constants";
 
 export function PlantDetailView() {
   const { id } = useParams();
@@ -54,7 +55,7 @@ export function PlantDetailView() {
         padding: 3,
       }}
       style={{
-        backgroundColor: "#14A14A",
+        backgroundColor: phytoMatterGreenColor,
         paddingTop: 150,
         minHeight: "100vh",
       }}

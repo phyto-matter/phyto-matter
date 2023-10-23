@@ -12,6 +12,7 @@ export function TopMenu() {
 
   return (
     <Container
+      maxWidth={false}
       style={{
         padding: 20,
         height: 130,
