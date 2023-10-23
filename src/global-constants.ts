@@ -1,3 +1,5 @@
-export const phytoMatterYellowColor = "#F0D66B"
+export const phytoMatterYellowColor = "#F0D66B";
 
-export const phytoMatterGreenColor = "#6CDA98"
+export const phytoMatterGreenColor = "#6CDA98";
+
+export const phytoMatterBrownColor = "";

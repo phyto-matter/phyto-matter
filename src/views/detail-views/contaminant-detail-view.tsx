@@ -1,13 +1,8 @@
 import React from "react";
 import {
-  Avatar,
   Chip,
   Container,
   Grid,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
   Paper,
   Table,
   TableBody,
@@ -15,31 +10,36 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Tooltip,
   Typography,
 } from "@mui/material";
-import ParkIcon from "@mui/icons-material/Park";
-import LayersIcon from "@mui/icons-material/Layers";
-import HardwareIcon from "@mui/icons-material/Hardware";
-import WaterfallChartIcon from "@mui/icons-material/WaterfallChart";
 import { Link, useParams } from "react-router-dom";
-import { NORMALISED_DATA } from "../utils/get-normalised-data";
+import {
+  ContaminantEntry,
+  NORMALISED_DATA,
+  PlantEntry,
+} from "../../utils/get-normalised-data";
 import { capitalize, keyBy } from "lodash";
-import {phytoMatterGreenColor} from "../global-constants";
+import {
+  phytoMatterGreenColor,
+  phytoMatterYellowColor,
+} from "../../global-constants";
 
-export function PlantDetailView() {
+export function ContaminantDetailView() {
   const { id } = useParams();
-  const plant = NORMALISED_DATA.find((_) => _.id === id);
+  const results = NORMALISED_DATA.flatMap((p) =>
+    p.contaminants.map((c): [ContaminantEntry, PlantEntry] => [c, p]),
+  ).filter(([c, p]) => c.id === id);
   const references = Object.values(
     keyBy(
-      (plant?.contaminants ?? [])
+      results
+        .map(([c]) => c)
         .flatMap((_) => _.removal_rates)
         .map((_) => _.reference),
       "reference",
     ),
   );
 
-  if (!plant) {
+  if (!results.length) {
     return (
       <Container>
         <Typography variant="h2" gutterBottom>
@@ -49,67 +49,30 @@ export function PlantDetailView() {
     );
   }
 
+  const [contaminant] = results[0];
+
   return (
     <Container
+      maxWidth={false}
       sx={{
         padding: 3,
       }}
       style={{
-        backgroundColor: phytoMatterGreenColor,
+        backgroundColor: phytoMatterYellowColor,
         paddingTop: 150,
+        paddingLeft: 150,
+        paddingRight: 150,
         minHeight: "100vh",
       }}
     >
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           <Typography variant="h4" gutterBottom>
-            {plant.latin_name} ({plant.common_name})
+            {capitalize(contaminant.name)} ({contaminant.symbol})
           </Typography>
           <Typography variant="subtitle1" gutterBottom>
-            {plant.species}, {plant.family}
+            {capitalize(contaminant.category)}
           </Typography>
-          <List
-            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-          >
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
-                  <ParkIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="Vegetation Type"
-                secondary={capitalize(plant.vegetation_type)}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
-                  <LayersIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Soil" secondary={plant.soil} />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
-                  <HardwareIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="Hardiness"
-                secondary={plant.hardiness_zone}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
-                  <WaterfallChartIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Moisture" secondary={plant.moisture} />
-            </ListItem>
-          </List>
         </Grid>
         <Grid item xs={12} md={6}>
           <TableContainer sx={{ maxHeight: 400 }} component={Paper}>
@@ -117,7 +80,7 @@ export function PlantDetailView() {
               <TableHead>
                 <TableRow>
                   <TableCell>
-                    <b>Contaminant</b>
+                    <b>Plant</b>
                   </TableCell>
                   <TableCell>
                     <b>Tissue type</b>
@@ -128,18 +91,20 @@ export function PlantDetailView() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {plant.contaminants.flatMap((c) =>
+                {results.flatMap(([c, p]) =>
                   c.removal_rates.map((r) => (
                     <TableRow>
                       <TableCell>
-                        <Link to={`/contaminants/${c.id}`}>
-                          <Tooltip title={capitalize(c.name)} placement="right">
-                            <Chip
-                              label={c.symbol}
-                              size="small"
-                              variant="outlined"
-                            />
-                          </Tooltip>
+                        <Link to={`/plants/${p.id}`}>
+                          <Chip
+                            label={p.latin_name}
+                            size="small"
+                            variant="outlined"
+                            sx={{
+                              backgroundColor: phytoMatterGreenColor,
+                              borderColor: phytoMatterGreenColor,
+                            }}
+                          />
                         </Link>
                       </TableCell>
                       <TableCell>{capitalize(c.tissue_type)}</TableCell>
