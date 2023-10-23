@@ -12,7 +12,7 @@ import {
   Select,
   styled,
   Switch,
-  TextField,
+  TextField, ThemeProvider,
 } from "@mui/material";
 import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
@@ -20,6 +20,12 @@ import { capitalize, groupBy, lowerCase, omitBy, upperCase } from "lodash";
 import { useCallback, useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { NORMALISED_DATA, PlantEntry } from "../utils/get-normalised-data";
+
+import { createTheme} from "@mui/material";
+import {fontTheme} from "../global-themes";
+import { phytoMatterGreenColor } from "../global-constants";
+
+
 
 const IconStyle = styled("img")({
   width: 150,
@@ -91,7 +97,7 @@ export function PlantsView() {
   return (
     <div
       style={{
-        backgroundColor: "#14A14A",
+        backgroundColor: phytoMatterGreenColor,
         paddingTop: 150,
         minHeight: "100vh",
       }}
@@ -136,29 +142,48 @@ export function PlantsView() {
           </Grid>
         ) : (
           [...byVegetationType].map(([vegType, plants]) => (
-            <List sx={{ width: "100%" }} key={vegType}>
-              {plants.map((plant, index) => (
-                <ListItem disablePadding key={plant.id}>
-                  <ListItemIcon>
-                    {index === 0 ? (
-                      <IconStyle src={`/icons/${lowerCase(vegType)}.png`} />
-                    ) : (
-                      <IconStyle
-                        style={{ visibility: "hidden" }}
-                        src={`/${lowerCase(vegType)}.png`}
-                      />
-                    )}
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={
-                      <Link to={`/plants/${plant.id}`}>
-                        {capitalize(plant.latin_name)}
-                      </Link>
-                    }
-                  />
-                </ListItem>
-              ))}
-            </List>
+            <Grid container spacing={2}>
+              <Grid item xs={2}>
+
+                <List sx={{ width: "100%" }} key={vegType}>
+                  {plants.map((plant, index) => (
+
+                    <ListItem disablePadding key={plant.id}>
+                      <ListItemIcon>
+                        {index === 0 ? (
+                          <IconStyle src={`/icons/${lowerCase(vegType)}.png`}/>
+                        ) : (
+                          <IconStyle
+                            style={{ visibility: "hidden" }}
+                            src={`/${lowerCase(vegType)}.png`}
+                          />
+                        )}
+                      </ListItemIcon>
+                    </ListItem>
+                  ))}
+                </List>
+
+              </Grid>
+              <Grid item xs={10}>
+                  <List sx={{ width: "100%", paddingLeft: 10 }} key={vegType}>
+                    {plants.map((plant, index) => (
+
+                      <ListItem disablePadding key={plant.id}>
+                      <ThemeProvider theme={fontTheme}>
+                    <ListItemText
+                      primary={
+                        <Link to={`/plants/${plant.id}`} style={{ color: "black", textDecoration: "none"}}>
+                          {capitalize(plant.latin_name)}
+                        </Link>
+                      }
+                    />
+                      </ThemeProvider>
+                    </ListItem>
+                  ))}
+                </List>
+              </Grid>
+            </Grid>
+
           ))
         )}
       </Container>
@@ -241,7 +266,7 @@ function Controls({
               disablePortal
               freeSolo
               options={displayData.map((option) => option.latin_name)}
-              sx={{ width: 300 }}
+              sx={{ width: 300, maxWidth: "100%" }}
               onInputChange={(_, val) => updateFilters({ latin_name: val })}
               renderInput={(params) => (
                 <TextField {...params} label="Latin Name" />
@@ -249,7 +274,7 @@ function Controls({
             />
           </Grid>
           <Grid item xs={6} md={3}>
-            <FormControl fullWidth>
+            <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
               <InputLabel id="demo-simple-select-type">Type</InputLabel>
               <Select
                 labelId="demo-simple-select-type"
@@ -269,7 +294,7 @@ function Controls({
             </FormControl>
           </Grid>
           <Grid item xs={6} md={3}>
-            <FormControl fullWidth>
+            <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
               <InputLabel id="demo-simple-select-contaminant">
                 Contaminant
               </InputLabel>
@@ -291,7 +316,7 @@ function Controls({
             </FormControl>
           </Grid>
           <Grid item xs={6} md={3}>
-            <FormControl fullWidth>
+            <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
               <InputLabel id="demo-simple-select-hardiness">
                 Hardiness
               </InputLabel>
@@ -305,15 +330,15 @@ function Controls({
               >
                 <MenuItem value={""}>All</MenuItem>
                 {uniqueHardiness.map((c) => (
-                  <MenuItem key={c} value={c}>
-                    {capitalize(c)}
-                  </MenuItem>
+                    <MenuItem key={c} value={c}>
+                      {capitalize(c)}
+                    </MenuItem>
                 ))}
               </Select>
             </FormControl>
           </Grid>
           <Grid item xs={6} md={3}>
-            <FormControl fullWidth>
+            <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
               <InputLabel id="demo-simple-select-soil">Soil</InputLabel>
               <Select
                 labelId="demo-simple-select-soil"
@@ -333,7 +358,7 @@ function Controls({
             </FormControl>
           </Grid>
           <Grid item xs={6} md={3}>
-            <FormControl fullWidth>
+            <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
               <InputLabel id="demo-simple-select-shade">Shade</InputLabel>
               <Select
                 labelId="demo-simple-select-shade"

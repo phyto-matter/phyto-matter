@@ -12,7 +12,7 @@ import {
   MenuItem,
   Select,
   Switch,
-  TextField,
+  TextField, ThemeProvider,
   Typography,
 } from "@mui/material";
 import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
@@ -24,6 +24,8 @@ import {
   ContaminantEntry,
   NORMALISED_DATA,
 } from "../utils/get-normalised-data";
+import {fontTheme} from "../global-themes";
+import { phytoMatterYellowColor } from "../global-constants";
 
 type ContaminantFilters = {
   name: string;
@@ -83,7 +85,7 @@ export function ContaminantsView() {
   return (
     <div
       style={{
-        backgroundColor: "#EDBD16",
+        backgroundColor: phytoMatterYellowColor,
         paddingTop: 150,
         minHeight: "100vh",
       }}
@@ -136,32 +138,51 @@ export function ContaminantsView() {
           </Grid>
         ) : (
           [...byType].map(([contType, contaminants]) => (
-            <List sx={{ width: "100%" }} key={contType}>
-              {contaminants.map((contaminant, index) => (
-                <ListItem disablePadding key={contaminant.id}>
-                  <ListItemIcon>
-                    {index === 0 ? (
-                      <Chip
-                        label={capitalize(contaminants[0].category)}
-                        sx={{ mr: 2 }}
-                      />
-                    ) : (
-                      <Chip
-                        label={contaminants[0].category}
-                        sx={{ visibility: "hidden", mr: 2 }}
-                      />
-                    )}
-                  </ListItemIcon>
+            <Grid container spacing={2}>
+              <Grid item xs={2}>
+                <List sx={{ width: "100%" }} key={contType}>
+                  {contaminants.map((contaminant, index) => (
+                    <ListItem disablePadding key={contaminant.id}>
+                      <ListItemIcon>
+                        {index === 0 ? (
+                          <Chip
+                            size={"medium"}
+                            label={capitalize(contaminants[0].category)}
+                            sx={{ mr: 2 }}
+                          />
+                        ) : (
+                          <Chip
+                            label={contaminants[0].category}
+                            sx={{ visibility: "hidden", mr: 2 }}
+                          />
+                        )}
+                      </ListItemIcon>
+                    </ListItem>
+                    ))}
+                    </List>
+              </Grid>
+              <Grid item xs={10}>
+                <List sx={{ width: "100%", paddingBottom: 5 }} key={contType}>
+                  {contaminants.map((contaminant, index) => (
+                    <ListItem disablePadding key={contaminant.id}>
+                    <ThemeProvider theme={fontTheme}>
                   <ListItemText
                     primary={
-                      <Link to={`/contaminants/${contaminant.id}`}>
+                      <Link to={`/contaminants/${contaminant.id}`} style={{
+                        color: "black",
+                        textDecoration: "none",
+                      }}>
                         {capitalize(contaminant.name)}
                       </Link>
                     }
                   />
-                </ListItem>
+                </ThemeProvider>
+              </ListItem>
               ))}
             </List>
+              </Grid>
+            </Grid>
+
           ))
         )}
       </Container>
@@ -216,13 +237,13 @@ function Controls({
               disablePortal
               freeSolo
               options={displayData.map((option) => option.name)}
-              sx={{ width: 300 }}
+              sx={{ width: 300, maxWidth: "100%" }}
               onInputChange={(_, val) => updateFilters({ name: val })}
               renderInput={(params) => <TextField {...params} label="Name" />}
             />
           </Grid>
           <Grid item xs={6} md={3}>
-            <FormControl fullWidth>
+            <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
               <InputLabel id="demo-simple-select-type">Type</InputLabel>
               <Select
                 labelId="demo-simple-select-type"
@@ -234,6 +255,7 @@ function Controls({
               >
                 <MenuItem value={""}>All</MenuItem>
                 {uniqueType.map((c) => (
+
                   <MenuItem key={c} value={c}>
                     {capitalize(c)}
                   </MenuItem>

@@ -10,6 +10,7 @@ import { TopMenu } from "./components/topMenu";
 import { PlantDetailView } from "./views/plant-detail-view";
 import { ContaminantDetailView } from "./views/contaminant-detail-view";
 
+
 function App() {
   return (
     <BrowserRouter>

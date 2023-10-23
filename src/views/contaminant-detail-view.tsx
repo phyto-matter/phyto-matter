@@ -19,6 +19,7 @@ import {
   PlantEntry,
 } from "../utils/get-normalised-data";
 import { capitalize, keyBy } from "lodash";
+import { phytoMatterYellowColor } from "../global-constants";
 
 export function ContaminantDetailView() {
   const { id } = useParams();
@@ -53,7 +54,7 @@ export function ContaminantDetailView() {
         padding: 3,
       }}
       style={{
-        backgroundColor: "#EDBD16",
+        backgroundColor: phytoMatterYellowColor,
         paddingTop: 150,
         minHeight: "100vh",
       }}
