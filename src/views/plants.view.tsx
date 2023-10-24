@@ -19,7 +19,10 @@ import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import { capitalize, groupBy, lowerCase, omitBy, upperCase } from "lodash";
 import { useCallback, useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { NORMALISED_DATA, PlantEntry } from "../utils/get-normalised-data";
+import {
+  NORMALISED_PHYTO_DATA,
+  PlantEntry,
+} from "../utils/get-normalised-phyto-data";
 
 const IconStyle = styled("img")({
   width: 150,
@@ -67,7 +70,7 @@ export function PlantsView() {
   );
   const displayData = useMemo(
     () =>
-      NORMALISED_DATA.filter((e) => {
+      NORMALISED_PHYTO_DATA.filter((e) => {
         return (
           (!filters.latin_name ||
             lowerCase(e.latin_name).includes(lowerCase(filters.latin_name))) &&

@@ -1,12 +1,16 @@
 import { groupBy } from "lodash";
 import { PHYTO_DATA } from "./converted-phyto";
+import { normaliseData } from "./utils/normalise-data";
 
-describe("NORMALISED_DATA", () => {
-  const bySource = groupBy(PHYTO_DATA, "source_file");
+describe("NORMALISED_PHYTO_DATA", () => {
+  const bySource = groupBy(
+    normaliseData(PHYTO_DATA, (e) => e.plant_name),
+    "source_file",
+  );
 
   Object.entries(bySource).forEach(([source, entries]) => {
     describe(`${source} contains valid rows`, () => {
-      describe("refernce", () => {
+      describe("reference", () => {
         test("reference is never empty", () => {
           expect(entries.every((_) => _.reference)).toBe(true);
         });

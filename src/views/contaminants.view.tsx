@@ -22,8 +22,8 @@ import React, { useCallback, useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
   ContaminantEntry,
-  NORMALISED_DATA,
-} from "../utils/get-normalised-data";
+  NORMALISED_PHYTO_DATA,
+} from "../utils/get-normalised-phyto-data";
 
 type ContaminantFilters = {
   name: string;
@@ -58,7 +58,7 @@ export function ContaminantsView() {
   const allContaminants = useMemo(
     () =>
       uniqBy(
-        NORMALISED_DATA.flatMap((e) => e.contaminants),
+        NORMALISED_PHYTO_DATA.flatMap((e) => e.contaminants),
         "name",
       ),
     [],

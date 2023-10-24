@@ -14,7 +14,7 @@ import {
 import React, { useCallback, useMemo, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { NORMALISED_DATA } from "../utils/get-normalised-data";
+import { NORMALISED_PHYTO_DATA } from "../utils/get-normalised-phyto-data";
 import { InputRow } from "../components/input-row";
 import { usePlantSuggestions } from "../hooks/use-plant-suggestions";
 import { Link, useSearchParams } from "react-router-dom";
@@ -68,7 +68,7 @@ export function CalculatorView() {
     () =>
       [
         ...new Set(
-          NORMALISED_DATA.flatMap((plant) => plant.contaminants).flatMap(
+          NORMALISED_PHYTO_DATA.flatMap((plant) => plant.contaminants).flatMap(
             (e) => e.name,
           ),
         ),

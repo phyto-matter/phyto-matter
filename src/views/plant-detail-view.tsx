@@ -23,12 +23,12 @@ import LayersIcon from "@mui/icons-material/Layers";
 import HardwareIcon from "@mui/icons-material/Hardware";
 import WaterfallChartIcon from "@mui/icons-material/WaterfallChart";
 import { Link, useParams } from "react-router-dom";
-import { NORMALISED_DATA } from "../utils/get-normalised-data";
+import { NORMALISED_PHYTO_DATA } from "../utils/get-normalised-phyto-data";
 import { capitalize, keyBy } from "lodash";
 
 export function PlantDetailView() {
   const { id } = useParams();
-  const plant = NORMALISED_DATA.find((_) => _.id === id);
+  const plant = NORMALISED_PHYTO_DATA.find((_) => _.id === id);
   const references = Object.values(
     keyBy(
       (plant?.contaminants ?? [])
