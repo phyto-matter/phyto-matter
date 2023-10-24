@@ -2,18 +2,20 @@ import csvToJson from "csvtojson";
 import fs from "fs";
 import path from "path";
 
-const DATA_ROOT = path.join(__dirname, "./data");
-const TARGET = path.join(__dirname, "src/converted.ts");
+const PHYTO_DATA_ROOT = path.join(__dirname, "./data/phyto");
+const PHYTO_TARGET = path.join(__dirname, "src/converted-phyto.ts");
+const MATTER_DATA_ROOT = path.join(__dirname, "./data/matter");
+const MATTER_TARGET = path.join(__dirname, "src/converted-matter.ts");
 const CSV_PREFIX = ".csv";
-const csvFiles = fs
-  .readdirSync(DATA_ROOT)
-  .filter((_) => _.endsWith(CSV_PREFIX));
 
-async function doParse() {
+async function doParsePhyto() {
+  const csvFiles = fs
+    .readdirSync(PHYTO_DATA_ROOT)
+    .filter((_) => _.endsWith(CSV_PREFIX));
   let allEntries = await Promise.all(
     csvFiles.map(async (source_file) => {
       const jsonArray = await csvToJson().fromFile(
-        path.join(DATA_ROOT, source_file),
+        path.join(PHYTO_DATA_ROOT, source_file),
       );
 
       return jsonArray.map((e) => ({ ...e, source_file }));
@@ -21,8 +23,8 @@ async function doParse() {
   );
 
   fs.writeFileSync(
-    TARGET,
-    `export const ALL_DATA: any[] = ${JSON.stringify(
+    PHYTO_TARGET,
+    `export const PHYTO_DATA: any[] = ${JSON.stringify(
       allEntries.flat(),
       null,
       2,
@@ -31,4 +33,30 @@ async function doParse() {
   );
 }
 
-doParse();
+async function doParseMatter() {
+  const csvFiles = fs
+    .readdirSync(MATTER_DATA_ROOT)
+    .filter((_) => _.endsWith(CSV_PREFIX));
+  let allEntries = await Promise.all(
+    csvFiles.map(async (source_file) => {
+      const jsonArray = await csvToJson().fromFile(
+        path.join(MATTER_DATA_ROOT, source_file),
+      );
+
+      return jsonArray.map((e) => ({ ...e, source_file }));
+    }, []),
+  );
+
+  fs.writeFileSync(
+    MATTER_TARGET,
+    `export const MATTER_DATA: any[] = ${JSON.stringify(
+      allEntries.flat(),
+      null,
+      2,
+    )};`,
+    "utf-8",
+  );
+}
+
+doParsePhyto();
+doParseMatter();

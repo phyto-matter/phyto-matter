@@ -15,14 +15,14 @@ import {
 import { Link, useParams } from "react-router-dom";
 import {
   ContaminantEntry,
-  NORMALISED_DATA,
+  NORMALISED_PHYTO_DATA,
   PlantEntry,
-} from "../utils/get-normalised-data";
+} from "../utils/get-normalised-phyto-data";
 import { capitalize, keyBy } from "lodash";
 
 export function ContaminantDetailView() {
   const { id } = useParams();
-  const results = NORMALISED_DATA.flatMap((p) =>
+  const results = NORMALISED_PHYTO_DATA.flatMap((p) =>
     p.contaminants.map((c): [ContaminantEntry, PlantEntry] => [c, p]),
   ).filter(([c, p]) => c.id === id);
   const references = Object.values(

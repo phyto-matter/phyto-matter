@@ -1,5 +1,6 @@
 import { groupBy, kebabCase, lowerCase, snakeCase, values } from "lodash";
-import { ALL_DATA } from "../converted";
+import { PHYTO_DATA } from "../converted-phyto";
+import { normaliseData } from "./normalise-data";
 
 export type ReferenceEntry = {
   title: string;
@@ -43,10 +44,10 @@ export type PlantEntry = {
   contributingCount: number;
 };
 
-export const NORMALISED_DATA = getNormalisedData();
+export const NORMALISED_PHYTO_DATA = getNormalisedPhytoData();
 
-function getNormalisedData() {
-  const normalised = normaliseData(ALL_DATA);
+function getNormalisedPhytoData() {
+  const normalised = normaliseData(PHYTO_DATA, (e) => e.plant_name);
 
   return Object.values(groupBy(normalised, "id")).map(
     ([first, ...rest]: any[]): PlantEntry => ({
@@ -108,19 +109,4 @@ function mapContaminants(entries: any[]): ContaminantEntry[] {
         tissue_type: first.tissue_type,
       }),
     );
-}
-
-function normaliseData(data: any[]) {
-  return data
-    .map((entry) =>
-      Object.entries(entry).reduce(
-        (agg, [key, val]) => ({
-          ...agg,
-          [snakeCase(key)]: val,
-        }),
-        {},
-      ),
-    )
-    .filter((e: any) => e.plant_name)
-    .map((e: any) => ({ ...e, id: e.plant_name })) as any[];
 }

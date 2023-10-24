@@ -1,10 +1,10 @@
 import { useMemo } from "react";
 import {
   ContaminantEntry,
-  NORMALISED_DATA,
+  NORMALISED_PHYTO_DATA,
   PlantEntry,
   ReferenceEntry,
-} from "../utils/get-normalised-data";
+} from "../utils/get-normalised-phyto-data";
 import { uniqBy } from "lodash";
 
 type ContaminantSuggestion = {
@@ -24,7 +24,7 @@ export function usePlantSuggestions(
   const byContaminant = useMemo(() => {
     const grouped = new Map<string, PlantEntry[]>();
 
-    NORMALISED_DATA.forEach((plant) =>
+    NORMALISED_PHYTO_DATA.forEach((plant) =>
       plant.contaminants.forEach((e) => {
         const existing = grouped.get(e.name) || [];
 
