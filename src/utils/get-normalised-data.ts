@@ -1,5 +1,5 @@
 import { groupBy, kebabCase, lowerCase, snakeCase, values } from "lodash";
-import { ALL_DATA } from "../converted";
+import { PHYTO_DATA } from "../converted-phyto";
 
 export type ReferenceEntry = {
   title: string;
@@ -46,7 +46,7 @@ export type PlantEntry = {
 export const NORMALISED_DATA = getNormalisedData();
 
 function getNormalisedData() {
-  const normalised = normaliseData(ALL_DATA);
+  const normalised = normaliseData(PHYTO_DATA);
 
   return Object.values(groupBy(normalised, "id")).map(
     ([first, ...rest]: any[]): PlantEntry => ({

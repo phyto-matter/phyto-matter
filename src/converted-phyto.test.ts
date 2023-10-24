@@ -1,8 +1,8 @@
 import { groupBy } from "lodash";
-import { ALL_DATA } from "./converted";
+import { PHYTO_DATA } from "./converted-phyto";
 
 describe("NORMALISED_DATA", () => {
-  const bySource = groupBy(ALL_DATA, "source_file");
+  const bySource = groupBy(PHYTO_DATA, "source_file");
 
   Object.entries(bySource).forEach(([source, entries]) => {
     describe(`${source} contains valid rows`, () => {
