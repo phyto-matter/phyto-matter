@@ -12,7 +12,8 @@ import {
   Select,
   styled,
   Switch,
-  TextField, ThemeProvider,
+  TextField,
+  ThemeProvider,
 } from "@mui/material";
 import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
@@ -24,11 +25,8 @@ import {
   PlantEntry,
 } from "../utils/get-normalised-phyto-data";
 
-import { createTheme} from "@mui/material";
-import {fontTheme} from "../global-themes";
+import { fontTheme } from "../global-themes";
 import { phytoMatterGreenColor } from "../global-constants";
-
-
 
 const IconStyle = styled("img")({
   width: 150,
@@ -147,14 +145,12 @@ export function PlantsView() {
           [...byVegetationType].map(([vegType, plants]) => (
             <Grid container spacing={2}>
               <Grid item xs={2}>
-
                 <List sx={{ width: "100%" }} key={vegType}>
                   {plants.map((plant, index) => (
-
                     <ListItem disablePadding key={plant.id}>
                       <ListItemIcon>
                         {index === 0 ? (
-                          <IconStyle src={`/icons/${lowerCase(vegType)}.png`}/>
+                          <IconStyle src={`/icons/${lowerCase(vegType)}.png`} />
                         ) : (
                           <IconStyle
                             style={{ visibility: "hidden" }}
@@ -165,28 +161,28 @@ export function PlantsView() {
                     </ListItem>
                   ))}
                 </List>
-
               </Grid>
               <Grid item xs={10}>
-                  <List sx={{ width: "100%", paddingLeft: 10 }} key={vegType}>
-                    {plants.map((plant, index) => (
-
-                      <ListItem disablePadding key={plant.id}>
+                <List sx={{ width: "100%", paddingLeft: 10 }} key={vegType}>
+                  {plants.map((plant, index) => (
+                    <ListItem disablePadding key={plant.id}>
                       <ThemeProvider theme={fontTheme}>
-                    <ListItemText
-                      primary={
-                        <Link to={`/plants/${plant.id}`} style={{ color: "black", textDecoration: "none"}}>
-                          {capitalize(plant.latin_name)}
-                        </Link>
-                      }
-                    />
+                        <ListItemText
+                          primary={
+                            <Link
+                              to={`/plants/${plant.id}`}
+                              style={{ color: "black", textDecoration: "none" }}
+                            >
+                              {capitalize(plant.latin_name)}
+                            </Link>
+                          }
+                        />
                       </ThemeProvider>
                     </ListItem>
                   ))}
                 </List>
               </Grid>
             </Grid>
-
           ))
         )}
       </Container>
@@ -333,9 +329,9 @@ function Controls({
               >
                 <MenuItem value={""}>All</MenuItem>
                 {uniqueHardiness.map((c) => (
-                    <MenuItem key={c} value={c}>
-                      {capitalize(c)}
-                    </MenuItem>
+                  <MenuItem key={c} value={c}>
+                    {capitalize(c)}
+                  </MenuItem>
                 ))}
               </Select>
             </FormControl>
