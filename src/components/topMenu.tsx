@@ -1,5 +1,6 @@
 import { Button, ButtonProps, Container, Grid, styled } from "@mui/material";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const StyledButton = styled(Button)<ButtonProps>((theme) => ({
   variant: "text",
@@ -16,8 +17,11 @@ const StyledButton = styled(Button)<ButtonProps>((theme) => ({
 
 export function TopMenu() {
   const navigate = useNavigate();
-
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <Container
