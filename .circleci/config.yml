@@ -18,7 +18,7 @@ jobs:
       - checkout
       - node/install:
           install-yarn: true
-          node-version: '18.16.0'
+          node-version: '20.9.0'
       - run:
           name: Update NPM
           command: "sudo npm install -g npm"
@@ -45,7 +45,7 @@ workflows:
           # This is the node version to use for the `cimg/node` tag
           # Relevant tags can be found on the CircleCI Developer Hub
           # https://circleci.com/developer/images/image/cimg/node
-          version: '16.10'
+          version: '20.9.0'
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
       - build:
