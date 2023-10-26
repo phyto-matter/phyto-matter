@@ -17,7 +17,7 @@ import {
   ContaminantEntry,
   NORMALISED_PHYTO_DATA,
   PlantEntry,
-} from "../utils/get-normalised-phyto-data";
+} from "../../utils/get-normalised-phyto-data";
 import { capitalize, keyBy } from "lodash";
 import {
   phytoMatterGreenColor,

@@ -24,7 +24,7 @@ import LayersIcon from "@mui/icons-material/Layers";
 import HardwareIcon from "@mui/icons-material/Hardware";
 import WaterfallChartIcon from "@mui/icons-material/WaterfallChart";
 import { Link, useParams } from "react-router-dom";
-import { NORMALISED_PHYTO_DATA } from "../utils/get-normalised-phyto-data";
+import { NORMALISED_PHYTO_DATA } from "../../utils/get-normalised-phyto-data";
 import { capitalize, keyBy } from "lodash";
 import {
   phytoMatterGreenColor,
