@@ -1,30 +1,40 @@
-export const VALID_CATEGORIES = [
-  "roof",
-  "paving and bricks",
-  "walls",
-  "decor and paint",
-  "edges",
-  "furniture",
-];
-export const VALID_PROCESSING = ["dry", "burn", "braid", "soak"];
-export const VALID_FUNCTIONS = [
-  "structure",
-  "filler",
-  "plaster",
-  "reinforcement",
-  "decor",
-  "paint",
-];
-export const VALID_VEGETATION_TYPES = [
-  "herbaceous",
-  "grasses and sedges",
-  "shrub",
-  "tree",
-];
+export enum VALID_CATEGORIES {
+  root = "roof",
+  paving = "paving and bricks",
+  walls = "walls",
+  decor = "decor and paint",
+  edges = "edges",
+  furniture = "furniture",
+}
+export enum VALID_PROCESSING {
+  dry = "dry",
+  burn = "burn",
+  braid = "braid",
+  soak = "soak",
+}
+export enum VALID_FUNCTIONS {
+  structure = "structure",
+  filler = "filler",
+  plaster = "plaster",
+  reinforcement = "reinforcement",
+  decor = "decor",
+  paint = "paint",
+}
+export enum VALID_VEGETATION_TYPES {
+  herbaceous = "herbaceous",
+  grasses = "grasses and sedges",
+  shrub = "shrub",
+  tree = "tree",
+}
 
-export function allValid(toTest: string, validation: string[]) {
+export function allValid(
+  toTest: string,
+  validation: { [key: string]: string },
+) {
+  const values = Object.values(validation);
+
   return toTest
     .split(",")
     .map((_) => _.trim().toLowerCase())
-    .every((t) => validation.includes(t));
+    .every((t) => values.includes(t));
 }
