@@ -16,9 +16,6 @@ jobs:
       - image: cimg/node:20.9.0
     steps:
       - checkout
-      - node/install:
-          install-yarn: true
-          node-version: '20.9.0'
       - run:
           name: Update NPM
           command: "sudo npm install -g npm"
