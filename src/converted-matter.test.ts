@@ -1,13 +1,13 @@
 import { groupBy } from "lodash";
 import { MATTER_DATA } from "./converted-matter";
 import { normaliseData } from "./utils/normalise-data";
+import { allValid } from "./utils/test-utils";
 import {
-  allValid,
   VALID_CATEGORIES,
   VALID_FUNCTIONS,
   VALID_PROCESSING,
   VALID_VEGETATION_TYPES,
-} from "./utils/test-utils";
+} from "./global-constants";
 
 describe("NORMALISED_MATTER_DATA", () => {
   const bySource = groupBy(

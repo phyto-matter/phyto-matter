@@ -1,7 +1,8 @@
 import { groupBy } from "lodash";
 import { PHYTO_DATA } from "./converted-phyto";
 import { normaliseData } from "./utils/normalise-data";
-import { allValid, VALID_VEGETATION_TYPES } from "./utils/test-utils";
+import { allValid } from "./utils/test-utils";
+import { VALID_VEGETATION_TYPES } from "./global-constants";
 
 describe("NORMALISED_PHYTO_DATA", () => {
   const bySource = groupBy(
