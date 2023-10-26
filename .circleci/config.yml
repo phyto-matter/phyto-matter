@@ -13,7 +13,7 @@ jobs:
   build:
     working_directory: ~/project
     docker:
-      - image: cimg/node:18.16.0
+      - image: cimg/node:20.9.0
     steps:
       - checkout
       - node/install:
