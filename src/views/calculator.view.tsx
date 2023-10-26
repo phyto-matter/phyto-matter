@@ -20,11 +20,8 @@ import { usePlantSuggestions } from "../hooks/use-plant-suggestions";
 import { Link, useSearchParams } from "react-router-dom";
 import { capitalize, uniqBy } from "lodash";
 import { TimelineChart } from "../components/timeline-chart";
-
-type TableRowEntry = {
-  contaminant: string;
-  concentration: number;
-};
+import { TableRowEntry } from "../hooks/use-calculated-removal";
+import { KGS_BY_VEG_TYPE } from "../global-constants";
 
 const ENTRIES_KEY = "entries";
 const ENTRIES_SEPARATOR = ":";
@@ -90,6 +87,15 @@ export function CalculatorView() {
       }}
     >
       <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Typography variant="h4" gutterBottom sx={{ mb: 3 }}>
+            Example calculations for phytoremediation of various contaminants
+          </Typography>
+          <Typography variant="subtitle1" gutterBottom sx={{ mb: 3 }}>
+            Add your contaminants and their concentrations to see how they could
+            be mediated over time
+          </Typography>
+        </Grid>
         <Grid item xs={12} md={6}>
           <TableContainer component={Paper}>
             <Table>
@@ -105,7 +111,7 @@ export function CalculatorView() {
                   <TableRow key={index}>
                     <TableCell>{capitalize(row.contaminant)}</TableCell>
                     <TableCell align="right">
-                      {row.concentration.toLocaleString()}
+                      {row.concentration.toLocaleString()} mg/kg
                     </TableCell>
                     <TableCell align="right">
                       <IconButton
@@ -203,7 +209,22 @@ export function CalculatorView() {
           </TableContainer>
         </Grid>
         <Grid item xs={12}>
-          <TimelineChart />
+          <Container sx={{ pt: 4, pb: 4 }}>
+            <Typography variant="subtitle1" gutterBottom sx={{ mb: 3 }}>
+              <b>Disclaimer:</b> These are <i>example</i> removal rates based on
+              an assumed mass by vegetation type of
+              <br />
+              {Object.entries(KGS_BY_VEG_TYPE)
+                .map(
+                  ([key, val]) =>
+                    `${capitalize(key)}: ${val.toLocaleString()} kgs`,
+                )
+                .join(", ")}
+              . Please see the references for how to produce an actual
+              calculation for your specific situation
+            </Typography>
+            <TimelineChart entries={tableRows} suggestions={suggestions} />
+          </Container>
         </Grid>
         <Grid item xs={12}>
           {" "}

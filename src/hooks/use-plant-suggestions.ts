@@ -7,7 +7,7 @@ import {
 } from "../utils/get-normalised-phyto-data";
 import { uniqBy } from "lodash";
 
-type ContaminantSuggestion = {
+export type ContaminantSuggestion = {
   contaminantId: string;
   contaminant: string;
   plantId: string;

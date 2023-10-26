@@ -32,3 +32,10 @@ export enum VALID_VEGETATION_TYPES {
   shrub = "shrub",
   tree = "tree",
 }
+
+export const KGS_BY_VEG_TYPE = {
+  [VALID_VEGETATION_TYPES.tree]: 10,
+  [VALID_VEGETATION_TYPES.shrub]: 4,
+  [VALID_VEGETATION_TYPES.grasses]: 2,
+  [VALID_VEGETATION_TYPES.herbaceous]: 1.2,
+};
