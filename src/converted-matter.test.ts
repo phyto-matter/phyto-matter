@@ -1,31 +1,14 @@
 import { groupBy } from "lodash";
 import { MATTER_DATA } from "./converted-matter";
 import { normaliseData } from "./utils/normalise-data";
+import {
+  allValid,
+  VALID_CATEGORIES,
+  VALID_FUNCTIONS,
+  VALID_PROCESSING,
+  VALID_VEGETATION_TYPES,
+} from "./utils/test-utils";
 
-const VALID_CATEGORIES = [
-  "roof",
-  "paving and bricks",
-  "walls",
-  "decor and paint",
-  "edges",
-  "furniture",
-];
-const VALID_PROCESSING = ["dry", "burn", "braid", "soak"];
-const VALID_FUNCTIONS = [
-  "structure",
-  "filler",
-  "plaster",
-  "reinforcement",
-  "decor",
-  "paint",
-];
-
-function allValid(toTest: string, validation: string[]) {
-  return toTest
-    .split(",")
-    .map((_) => _.trim())
-    .every((t) => validation.includes(t));
-}
 describe("NORMALISED_MATTER_DATA", () => {
   const bySource = groupBy(
     normaliseData(MATTER_DATA, (e) => `${e.plant_genus}-${e.category}`),
@@ -55,6 +38,13 @@ describe("NORMALISED_MATTER_DATA", () => {
           expect(
             entries.every((_) =>
               allValid(_.building_material_function, VALID_FUNCTIONS),
+            ),
+          ).toBe(true);
+        });
+        test("vegetation_type is valid", () => {
+          expect(
+            entries.every((_) =>
+              allValid(_.vegetation_type, VALID_VEGETATION_TYPES),
             ),
           ).toBe(true);
         });

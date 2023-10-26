@@ -1,6 +1,7 @@
 import { groupBy } from "lodash";
 import { PHYTO_DATA } from "./converted-phyto";
 import { normaliseData } from "./utils/normalise-data";
+import { allValid, VALID_VEGETATION_TYPES } from "./utils/test-utils";
 
 describe("NORMALISED_PHYTO_DATA", () => {
   const bySource = groupBy(
@@ -40,6 +41,13 @@ describe("NORMALISED_PHYTO_DATA", () => {
         });
         test("plant_family is never empty", () => {
           expect(entries.every((_) => _.plant_family)).toBe(true);
+        });
+        test("vegetation_type is valid", () => {
+          expect(
+            entries.every((_) =>
+              allValid(_.vegetation_type, VALID_VEGETATION_TYPES),
+            ),
+          ).toBe(true);
         });
       });
 
