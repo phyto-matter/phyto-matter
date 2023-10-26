@@ -89,6 +89,7 @@ export function usePlantSuggestions(
 
         return Object.values(suggestions);
       }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [contaminants.sort().join(), byContaminant],
   );
 }

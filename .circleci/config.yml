@@ -16,14 +16,11 @@ jobs:
       - image: cimg/node:20.9.0
     steps:
       - checkout
-      - run:
-          name: Update NPM
-          command: "sudo npm install -g npm"
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
           name: Install Dependencies
-          command: npm install
+          command: npm ci
       - run: npm install --save-dev firebase-tools
       - save_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
@@ -38,13 +35,7 @@ jobs:
 workflows:
   build-and-deploy:
     jobs:
-      - node/test:
-          # This is the node version to use for the `cimg/node` tag
-          # Relevant tags can be found on the CircleCI Developer Hub
-          # https://circleci.com/developer/images/image/cimg/node
-          version: '20.9.0'
-          # If you are using yarn, change the line below from "npm" to "yarn"
-          pkg-manager: npm
+      - node/test
       - build:
           requires:
             - node/test
