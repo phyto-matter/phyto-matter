@@ -41,13 +41,6 @@ jobs:
 workflows:
   build-and-deploy:
     jobs:
-      - build:
-          filters:
-            branches:
-              only: main
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
-    jobs:
       - node/test:
           # This is the node version to use for the `cimg/node` tag
           # Relevant tags can be found on the CircleCI Developer Hub
@@ -55,3 +48,9 @@ workflows:
           version: '16.10'
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
+      - build:
+          requires:
+            - node/test
+          filters:
+            branches:
+              only: main
