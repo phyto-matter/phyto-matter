@@ -9,6 +9,7 @@ import { MaterialsView } from "./views/materials.view";
 import { TopMenu } from "./components/topMenu";
 import { PlantDetailView } from "./views/detail-views/plant-detail-view";
 import { ContaminantDetailView } from "./views/detail-views/contaminant-detail-view";
+import { MaterialDetailView } from "./views/detail-views/material-detail-view";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contaminants" element={<ContaminantsView />} />
           <Route path="/contaminants/:id" element={<ContaminantDetailView />} />
           <Route path="/materials" element={<MaterialsView />} />
+          <Route path="/materials/:id" element={<MaterialDetailView />} />
           <Route path="/calculator" element={<CalculatorView />} />
         </Routes>
       </div>

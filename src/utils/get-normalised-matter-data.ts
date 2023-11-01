@@ -16,9 +16,9 @@ export type MatterEntry = {
   plant_genus: string;
   common_name: string;
   image: string;
-  processing: string;
-  material_function: string;
-  category: string;
+  processing: string[];
+  material_function: string[];
+  category: string[];
   comment: string;
   projects: ProjectEntry[];
 };

@@ -1,9 +1,12 @@
+import { styled } from "@mui/material";
+
 export const phytoMatterYellowColor = "#F0D66B";
 
 export const phytoMatterGreenColor = "#6CDA98";
 
-export const phytoMatterBrownColor = "";
+export const phytoMatterBrownColor = "#AE8E5E";
 
+export const phytoMatterBlackColor = "#323232";
 export enum VALID_CATEGORIES {
   root = "roof",
   paving = "paving and bricks",
@@ -39,3 +42,18 @@ export const KGS_BY_VEG_TYPE = {
   [VALID_VEGETATION_TYPES.grasses]: 2,
   [VALID_VEGETATION_TYPES.herbaceous]: 1.2,
 };
+
+export const IconStyle = styled("img")({
+  width: 150,
+  marginRight: 50,
+  marginLeft: 50,
+});
+
+export const SoilDescription =
+  "L = light (sandy), M = medium, H = heavy (clay)";
+
+export const MoistureDescription = "D = dry, M = Moist, We = wet, Wa = water";
+
+export const ShadeDescription = "F = full shade, S = semi-shade, N = no shade";
+
+export const HardinessDescription = "Based on USDA";

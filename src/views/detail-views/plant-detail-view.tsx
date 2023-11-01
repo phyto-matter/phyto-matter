@@ -25,14 +25,20 @@ import HardwareIcon from "@mui/icons-material/Hardware";
 import WaterfallChartIcon from "@mui/icons-material/WaterfallChart";
 import { Link, useParams } from "react-router-dom";
 import { NORMALISED_PHYTO_DATA } from "../../utils/get-normalised-phyto-data";
-import { capitalize, keyBy } from "lodash";
+
+import { capitalize, keyBy, snakeCase } from "lodash";
 import {
+  HardinessDescription,
+  IconStyle,
+  MoistureDescription,
+  phytoMatterBlackColor,
   phytoMatterGreenColor,
   phytoMatterYellowColor,
+  SoilDescription,
 } from "../../global-constants";
 
 const StyledAvatar = styled(Avatar)({
-  backgroundColor: "black",
+  backgroundColor: phytoMatterBlackColor,
 });
 
 export function PlantDetailView() {
@@ -58,174 +64,265 @@ export function PlantDetailView() {
   }
 
   return (
-    <Container
-      maxWidth={false}
-      sx={{
-        padding: 3,
-      }}
+    <div
       style={{
         backgroundColor: phytoMatterGreenColor,
         paddingTop: 150,
-        paddingLeft: 150,
-        paddingRight: 150,
         minHeight: "100vh",
       }}
     >
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>
-          <Typography variant="h4" gutterBottom>
-            {plant.latin_name} ({plant.common_name})
-          </Typography>
-          <Typography variant="subtitle1" gutterBottom>
-            {plant.species}, {plant.family}
-          </Typography>
-          <List
-            sx={{
-              width: "100%",
-              maxWidth: 360,
-              bgcolor: phytoMatterGreenColor,
-            }}
-          >
-            <ListItem>
-              <ListItemAvatar>
-                <StyledAvatar>
-                  <ParkIcon />
-                </StyledAvatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="Vegetation Type"
-                secondary={capitalize(plant.vegetation_type)}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <StyledAvatar>
-                  <LayersIcon />
-                </StyledAvatar>
-              </ListItemAvatar>
-              <ListItemText primary="Soil" secondary={plant.soil} />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <StyledAvatar>
-                  <HardwareIcon />
-                </StyledAvatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary="Hardiness"
-                secondary={plant.hardiness_zone}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <StyledAvatar>
-                  <WaterfallChartIcon />
-                </StyledAvatar>
-              </ListItemAvatar>
-              <ListItemText primary="Moisture" secondary={plant.moisture} />
-            </ListItem>
-          </List>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <TableContainer sx={{ maxHeight: 400 }} component={Paper}>
-            <Table stickyHeader>
-              <TableHead>
-                <TableRow>
-                  <TableCell>
-                    <b>Contaminant</b>
-                  </TableCell>
-                  <TableCell>
-                    <b>Tissue type</b>
-                  </TableCell>
-                  <TableCell>
-                    <b>Removal Rate</b>
-                  </TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {plant.contaminants.flatMap((c) =>
-                  c.removal_rates.map((r) => (
-                    <TableRow>
-                      <TableCell>
-                        <Link to={`/contaminants/${c.id}`}>
-                          <Tooltip title={capitalize(c.name)} placement="right">
-                            <Chip
-                              label={c.symbol}
-                              size="small"
-                              variant="outlined"
-                              sx={{
-                                backgroundColor: phytoMatterYellowColor,
-                                borderColor: phytoMatterYellowColor,
-                              }}
-                            />
-                          </Tooltip>
-                        </Link>
-                      </TableCell>
-                      <TableCell>{capitalize(c.tissue_type)}</TableCell>
-                      <TableCell>
-                        {r.removal_rate
-                          ? r.removal_rate.toLocaleString()
-                          : "No data"}{" "}
-                        mg/kg
-                        <sup>
-                          (
-                          {references.findIndex(
-                            (_) => _.reference === r.reference.reference,
-                          ) + 1}
-                          )
-                        </sup>
-                      </TableCell>
-                    </TableRow>
-                  )),
+      <Container>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={6}>
+            <Typography variant="h4" gutterBottom color={phytoMatterBlackColor}>
+              {plant.latin_name} ({plant.common_name})
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              gutterBottom
+              color={phytoMatterBlackColor}
+            >
+              {plant.species}, {plant.family}
+            </Typography>
+            <Grid container>
+              <Grid item xs={6}>
+                {plant.image ? (
+                  <img src={plant.image} alt={""} />
+                ) : (
+                  <IconStyle
+                    src={`/icons/${snakeCase(plant.vegetation_type)}.png`}
+                  />
                 )}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Grid>
-        <Grid item xs={12}>
-          <Typography variant="h5" gutterBottom>
-            References
-          </Typography>
-          <TableContainer sx={{ maxHeight: 400 }} component={Paper}>
-            <Table stickyHeader>
-              <TableHead>
-                <TableRow>
-                  <TableCell>
-                    <b>#</b>
-                  </TableCell>
-                  <TableCell>
-                    <b>Title</b>
-                  </TableCell>
-                  <TableCell>
-                    <b>Author</b>
-                  </TableCell>
-                  <TableCell>
-                    <b>Year</b>
-                  </TableCell>
-                  <TableCell>
-                    <b>Source</b>
-                  </TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {references.map((ref, i) => (
+              </Grid>
+              <Grid item xs={6}>
+                <List
+                  sx={{
+                    width: "100%",
+                    maxWidth: 360,
+                    bgcolor: phytoMatterGreenColor,
+                  }}
+                >
+                  <ListItem>
+                    <ListItemAvatar>
+                      <StyledAvatar>
+                        <ParkIcon />
+                      </StyledAvatar>
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={
+                        <Typography style={{ color: phytoMatterBlackColor }}>
+                          Vegetation Type
+                        </Typography>
+                      }
+                      secondary={capitalize(plant.vegetation_type)}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemAvatar>
+                      <StyledAvatar>
+                        <LayersIcon />
+                      </StyledAvatar>
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={
+                        <Typography style={{ color: phytoMatterBlackColor }}>
+                          Soil
+                        </Typography>
+                      }
+                      secondary={
+                        <Tooltip
+                          title={SoilDescription}
+                          placement="bottom-start"
+                        >
+                          <span>{plant.soil}</span>
+                        </Tooltip>
+                      }
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemAvatar>
+                      <StyledAvatar>
+                        <HardwareIcon />
+                      </StyledAvatar>
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={
+                        <Typography style={{ color: phytoMatterBlackColor }}>
+                          Hardiness
+                        </Typography>
+                      }
+                      secondary={
+                        <Tooltip
+                          title={HardinessDescription}
+                          placement="bottom-start"
+                        >
+                          <span>{plant.hardiness_zone}</span>
+                        </Tooltip>
+                      }
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemAvatar>
+                      <StyledAvatar>
+                        <WaterfallChartIcon />
+                      </StyledAvatar>
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={
+                        <Typography style={{ color: phytoMatterBlackColor }}>
+                          Moisture
+                        </Typography>
+                      }
+                      secondary={
+                        <Tooltip
+                          title={MoistureDescription}
+                          placement="bottom-start"
+                        >
+                          <span>{plant.moisture}</span>
+                        </Tooltip>
+                      }
+                    />
+                  </ListItem>
+                </List>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <TableContainer sx={{ maxHeight: 400 }} component={Paper}>
+              <Table stickyHeader>
+                <TableHead>
                   <TableRow>
-                    <TableCell>{i + 1}</TableCell>
-                    <TableCell>{ref.title}</TableCell>
-                    <TableCell>{ref.author}</TableCell>
-                    <TableCell>{ref.year}</TableCell>
                     <TableCell>
-                      <a href={ref.link} target="_blank" rel="noreferrer">
-                        {ref.reference}
-                      </a>
+                      <Typography
+                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
+                      >
+                        <b>Contaminant</b>
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography
+                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
+                      >
+                        <b>Tissue type</b>
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography
+                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
+                      >
+                        <b>Removal Rate</b>
+                      </Typography>
                     </TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+                </TableHead>
+                <TableBody>
+                  {plant.contaminants.flatMap((c) =>
+                    c.removal_rates.map((r) => (
+                      <TableRow>
+                        <TableCell>
+                          <Link to={`/contaminants/${c.id}`}>
+                            <Tooltip
+                              title={capitalize(c.symbol)}
+                              placement="right"
+                            >
+                              <Chip
+                                label={capitalize(c.name)}
+                                size="small"
+                                variant="outlined"
+                                sx={{
+                                  backgroundColor: phytoMatterYellowColor,
+                                  borderColor: phytoMatterYellowColor,
+                                }}
+                              />
+                            </Tooltip>
+                          </Link>
+                        </TableCell>
+                        <TableCell>{capitalize(c.tissue_type)}</TableCell>
+                        <TableCell>
+                          {r.removal_rate
+                            ? r.removal_rate.toLocaleString()
+                            : "No data"}{" "}
+                          mg/kg
+                          <sup>
+                            (
+                            {references.findIndex(
+                              (_) => _.reference === r.reference.reference,
+                            ) + 1}
+                            )
+                          </sup>
+                        </TableCell>
+                      </TableRow>
+                    )),
+                  )}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="h5" gutterBottom color={phytoMatterBlackColor}>
+              References
+            </Typography>
+            <TableContainer sx={{ maxHeight: 400 }} component={Paper}>
+              <Table stickyHeader>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>
+                      <Typography
+                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
+                      >
+                        <b>#</b>
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography
+                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
+                      >
+                        <b>Title</b>
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography
+                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
+                      >
+                        <b>Author</b>
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography
+                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
+                      >
+                        <b>Year</b>
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography
+                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
+                      >
+                        <b>Source</b>
+                      </Typography>
+                    </TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {references.map((ref, i) => (
+                    <TableRow>
+                      <TableCell>{i + 1}</TableCell>
+                      <TableCell>{ref.title}</TableCell>
+                      <TableCell>{ref.author}</TableCell>
+                      <TableCell>{ref.year}</TableCell>
+                      <TableCell>
+                        <a href={ref.link} target="_blank" rel="noreferrer">
+                          {ref.reference}
+                        </a>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </div>
   );
 }

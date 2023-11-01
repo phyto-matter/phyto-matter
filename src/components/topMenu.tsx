@@ -43,7 +43,7 @@ export function TopMenu() {
             <img
               alt={""}
               style={{ width: 200, marginRight: 50 }}
-              src={"/icons/logo.png"}
+              src={"/icons/pm-logo.png"}
             />
           </Link>
         </Grid>
@@ -54,8 +54,8 @@ export function TopMenu() {
             style={{
               width: 100,
               backgroundImage: location.pathname.startsWith("/plants")
-                ? "url(/icons/plants_green.png)"
-                : "url(/icons/plants.png)",
+                ? "url(/icons/plants-green.png)"
+                : "url(/icons/plants-title.png)",
             }}
           ></StyledButton>
         </Grid>
@@ -66,8 +66,8 @@ export function TopMenu() {
             style={{
               width: 180,
               backgroundImage: location.pathname.startsWith("/contaminants")
-                ? "url(/icons/contam_yellow.png)"
-                : "url(/icons/contam.png)",
+                ? "url(/icons/contam-yellow-title.png)"
+                : "url(/icons/contam-title.png)",
             }}
           ></StyledButton>
         </Grid>
@@ -79,8 +79,8 @@ export function TopMenu() {
               style={{
                 width: 130,
                 backgroundImage: location.pathname.startsWith("/materials")
-                  ? "url(/icons/materials_brown.png)"
-                  : "url(/icons/materials.png)",
+                  ? "url(/icons/materials-brown-title.png)"
+                  : "url(/icons/materials-title.png)",
               }}
             ></StyledButton>
           </Grid>
@@ -92,8 +92,8 @@ export function TopMenu() {
             style={{
               height: 65,
               backgroundImage: location.pathname.startsWith("/calculator")
-                ? "url(/icons/calculator-filled.png)"
-                : "url(/icons/calculator.png)",
+                ? "url(/icons/calculator-filled-title.png)"
+                : "url(/icons/calculator-title.png)",
             }}
           ></StyledButton>
         </Grid>

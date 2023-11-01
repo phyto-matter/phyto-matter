@@ -10,14 +10,17 @@ import {
   ListItemText,
   MenuItem,
   Select,
-  styled,
-  Switch,
   TextField,
   ThemeProvider,
 } from "@mui/material";
-import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
-import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
-import { capitalize, groupBy, lowerCase, omitBy, upperCase } from "lodash";
+import {
+  capitalize,
+  groupBy,
+  lowerCase,
+  omitBy,
+  snakeCase,
+  upperCase,
+} from "lodash";
 import { useCallback, useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
@@ -26,29 +29,16 @@ import {
 } from "../utils/get-normalised-phyto-data";
 
 import { fontTheme } from "../global-themes";
-import { phytoMatterGreenColor } from "../global-constants";
-
-const IconStyle = styled("img")({
-  width: 150,
-  marginRight: 50,
-  marginLeft: 50,
-});
-
-type PlantFilters = {
-  latin_name: string;
-  contaminant: string;
-  vegetation_type: string;
-  hardiness_zone: string;
-  soil: string;
-  shade: string;
-};
+import { IconStyle, phytoMatterGreenColor } from "../global-constants";
+import ArrowRightRoundedIcon from "@mui/icons-material/ArrowRightRounded";
+import { PlantFilters } from "../global-types";
 
 export function PlantsView() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const selectedView = searchParams.get("view") || "grid";
   const filters: PlantFilters = useMemo(
     () => ({
       latin_name: searchParams.get("latin_name") || "",
+      common_name: searchParams.get("common_name") || "",
       contaminant: searchParams.get("contaminant") || "",
       vegetation_type: searchParams.get("vegetation_type") || "",
       hardiness_zone: searchParams.get("hardiness_zone") || "",
@@ -63,14 +53,13 @@ export function PlantsView() {
         omitBy(
           {
             ...filters,
-            view: selectedView,
             ...update,
           },
           (v) => !v,
         ),
       );
     },
-    [filters, selectedView, setSearchParams],
+    [filters, setSearchParams],
   );
   const displayData = useMemo(
     () =>
@@ -108,55 +97,39 @@ export function PlantsView() {
           displayData={displayData}
           filters={filters}
           updateFilters={updateFilters}
-          selectedView={selectedView}
           setSelectedView={(view) => setSearchParams({ view })}
           clearFilters={() => setSearchParams({})}
         />
       </Container>
       <Container style={{ marginTop: 50 }}>
-        {selectedView === "grid" ? (
-          <Grid
-            container
-            spacing={2}
-            alignItems="start"
-            justifyContent="center"
-            style={{ margin: 0 }}
-          >
-            {[...byVegetationType].map(([vegType, plants]) => (
-              <Grid key={vegType} item xs={6} md={3}>
-                <List
-                  dense={true}
-                  style={{ cursor: "pointer" }}
-                  onClick={() => {
-                    setSearchParams({
-                      view: "list",
-                      vegetation_type: plants[0].vegetation_type,
-                    });
-                  }}
-                >
-                  <ListItemIcon>
-                    <IconStyle src={`/icons/${vegType}.png`} />
-                  </ListItemIcon>
-                </List>
-              </Grid>
-            ))}
-          </Grid>
-        ) : (
-          [...byVegetationType].map(([vegType, plants]) => (
-            <Grid container spacing={2} sx={{ mb: 5 }}>
-              <Grid item xs={2} justifyContent={"flex-start"}>
-                <IconStyle src={`/icons/${lowerCase(vegType)}.png`} />
-              </Grid>
+        <Grid
+          container
+          spacing={2}
+          alignItems="start"
+          justifyContent="center"
+          style={{ margin: 0 }}
+        >
+          {[...byVegetationType].map(([vegType, plants]) => (
+            <Grid key={vegType} item xs={6} md={3}>
+              <List dense={true}>
+                <ListItemIcon>
+                  <IconStyle src={`/icons/${snakeCase(vegType)}.png`} />
+                </ListItemIcon>
+              </List>
               <Grid item xs={10}>
                 <List sx={{ width: "100%", paddingLeft: 10 }} key={vegType}>
                   {plants.map((plant, index) => (
                     <ListItem disablePadding key={plant.id}>
+                      <ArrowRightRoundedIcon />
                       <ThemeProvider theme={fontTheme}>
                         <ListItemText
                           primary={
                             <Link
                               to={`/plants/${plant.id}`}
-                              style={{ color: "black", textDecoration: "none" }}
+                              style={{
+                                color: "black",
+                                textDecoration: "none",
+                              }}
                             >
                               {capitalize(plant.latin_name)}
                             </Link>
@@ -168,8 +141,8 @@ export function PlantsView() {
                 </List>
               </Grid>
             </Grid>
-          ))
-        )}
+          ))}
+        </Grid>
       </Container>
     </div>
   );
@@ -179,13 +152,11 @@ function Controls({
   displayData,
   filters,
   updateFilters,
-  selectedView,
   setSelectedView,
   clearFilters,
 }: {
   displayData: PlantEntry[];
   filters: PlantFilters;
-  selectedView: string;
   setSelectedView: (v: string) => void;
   updateFilters: (f: Partial<PlantFilters>) => void;
   clearFilters: () => void;
@@ -225,144 +196,144 @@ function Controls({
         .filter(Boolean),
     [displayData],
   );
+  const uniqueCommonName = useMemo(
+    () =>
+      [...new Set(displayData.flatMap((e) => e.common_name))]
+        .sort()
+        .filter(Boolean),
+    [displayData],
+  );
 
   return (
     <Grid container spacing={2}>
       <Grid item xs={6} md={3}>
-        <GridViewOutlinedIcon />
-        <Switch
-          checked={selectedView === "list"}
-          onClick={() => {
-            if (selectedView === "grid") {
-              setSelectedView("list");
-              return;
-            }
-            clearFilters();
-            setSelectedView("grid");
-          }}
+        <Autocomplete
+          disablePortal
+          freeSolo
+          options={displayData.map((option) => option.common_name)}
+          sx={{ width: 300, maxWidth: "100%" }}
+          onInputChange={(_, val) => updateFilters({ common_name: val })}
+          renderInput={(params) => (
+            <TextField {...params} label="Common Name" />
+          )}
         />
-        <FormatListBulletedOutlinedIcon />
       </Grid>
-      {selectedView === "list" && (
-        <>
-          <Grid item xs={6} md={3}>
-            <Autocomplete
-              disablePortal
-              freeSolo
-              options={displayData.map((option) => option.latin_name)}
-              sx={{ width: 300, maxWidth: "100%" }}
-              onInputChange={(_, val) => updateFilters({ latin_name: val })}
-              renderInput={(params) => (
-                <TextField {...params} label="Latin Name" />
-              )}
-            />
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
-              <InputLabel id="demo-simple-select-type">Type</InputLabel>
-              <Select
-                labelId="demo-simple-select-type"
-                value={filters.vegetation_type}
-                label="Type"
-                onChange={(e) =>
-                  updateFilters({ vegetation_type: e.target.value as string })
-                }
-              >
-                <MenuItem value={""}>All</MenuItem>
-                {uniqueType.map((c) => (
-                  <MenuItem key={c} value={c}>
-                    {capitalize(c)}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
-              <InputLabel id="demo-simple-select-contaminant">
-                Contaminant
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-contaminant"
-                value={filters.contaminant}
-                label="Contaminant"
-                onChange={(e) =>
-                  updateFilters({ contaminant: e.target.value as string })
-                }
-              >
-                <MenuItem value={""}>All</MenuItem>
-                {uniqueContaminants.map((c) => (
-                  <MenuItem key={c} value={c}>
-                    {capitalize(c)}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
-              <InputLabel id="demo-simple-select-hardiness">
-                Hardiness
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-hardiness"
-                value={filters.hardiness_zone}
-                label="Hardiness Zone"
-                onChange={(e) =>
-                  updateFilters({ hardiness_zone: e.target.value as string })
-                }
-              >
-                <MenuItem value={""}>All</MenuItem>
-                {uniqueHardiness.map((c) => (
-                  <MenuItem key={c} value={c}>
-                    {capitalize(c)}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
-              <InputLabel id="demo-simple-select-soil">Soil</InputLabel>
-              <Select
-                labelId="demo-simple-select-soil"
-                value={filters.soil}
-                label="Soil"
-                onChange={(e) =>
-                  updateFilters({ soil: e.target.value as string })
-                }
-              >
-                <MenuItem value={""}>All</MenuItem>
-                {uniqueSoil.map((c) => (
-                  <MenuItem key={c} value={c}>
-                    {upperCase(c)}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
-              <InputLabel id="demo-simple-select-shade">Shade</InputLabel>
-              <Select
-                labelId="demo-simple-select-shade"
-                value={filters.shade}
-                label="Shade"
-                onChange={(e) =>
-                  updateFilters({ shade: e.target.value as string })
-                }
-              >
-                <MenuItem value={""}>All</MenuItem>
-                {uniqueShade.map((c) => (
-                  <MenuItem key={c} value={c}>
-                    {upperCase(c)}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Grid>
-        </>
-      )}
+      <>
+        <Grid item xs={6} md={3}>
+          <Autocomplete
+            disablePortal
+            freeSolo
+            options={displayData.map((option) => option.latin_name)}
+            sx={{ width: 300, maxWidth: "100%" }}
+            onInputChange={(_, val) => updateFilters({ latin_name: val })}
+            renderInput={(params) => (
+              <TextField {...params} label="Latin Name" />
+            )}
+          />
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
+            <InputLabel id="demo-simple-select-type">Type</InputLabel>
+            <Select
+              labelId="demo-simple-select-type"
+              value={filters.vegetation_type}
+              label="Type"
+              onChange={(e) =>
+                updateFilters({ vegetation_type: e.target.value as string })
+              }
+            >
+              <MenuItem value={""}>All</MenuItem>
+              {uniqueType.map((c) => (
+                <MenuItem key={c} value={c}>
+                  {capitalize(c)}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
+            <InputLabel id="demo-simple-select-contaminant">
+              Contaminant
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-contaminant"
+              value={filters.contaminant}
+              label="Contaminant"
+              onChange={(e) =>
+                updateFilters({ contaminant: e.target.value as string })
+              }
+            >
+              <MenuItem value={""}>All</MenuItem>
+              {uniqueContaminants.map((c) => (
+                <MenuItem key={c} value={c}>
+                  {capitalize(c)}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
+            <InputLabel id="demo-simple-select-hardiness">Hardiness</InputLabel>
+            <Select
+              labelId="demo-simple-select-hardiness"
+              value={filters.hardiness_zone}
+              label="Hardiness Zone"
+              onChange={(e) =>
+                updateFilters({ hardiness_zone: e.target.value as string })
+              }
+            >
+              <MenuItem value={""}>All</MenuItem>
+              {uniqueHardiness.map((c) => (
+                <MenuItem key={c} value={c}>
+                  {capitalize(c)}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
+            <InputLabel id="demo-simple-select-soil">Soil</InputLabel>
+            <Select
+              labelId="demo-simple-select-soil"
+              value={filters.soil}
+              label="Soil"
+              onChange={(e) =>
+                updateFilters({ soil: e.target.value as string })
+              }
+            >
+              <MenuItem value={""}>All</MenuItem>
+              {uniqueSoil.map((c) => (
+                <MenuItem key={c} value={c}>
+                  {upperCase(c)}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={6} md={3}>
+          <FormControl fullWidth sx={{ width: 300, maxWidth: "100%" }}>
+            <InputLabel id="demo-simple-select-shade">Shade</InputLabel>
+            <Select
+              labelId="demo-simple-select-shade"
+              value={filters.shade}
+              label="Shade"
+              onChange={(e) =>
+                updateFilters({ shade: e.target.value as string })
+              }
+            >
+              <MenuItem value={""}>All</MenuItem>
+              {uniqueShade.map((c) => (
+                <MenuItem key={c} value={c}>
+                  {upperCase(c)}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+      </>
     </Grid>
   );
 }

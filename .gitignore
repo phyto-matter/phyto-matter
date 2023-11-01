@@ -136,3 +136,4 @@ dist
 src/converted-phyto.ts
 src/converted-matter.ts
 build
+.DS_Store
