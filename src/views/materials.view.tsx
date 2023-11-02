@@ -29,18 +29,13 @@ export function MaterialsView() {
   const [searchParams, setSearchParams] = useSearchParams();
   const filters: MaterialFilters = useMemo(
     () => ({
-      name: searchParams.get("common_name") || "",
+      name: searchParams.get("name") || "",
       category: searchParams.get("category") || "",
       plant_genus: searchParams.get("plant_genus") || "",
-      material_function: searchParams.get("building_material_function") || "",
+      material_function: searchParams.get("material_function") || "",
       processing: searchParams.get("processing") || "",
     }),
     [searchParams],
-  );
-
-  const byCategory = useMemo(
-    () => Object.entries(groupBy(NORMALISED_MATTER_DATA, "category")),
-    [],
   );
 
   const updateFilters = useCallback(
@@ -62,7 +57,7 @@ export function MaterialsView() {
       NORMALISED_MATTER_DATA.filter((e) => {
         return (
           (!filters.name ||
-            lowerCase(e.common_name).includes(lowerCase(filters.category))) &&
+            lowerCase(e.common_name).includes(lowerCase(filters.name))) &&
           (!filters.category || e.category.includes(filters.category)) &&
           (!filters.plant_genus || e.plant_genus === filters.plant_genus) &&
           (!filters.material_function ||
@@ -71,6 +66,11 @@ export function MaterialsView() {
         );
       }),
     [filters],
+  );
+
+  const byCategory = useMemo(
+    () => Object.entries(groupBy(displayData, "category")),
+    [displayData],
   );
 
   return (
@@ -173,13 +173,23 @@ function Controls({
     [displayData],
   );
 
+  const uniqueName = useMemo(
+    () => [...new Set(displayData.map((option) => option.common_name))],
+    [displayData],
+  );
+
+  const uniqueGenus = useMemo(
+    () => [...new Set(displayData.map((option) => option.plant_genus))],
+    [displayData],
+  );
+
   return (
     <Grid container spacing={2}>
       <Grid item xs={6} md={3}>
         <Autocomplete
           disablePortal
           freeSolo
-          options={displayData.map((option) => option.common_name)}
+          options={uniqueName}
           sx={{ width: 300, maxWidth: "100%" }}
           onInputChange={(_, val) => updateFilters({ name: val })}
           renderInput={(params) => (
@@ -191,7 +201,7 @@ function Controls({
         <Autocomplete
           disablePortal
           freeSolo
-          options={displayData.map((option) => option.plant_genus)}
+          options={uniqueGenus}
           sx={{ width: 300, maxWidth: "100%" }}
           onInputChange={(_, val) => updateFilters({ plant_genus: val })}
           renderInput={(params) => (
