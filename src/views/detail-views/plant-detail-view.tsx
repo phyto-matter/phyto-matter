@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Avatar,
   Chip,
   Container,
   Grid,
@@ -9,7 +8,6 @@ import {
   ListItemAvatar,
   ListItemText,
   Paper,
-  styled,
   Table,
   TableBody,
   TableCell,
