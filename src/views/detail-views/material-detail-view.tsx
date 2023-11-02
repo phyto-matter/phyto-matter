@@ -14,7 +14,7 @@ import {
   phytoMatterBrownColor,
   StyledAvatar,
 } from "../../global-constants";
-import { capitalize, startCase, upperCase } from "lodash";
+import { capitalize, startCase } from "lodash";
 import React from "react";
 import { NORMALISED_MATTER_DATA } from "../../utils/get-normalised-matter-data";
 import { Link, useParams } from "react-router-dom";

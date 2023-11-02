@@ -29,11 +29,7 @@ import {
 } from "../utils/get-normalised-phyto-data";
 
 import { fontTheme } from "../global-themes";
-import {
-  IconStyle,
-  phytoMatterBrownColor,
-  phytoMatterGreenColor,
-} from "../global-constants";
+import { IconStyle, phytoMatterGreenColor } from "../global-constants";
 import ArrowRightRoundedIcon from "@mui/icons-material/ArrowRightRounded";
 import { PlantFilters } from "../global-types";
 
@@ -132,7 +128,7 @@ export function PlantsView() {
               </List>
               <Grid item xs={10}>
                 <List sx={{ width: "100%", paddingLeft: 10 }} key={vegType}>
-                  {plants.map((plant, index) => (
+                  {plants.map((plant) => (
                     <ListItem disablePadding key={plant.id}>
                       <ArrowRightRoundedIcon />
                       <ThemeProvider theme={fontTheme}>
@@ -166,8 +162,6 @@ function Controls({
   displayData,
   filters,
   updateFilters,
-  setSelectedView,
-  clearFilters,
 }: {
   displayData: PlantEntry[];
   filters: PlantFilters;
@@ -206,13 +200,6 @@ function Controls({
   const uniqueType = useMemo(
     () =>
       [...new Set(displayData.flatMap((e) => e.vegetation_type))]
-        .sort()
-        .filter(Boolean),
-    [displayData],
-  );
-  const uniqueCommonName = useMemo(
-    () =>
-      [...new Set(displayData.flatMap((e) => e.common_name))]
         .sort()
         .filter(Boolean),
     [displayData],

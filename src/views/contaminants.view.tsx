@@ -29,10 +29,7 @@ import {
   NORMALISED_PHYTO_DATA,
 } from "../utils/get-normalised-phyto-data";
 import { fontTheme } from "../global-themes";
-import {
-  phytoMatterBrownColor,
-  phytoMatterYellowColor,
-} from "../global-constants";
+import { phytoMatterYellowColor } from "../global-constants";
 import { ContaminantFilters } from "../global-types";
 
 export function ContaminantsView() {

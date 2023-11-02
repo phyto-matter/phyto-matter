@@ -18,14 +18,7 @@ import {
   NORMALISED_MATTER_DATA,
 } from "../utils/get-normalised-matter-data";
 import { IconStyle, phytoMatterBrownColor } from "../global-constants";
-import {
-  capitalize,
-  groupBy,
-  lowerCase,
-  omitBy,
-  snakeCase,
-  uniq,
-} from "lodash";
+import { capitalize, groupBy, lowerCase, omitBy, snakeCase } from "lodash";
 import { useCallback, useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { fontTheme } from "../global-themes";
@@ -45,15 +38,9 @@ export function MaterialsView() {
     [searchParams],
   );
 
-  const allUniqueCategories = uniq(
-    NORMALISED_MATTER_DATA.flatMap((e) => e.category),
-  );
-  const allMaterialsByCommonName = NORMALISED_MATTER_DATA.flatMap(
-    (e) => e.common_name,
-  );
   const byCategory = useMemo(
     () => Object.entries(groupBy(NORMALISED_MATTER_DATA, "category")),
-    [NORMALISED_MATTER_DATA],
+    [],
   );
 
   const updateFilters = useCallback(
@@ -164,8 +151,6 @@ function Controls({
   displayData,
   filters,
   updateFilters,
-  setSelectedView,
-  clearFilters,
 }: {
   displayData: MatterEntry[];
   filters: MaterialFilters;
@@ -173,20 +158,6 @@ function Controls({
   updateFilters: (f: Partial<MaterialFilters>) => void;
   clearFilters: () => void;
 }) {
-  const uniqueProjects = useMemo(
-    () =>
-      [...new Set(displayData.flatMap((e) => e.projects).map((c) => c.title))]
-        .sort()
-        .filter(Boolean),
-    [displayData],
-  );
-  const uniquePlantGenus = useMemo(
-    () =>
-      [...new Set(displayData.flatMap((e) => e.plant_genus))]
-        .sort()
-        .filter(Boolean),
-    [displayData],
-  );
   const uniqueFuncion = useMemo(
     () =>
       [...new Set(displayData.flatMap((e) => e.material_function))]
