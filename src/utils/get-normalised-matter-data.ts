@@ -8,6 +8,7 @@ export type ProjectEntry = {
   about: string;
   link: string;
   image: string;
+  comment: string;
 };
 
 export type MatterEntry = {
@@ -19,7 +20,6 @@ export type MatterEntry = {
   processing: string;
   material_function: string;
   category: string;
-  comment: string;
   projects: ProjectEntry[];
 };
 
@@ -51,7 +51,6 @@ function getNormalisedMatterData(): MatterEntry[] {
         .toLowerCase()
         .split(",")
         .map((_: string) => _.trim()),
-      comment: first.comment,
       projects: mapProjects([first, ...rest]),
     }),
   );
@@ -65,6 +64,7 @@ function mapProjects(entries: any[]): ProjectEntry[] {
       link: e.project_link,
       about: e.about_project,
       image: e.material_image,
+      comment: e.comment,
     }),
   );
 

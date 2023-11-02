@@ -94,7 +94,17 @@ export function MaterialsView() {
         minHeight: "100vh",
       }}
     >
-      <Container>
+      <Container
+        style={{
+          position: "fixed",
+          backgroundColor: phytoMatterBrownColor,
+          zIndex: 2,
+          left: 0,
+          right: 0,
+          top: 130,
+          paddingTop: 20,
+        }}
+      >
         <Controls
           displayData={displayData}
           filters={filters}
@@ -145,10 +155,6 @@ export function MaterialsView() {
             </Grid>
           ))}
         </Grid>
-      </Container>
-      <Container>
-        <h3>{NORMALISED_MATTER_DATA.length} Materials</h3>
-        <pre>{JSON.stringify(NORMALISED_MATTER_DATA, null, 2)}</pre>
       </Container>
     </div>
   );

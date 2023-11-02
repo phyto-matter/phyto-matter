@@ -29,7 +29,10 @@ import {
   NORMALISED_PHYTO_DATA,
 } from "../utils/get-normalised-phyto-data";
 import { fontTheme } from "../global-themes";
-import { phytoMatterYellowColor } from "../global-constants";
+import {
+  phytoMatterBrownColor,
+  phytoMatterYellowColor,
+} from "../global-constants";
 import { ContaminantFilters } from "../global-types";
 
 export function ContaminantsView() {
@@ -91,7 +94,17 @@ export function ContaminantsView() {
         minHeight: "100vh",
       }}
     >
-      <Container>
+      <Container
+        style={{
+          position: "fixed",
+          backgroundColor: phytoMatterYellowColor,
+          zIndex: 2,
+          left: 0,
+          right: 0,
+          top: 130,
+          paddingTop: 20,
+        }}
+      >
         <Controls
           filters={filters}
           updateFilters={updateFilters}

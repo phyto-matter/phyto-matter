@@ -1,4 +1,5 @@
 import {
+  Box,
   Container,
   Divider,
   Grid,
@@ -13,16 +14,16 @@ import {
   phytoMatterBrownColor,
   StyledAvatar,
 } from "../../global-constants";
-import { capitalize } from "lodash";
+import { capitalize, startCase, upperCase } from "lodash";
 import React from "react";
 import { NORMALISED_MATTER_DATA } from "../../utils/get-normalised-matter-data";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ParkIcon from "@mui/icons-material/Park";
 import LocalFloristIcon from "@mui/icons-material/LocalFlorist";
 import ConstructionIcon from "@mui/icons-material/Construction";
 import HomeIcon from "@mui/icons-material/Home";
 import CarpenterIcon from "@mui/icons-material/Carpenter";
-import Link from "@mui/material/Link";
+import LinkIcon from "@mui/icons-material/Link";
 
 export function MaterialDetailView() {
   const { id } = useParams();
@@ -43,6 +44,9 @@ export function MaterialDetailView() {
       style={{
         backgroundColor: phytoMatterBrownColor,
         paddingTop: 150,
+        position: "fixed",
+        left: 0,
+        right: 0,
         minHeight: "100vh",
       }}
     >
@@ -91,12 +95,27 @@ export function MaterialDetailView() {
             </List>
           </Grid>
 
-          {results.projects.map((project) => (
-            <Grid item xs={12} md={9}>
-              <List sx={{ bgcolor: "background.paper" }}>
-                <ListItem>
+          <Grid item xs={12} md={9}>
+            <Typography variant="h4" gutterBottom>
+              Projects
+            </Typography>
+            <Box
+              style={{
+                maxHeight: "70vh",
+                overflow: "auto",
+              }}
+            >
+              {results.projects.map((project) => (
+                <Container
+                  sx={{
+                    bgcolor: "background.paper",
+                    marginBottom: 2,
+                    paddingTop: 2,
+                    paddingBottom: 2,
+                  }}
+                >
                   <Grid container>
-                    <Grid item>
+                    <Grid item xs={3}>
                       <ListItem>
                         <ListItemAvatar>
                           <StyledAvatar>
@@ -148,6 +167,28 @@ export function MaterialDetailView() {
                           secondary={capitalize(results.processing)}
                         />
                       </ListItem>
+                      <ListItem>
+                        <ListItemAvatar>
+                          <StyledAvatar>
+                            <LinkIcon />
+                          </StyledAvatar>
+                        </ListItemAvatar>
+                        <ListItemText
+                          secondary={
+                            <Link
+                              to={project.link}
+                              rel="noopener noreferrer"
+                              target="_blank"
+                              style={{
+                                color: phytoMatterBlackColor,
+                                cursor: "pointer",
+                              }}
+                            >
+                              Project Link
+                            </Link>
+                          }
+                        />
+                      </ListItem>
                     </Grid>
                     <Divider
                       orientation="vertical"
@@ -160,12 +201,13 @@ export function MaterialDetailView() {
                         <ListItemText
                           primary={
                             <Typography
+                              variant="h6"
                               style={{ color: phytoMatterBlackColor }}
                             >
                               <b>{project.title}</b>
                             </Typography>
                           }
-                          secondary={capitalize(project.author)}
+                          secondary={startCase(project.author)}
                         />
                         <ListItemText
                           primary={
@@ -176,38 +218,41 @@ export function MaterialDetailView() {
                             </Typography>
                           }
                         />
-                        <ListItemText
-                          primary={
-                            <Link
-                              href={project.link}
-                              variant="body2"
-                              rel="noopener noreferrer"
-                              target="_blank"
-                              style={{ color: phytoMatterBlackColor }}
-                            >
-                              Project Link
-                            </Link>
-                          }
-                        />
+                        {project.comment ? (
+                          <ListItemText
+                            sx={{
+                              marginTop: 4,
+                            }}
+                            primary={
+                              <Typography
+                                variant="subtitle1"
+                                style={{ color: phytoMatterBlackColor }}
+                              >
+                                Comment on phytoremediation process:
+                              </Typography>
+                            }
+                            secondary={
+                              <Typography
+                                variant="body2"
+                                style={{ color: phytoMatterBlackColor }}
+                              >
+                                {project.comment}
+                              </Typography>
+                            }
+                          />
+                        ) : (
+                          <></>
+                        )}
                       </List>
                     </Grid>
-                    <Grid item>
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          overflow: "hidden",
-                        }}
-                      >
-                        <img src={project.image} alt={""} />
-                      </div>
+                    <Grid item xs={2} zeroMinWidth>
+                      <img src={project.image} alt={""} width={200} />
                     </Grid>
                   </Grid>
-                </ListItem>
-              </List>
-            </Grid>
-          ))}
+                </Container>
+              ))}
+            </Box>
+          </Grid>
         </Grid>
       </Container>
     </div>

@@ -29,7 +29,11 @@ import {
 } from "../utils/get-normalised-phyto-data";
 
 import { fontTheme } from "../global-themes";
-import { IconStyle, phytoMatterGreenColor } from "../global-constants";
+import {
+  IconStyle,
+  phytoMatterBrownColor,
+  phytoMatterGreenColor,
+} from "../global-constants";
 import ArrowRightRoundedIcon from "@mui/icons-material/ArrowRightRounded";
 import { PlantFilters } from "../global-types";
 
@@ -92,7 +96,17 @@ export function PlantsView() {
         minHeight: "100vh",
       }}
     >
-      <Container>
+      <Container
+        style={{
+          position: "fixed",
+          backgroundColor: phytoMatterGreenColor,
+          zIndex: 2,
+          left: 0,
+          right: 0,
+          top: 130,
+          paddingTop: 20,
+        }}
+      >
         <Controls
           displayData={displayData}
           filters={filters}
@@ -101,7 +115,7 @@ export function PlantsView() {
           clearFilters={() => setSearchParams({})}
         />
       </Container>
-      <Container style={{ marginTop: 50 }}>
+      <Container style={{ marginTop: 100 }}>
         <Grid
           container
           spacing={2}
