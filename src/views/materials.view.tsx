@@ -76,8 +76,7 @@ export function MaterialsView() {
         return (
           (!filters.name ||
             lowerCase(e.common_name).includes(lowerCase(filters.category))) &&
-          (!filters.category ||
-            e.category.some((c) => c === filters.category)) &&
+          (!filters.category || e.category.includes(filters.category)) &&
           (!filters.plant_genus || e.plant_genus === filters.plant_genus) &&
           (!filters.material_function ||
             e.material_function.includes(filters.material_function)) &&

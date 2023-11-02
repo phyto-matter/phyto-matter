@@ -35,11 +35,8 @@ import {
   phytoMatterGreenColor,
   phytoMatterYellowColor,
   SoilDescription,
+  StyledAvatar,
 } from "../../global-constants";
-
-const StyledAvatar = styled(Avatar)({
-  backgroundColor: phytoMatterBlackColor,
-});
 
 export function PlantDetailView() {
   const { id } = useParams();

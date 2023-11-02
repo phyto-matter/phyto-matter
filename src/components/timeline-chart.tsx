@@ -10,7 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import autocolors from "chartjs-plugin-autocolors";
+//import autocolors from "chartjs-plugin-autocolors";
 import { ContaminantSuggestion } from "../hooks/use-plant-suggestions";
 import {
   TableRowEntry,
@@ -25,7 +25,7 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  autocolors,
+  // autocolors,
 );
 
 export const options = {

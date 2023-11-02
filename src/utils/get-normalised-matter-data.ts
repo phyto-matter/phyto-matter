@@ -7,6 +7,7 @@ export type ProjectEntry = {
   author: string;
   about: string;
   link: string;
+  image: string;
 };
 
 export type MatterEntry = {
@@ -15,10 +16,9 @@ export type MatterEntry = {
   plant_species: string;
   plant_genus: string;
   common_name: string;
-  image: string;
-  processing: string[];
-  material_function: string[];
-  category: string[];
+  processing: string;
+  material_function: string;
+  category: string;
   comment: string;
   projects: ProjectEntry[];
 };
@@ -39,7 +39,6 @@ function getNormalisedMatterData(): MatterEntry[] {
       plant_genus: first.plant_genus,
       common_name: first.common_name,
       vegetation_type: first.vegetation_type,
-      image: first.material_image,
       processing: first.processing
         .toLowerCase()
         .split(",")
@@ -65,6 +64,7 @@ function mapProjects(entries: any[]): ProjectEntry[] {
       author: e.project_author,
       link: e.project_link,
       about: e.about_project,
+      image: e.material_image,
     }),
   );
 

@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import { Avatar, styled } from "@mui/material";
 
 export const phytoMatterYellowColor = "#F0D66B";
 
@@ -57,3 +57,7 @@ export const MoistureDescription = "D = dry, M = Moist, We = wet, Wa = water";
 export const ShadeDescription = "F = full shade, S = semi-shade, N = no shade";
 
 export const HardinessDescription = "Based on USDA";
+
+export const StyledAvatar = styled(Avatar)({
+  backgroundColor: phytoMatterBlackColor,
+});
