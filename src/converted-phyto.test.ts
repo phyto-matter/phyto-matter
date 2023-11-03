@@ -14,10 +14,14 @@ describe("NORMALISED_PHYTO_DATA", () => {
     describe(`${source} contains valid rows`, () => {
       describe("reference", () => {
         test("reference is never empty", () => {
-          expect(entries.every((_) => _.reference)).toBe(true);
+          expect(
+            entries.every((_) => _.article_reference || _.book_reference),
+          ).toBe(true);
         });
         test("title is never empty", () => {
-          expect(entries.every((_) => _.title)).toBe(true);
+          expect(entries.every((_) => _.article_title || _.book_title)).toBe(
+            true,
+          );
         });
         test("reference_link is never empty", () => {
           expect(entries.every((_) => _.article_link || _.book_link)).toBe(

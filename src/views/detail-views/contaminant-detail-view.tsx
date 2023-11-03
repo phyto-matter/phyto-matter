@@ -139,10 +139,7 @@ export function ContaminantDetailView() {
                       <b>Title</b>
                     </TableCell>
                     <TableCell>
-                      <b>Author</b>
-                    </TableCell>
-                    <TableCell>
-                      <b>Year</b>
+                      <b>Type</b>
                     </TableCell>
                     <TableCell>
                       <b>Source</b>
@@ -154,8 +151,7 @@ export function ContaminantDetailView() {
                     <TableRow>
                       <TableCell>{i + 1}</TableCell>
                       <TableCell>{ref.title}</TableCell>
-                      <TableCell>{ref.author}</TableCell>
-                      <TableCell>{ref.year}</TableCell>
+                      <TableCell>{ref.type}</TableCell>
                       <TableCell>
                         <a href={ref.link} target="_blank" rel="noreferrer">
                           {ref.reference}

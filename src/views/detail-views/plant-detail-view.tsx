@@ -277,14 +277,7 @@ export function PlantDetailView() {
                       <Typography
                         style={{ color: phytoMatterBlackColor, fontSize: 14 }}
                       >
-                        <b>Author</b>
-                      </Typography>
-                    </TableCell>
-                    <TableCell>
-                      <Typography
-                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
-                      >
-                        <b>Year</b>
+                        <b>Type</b>
                       </Typography>
                     </TableCell>
                     <TableCell>
@@ -301,8 +294,7 @@ export function PlantDetailView() {
                     <TableRow>
                       <TableCell>{i + 1}</TableCell>
                       <TableCell>{ref.title}</TableCell>
-                      <TableCell>{ref.author}</TableCell>
-                      <TableCell>{ref.year}</TableCell>
+                      <TableCell>{ref.type}</TableCell>
                       <TableCell>
                         <a href={ref.link} target="_blank" rel="noreferrer">
                           {ref.reference}
