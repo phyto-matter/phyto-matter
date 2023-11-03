@@ -11,7 +11,7 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { NORMALISED_PHYTO_DATA } from "../utils/get-normalised-phyto-data";
@@ -21,7 +21,6 @@ import { Link, useSearchParams } from "react-router-dom";
 import { capitalize, uniqBy } from "lodash";
 import { TimelineChart } from "../components/timeline-chart";
 import { TableRowEntry } from "../hooks/use-calculated-removal";
-import { KGS_BY_VEG_TYPE } from "../global-constants";
 
 const ENTRIES_KEY = "entries";
 const ENTRIES_SEPARATOR = ":";
@@ -77,6 +76,20 @@ export function CalculatorView() {
         .sort((a, b) => a.localeCompare(b)),
     [tableRows],
   );
+
+  /**
+   * If we load an empty page, set example suggestions
+   */
+  const [initialised, setInitialised] = useState(false);
+  useEffect(() => {
+    if (initialised) return;
+    setInitialised(true);
+    if (tableRows.length) return;
+    setTableRows([
+      { contaminant: "zinc", concentration: 100000 },
+      { contaminant: "cadmium", concentration: 1000 },
+    ]);
+  }, [tableRows, initialised, setTableRows, setInitialised]);
 
   return (
     <Container
@@ -164,7 +177,7 @@ export function CalculatorView() {
                     <b>Plant</b>
                   </TableCell>
                   <TableCell>
-                    <b>Vegetation type</b>
+                    <b>Tissue type</b>
                   </TableCell>
                   <TableCell>
                     <b>Removal Rate</b>
@@ -184,9 +197,7 @@ export function CalculatorView() {
                         {suggestion.plant}
                       </Link>
                     </TableCell>
-                    <TableCell>
-                      {capitalize(suggestion.vegetation_type)}
-                    </TableCell>
+                    <TableCell>{capitalize(suggestion.tissue_type)}</TableCell>
                     <TableCell>
                       {suggestion.lower_rate && suggestion.upper_rate
                         ? `${suggestion.lower_rate.toLocaleString()} - ${suggestion.upper_rate.toLocaleString()} mg/kg`
@@ -210,19 +221,6 @@ export function CalculatorView() {
         </Grid>
         <Grid item xs={12}>
           <Container sx={{ pt: 4, pb: 4 }}>
-            <Typography variant="subtitle1" gutterBottom sx={{ mb: 3 }}>
-              <b>Disclaimer:</b> These are <i>example</i> removal rates based on
-              an assumed mass by vegetation type of
-              <br />
-              {Object.entries(KGS_BY_VEG_TYPE)
-                .map(
-                  ([key, val]) =>
-                    `${capitalize(key)}: ${val.toLocaleString()} kgs`,
-                )
-                .join(", ")}
-              . Please see the references for how to produce an actual
-              calculation for your specific situation
-            </Typography>
             <TimelineChart entries={tableRows} suggestions={suggestions} />
           </Container>
         </Grid>

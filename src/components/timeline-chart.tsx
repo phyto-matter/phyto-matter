@@ -10,12 +10,14 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-//import autocolors from "chartjs-plugin-autocolors";
+import autocolors from "chartjs-plugin-autocolors";
 import { ContaminantSuggestion } from "../hooks/use-plant-suggestions";
 import {
   TableRowEntry,
   useCalculatedRemoval,
 } from "../hooks/use-calculated-removal";
+import { Typography } from "@mui/material";
+import { capitalize } from "lodash";
 
 ChartJS.register(
   CategoryScale,
@@ -25,7 +27,7 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  // autocolors,
+  autocolors,
 );
 
 export const options = {
@@ -49,5 +51,25 @@ export function TimelineChart({
 }) {
   const data = useCalculatedRemoval(entries, suggestions);
 
-  return <Line options={options} data={data} />;
+  return (
+    <>
+      <Typography variant="subtitle1" gutterBottom sx={{ mb: 3 }}>
+        <b>Disclaimer:</b> These are <i>example</i> removal rates based on an
+        assumed mass by tissue type of
+        <br />
+        {suggestions
+          .map(
+            (s) =>
+              `${capitalize(s.plant)} (${capitalize(
+                s.tissue_type,
+              )}): ${s.mass_kg_m2.toLocaleString()} kgs/m2`,
+          )
+          .join(", ")}
+        .<br />
+        Please see the references for how to produce an actual calculation for
+        your specific situation
+      </Typography>
+      <Line options={options} data={data} />
+    </>
+  );
 }

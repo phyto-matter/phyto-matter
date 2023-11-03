@@ -13,6 +13,8 @@ export type ContaminantSuggestion = {
   plantId: string;
   plant: string;
   vegetation_type: string;
+  tissue_type: string;
+  mass_kg_m2: number;
   lower_rate: number;
   upper_rate: number;
   references: ReferenceEntry[];
@@ -55,6 +57,8 @@ export function usePlantSuggestions(
                 plantId: pla.id,
                 plant: pla.latin_name,
                 vegetation_type: pla.vegetation_type,
+                tissue_type: con.tissue_type,
+                mass_kg_m2: con.mass_kg_m2,
                 lower_rate: 0,
                 upper_rate: 0,
                 references: [],

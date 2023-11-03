@@ -23,6 +23,7 @@ export type ContaminantEntry = {
   image: string;
   removal_rates: RemovalRateEntry[];
   tissue_type: string;
+  mass_kg_m2: number;
 };
 
 export type PlantEntry = {
@@ -83,6 +84,7 @@ function mapContaminants(entries: any[]): ContaminantEntry[] {
     first_author: e.first_author,
     publication_year: e.publication_year,
     link: e.reference_link,
+    mass_kg_m2: e.plant_mass_kg_m_2,
   }));
 
   return values(groupBy(mapped, "id"))
@@ -107,6 +109,7 @@ function mapContaminants(entries: any[]): ContaminantEntry[] {
           }),
         ),
         tissue_type: first.tissue_type,
+        mass_kg_m2: Number(first.mass_kg_m2 || 0),
       }),
     );
 }

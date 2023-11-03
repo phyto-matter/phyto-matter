@@ -1,6 +1,5 @@
 import { ContaminantSuggestion } from "./use-plant-suggestions";
 import { useMemo } from "react";
-import { KGS_BY_VEG_TYPE, VALID_VEGETATION_TYPES } from "../global-constants";
 
 export type TableRowEntry = {
   contaminant: string;
@@ -43,11 +42,7 @@ function removalOverTime(
     .map(
       (_, i) =>
         concentration -
-        i *
-          (suggestion.upper_rate *
-            KGS_BY_VEG_TYPE[
-              suggestion.vegetation_type as VALID_VEGETATION_TYPES
-            ]),
+        i * (suggestion.upper_rate * (suggestion.mass_kg_m2 || 0)),
     )
     .map((i) => (i > 0 ? i : 0));
 }
