@@ -64,7 +64,7 @@ export function ContaminantDetailView() {
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <Typography variant="h4" gutterBottom>
-              {capitalize(contaminant.name)} ({contaminant.symbol})
+              {capitalize(contaminant.name)} ({contaminant.abbreviation})
             </Typography>
             <Typography variant="subtitle1" gutterBottom>
               {capitalize(contaminant.category)}
@@ -93,7 +93,7 @@ export function ContaminantDetailView() {
                         <TableCell>
                           <Link to={`/plants/${p.id}`}>
                             <Chip
-                              label={p.latin_name}
+                              label={p.genus}
                               size="small"
                               variant="outlined"
                               sx={{

@@ -6,7 +6,7 @@ import { VALID_VEGETATION_TYPES } from "./global-constants";
 
 describe("NORMALISED_PHYTO_DATA", () => {
   const bySource = groupBy(
-    normaliseData(PHYTO_DATA, (e) => e.plant_name),
+    normaliseData(PHYTO_DATA, (e) => `${e.plant_genus} ${e.plant_species}`),
     "source_file",
   );
 
@@ -20,13 +20,9 @@ describe("NORMALISED_PHYTO_DATA", () => {
           expect(entries.every((_) => _.title)).toBe(true);
         });
         test("reference_link is never empty", () => {
-          expect(entries.every((_) => _.reference_link)).toBe(true);
-        });
-        test("publication_year is never empty", () => {
-          expect(entries.every((_) => _.publication_year)).toBe(true);
-        });
-        test("first_author is never empty", () => {
-          expect(entries.every((_) => _.first_author)).toBe(true);
+          expect(entries.every((_) => _.article_link || _.book_link)).toBe(
+            true,
+          );
         });
       });
 
@@ -34,8 +30,8 @@ describe("NORMALISED_PHYTO_DATA", () => {
         test("plant_species is never empty", () => {
           expect(entries.every((_) => _.plant_species)).toBe(true);
         });
-        test("plant_name is never empty", () => {
-          expect(entries.every((_) => _.plant_name)).toBe(true);
+        test("plant_genus is never empty", () => {
+          expect(entries.every((_) => _.plant_genus)).toBe(true);
         });
         test("common_name is never empty", () => {
           expect(entries.every((_) => _.common_name)).toBe(true);
@@ -43,11 +39,9 @@ describe("NORMALISED_PHYTO_DATA", () => {
         test("plant_family is never empty", () => {
           expect(entries.every((_) => _.plant_family)).toBe(true);
         });
-        test("vegetation_type is valid", () => {
+        test("category is valid", () => {
           expect(
-            entries.every((_) =>
-              allValid(_.vegetation_type, VALID_VEGETATION_TYPES),
-            ),
+            entries.every((_) => allValid(_.category, VALID_VEGETATION_TYPES)),
           ).toBe(true);
         });
       });
@@ -59,8 +53,8 @@ describe("NORMALISED_PHYTO_DATA", () => {
         test("contaminant is never empty", () => {
           expect(entries.every((_) => _.contaminant)).toBe(true);
         });
-        test("contaminant_symbol is never empty", () => {
-          expect(entries.every((_) => _.contaminant_symbol)).toBe(true);
+        test("contaminant_abbreviation is never empty", () => {
+          expect(entries.every((_) => _.contaminant_abbreviation)).toBe(true);
         });
       });
 

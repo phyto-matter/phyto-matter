@@ -70,7 +70,7 @@ export function PlantDetailView() {
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <Typography variant="h4" gutterBottom color={phytoMatterBlackColor}>
-              {plant.latin_name} ({plant.common_name})
+              {plant.genus} ({plant.common_name})
             </Typography>
             <Typography
               variant="subtitle1"
@@ -84,9 +84,7 @@ export function PlantDetailView() {
                 {plant.image ? (
                   <img src={plant.image} alt={""} />
                 ) : (
-                  <IconStyle
-                    src={`/icons/${snakeCase(plant.vegetation_type)}.png`}
-                  />
+                  <IconStyle src={`/icons/${snakeCase(plant.category)}.png`} />
                 )}
               </Grid>
               <Grid item xs={6}>
@@ -109,7 +107,7 @@ export function PlantDetailView() {
                           Vegetation Type
                         </Typography>
                       }
-                      secondary={capitalize(plant.vegetation_type)}
+                      secondary={capitalize(plant.category)}
                     />
                   </ListItem>
                   <ListItem>
@@ -129,7 +127,7 @@ export function PlantDetailView() {
                           title={SoilDescription}
                           placement="bottom-start"
                         >
-                          <span>{plant.soil}</span>
+                          <span>{plant.soil_type}</span>
                         </Tooltip>
                       }
                     />
@@ -151,7 +149,7 @@ export function PlantDetailView() {
                           title={HardinessDescription}
                           placement="bottom-start"
                         >
-                          <span>{plant.hardiness_zone}</span>
+                          <span>{plant.us_hardiness_zone}</span>
                         </Tooltip>
                       }
                     />
@@ -217,7 +215,7 @@ export function PlantDetailView() {
                         <TableCell>
                           <Link to={`/contaminants/${c.id}`}>
                             <Tooltip
-                              title={capitalize(c.symbol)}
+                              title={capitalize(c.abbreviation)}
                               placement="right"
                             >
                               <Chip
