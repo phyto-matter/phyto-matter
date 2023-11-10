@@ -37,15 +37,11 @@ describe("NORMALISED_PHYTO_DATA", () => {
         test("plant_genus is never empty", () => {
           expect(entries.every((_) => _.plant_genus)).toBe(true);
         });
-        test("common_name is never empty", () => {
-          expect(entries.every((_) => _.common_name)).toBe(true);
-        });
-        test("plant_family is never empty", () => {
-          expect(entries.every((_) => _.plant_family)).toBe(true);
-        });
         test("category is valid", () => {
           expect(
-            entries.every((_) => allValid(_.category, VALID_VEGETATION_TYPES)),
+            entries.every((_) =>
+              allValid(_.plant_category, VALID_VEGETATION_TYPES),
+            ),
           ).toBe(true);
         });
       });

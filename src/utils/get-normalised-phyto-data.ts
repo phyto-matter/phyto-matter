@@ -32,7 +32,6 @@ export type PlantEntry = {
   cultivar: string;
   category: string;
   species: string;
-  family: string;
   common_name: string;
   organic_inorganic: string;
   phyto_process: string;
@@ -77,7 +76,6 @@ function getNormalisedPhytoData() {
       moisture: first.moisture.trim(),
       height: first.height.trim(),
       species: first.plant_species,
-      family: first.plant_family,
       organic_inorganic: first.organic_or_inorganic,
       phyto_process: first.phyto_process,
       growth_rate: first.growth_rate,

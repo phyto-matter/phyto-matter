@@ -1,327 +1,40 @@
-Article Reference,Article Title,Book Reference,Article Link,Book Link,Plant Genus,Plant Species,Plant Cultivar,Plant Tissue,Organic or Inorganic ,Phyto Process ,Contaminant Type,Contaminant,Contaminant Abbreviation,Removal Rate,Removal Rate Units,Timeline,Notes,Plant Category,Soil Ph,Soil type,Moisture,Shade,Height,Growth Rate,US Hardiness Zone,Plant Image,Contaminant Image,Geography,Seasonal Interest Spring,Seasonal Interest Summer,Seasonal Interest Fall,Seasonal Interest Winter
-Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,shoots,inorganic,phytoextraction and phytometabilization,heavy metal,cadmium,Cd,,mg/kg,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
-Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,roots,inorganic,phytoextraction and phytometabilization,heavy metal,cadmium,Cd,23.5,mg/kg,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
-Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,shoots,inorganic,phytostabilization,heavy metal,chromium,Cr,0.77,mg/kg,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
-Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,roots,inorganic,phytostabilization,heavy metal,chromium,Cr,82.5,mg/kg,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
-Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,shoots,inorganic,phytometabolism,heavy metal,copper,Cu,23.6,mg/kg,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
-Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,roots,inorganic,phytostabilization and phytometabolism,heavy metal,copper,Cu,414,mg/kg,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
-Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,shoots,inorganic,"phytostabilization, phytometabolism and phytoextraction",heavy metal,nickel,Ni,4.12,mg/kg,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
-Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,roots,inorganic,"phytostabilization, phytometabolism and phytoextraction",heavy metal,nickel,Ni,45.7,mg/kg,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
-Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,shoots,inorganic,phytostabilization,heavy metal,lead,Pb,5.48,mg/kg,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
-Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,roots,inorganic,phytostabilization,heavy metal,lead,Pb,472,mg/kg,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
-Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,shoots,inorganic,"phytoextraction, phytostabilization and phytometabolizm",heavy metal,zinc,Zn,1305,mg/kg,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
-Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,roots,inorganic,"phytoextraction, phytostabilization and phytometabolizm",heavy metal,zinc,Zn,5983,mg/kg,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
-Lotfy & Mostafa 2014,Phytoremediation of contaminated soil with cobalt and chromium,,https://www.sciencedirect.com/science/article/pii/S0375674213001362?casa_token=avMaI_GIqXQAAAAA:4qVVJ3j0toZuZDFyZpaixE2s5DPYcgeQjEoDBNq730LgGsr5Tlm0bX9UIWaqSDQX3i565M29KM4,,Helianthus,annuus,,roots/shoots,inorganic,phytostabilization,heavy metal,cobalt,Co,57.7,mg/kg,,"Total uptake by whole plant, authors also provide root and shoot rates too",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,DM,SN,3,F,6 - 9,,,,,"upright orange, red, yellow flowers","upright orange, red, yellow flowers",
-Lotfy & Mostafa 2014,Phytoremediation of contaminated soil with cobalt and chromium,,https://www.sciencedirect.com/science/article/pii/S0375674213001362?casa_token=avMaI_GIqXQAAAAA:4qVVJ3j0toZuZDFyZpaixE2s5DPYcgeQjEoDBNq730LgGsr5Tlm0bX9UIWaqSDQX3i565M29KM4,,Helianthus,annuus,,roots/shoots,inorganic,phytostabilization,heavy metal,cobalt,Co,36.3,mg/kg,,"Total uptake by whole plant, authors also provide root and shoot rates too",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,DM,SN,3,F,6 - 9,,,,,"upright orange, red, yellow flowers","upright orange, red, yellow flowers",
-Lotfy & Mostafa 2014,Phytoremediation of contaminated soil with cobalt and chromium,,https://www.sciencedirect.com/science/article/pii/S0375674213001362?casa_token=avMaI_GIqXQAAAAA:4qVVJ3j0toZuZDFyZpaixE2s5DPYcgeQjEoDBNq730LgGsr5Tlm0bX9UIWaqSDQX3i565M29KM4,,Helianthus,annuus,,roots/shoots,inorganic,phytostabilization,heavy metal,chromium,Cr,75.8,mg/kg,,"Total uptake by whole plant, authors also provide root and shoot rates too",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,DM,SN,3,F,6 - 9,,,,,"upright orange, red, yellow flowers","upright orange, red, yellow flowers",
-Lotfy & Mostafa 2014,Phytoremediation of contaminated soil with cobalt and chromium,,https://www.sciencedirect.com/science/article/pii/S0375674213001362?casa_token=avMaI_GIqXQAAAAA:4qVVJ3j0toZuZDFyZpaixE2s5DPYcgeQjEoDBNq730LgGsr5Tlm0bX9UIWaqSDQX3i565M29KM4,,Helianthus,annuus,,roots/shoots,inorganic,phytostabilization,heavy metal,chromium,Cr,61.6,mg/kg,,"Total uptake by whole plant, authors also provide root and shoot rates too",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,DM,SN,3,F,6 - 9,,,,,"upright orange, red, yellow flowers","upright orange, red, yellow flowers",
-Hutchinson 2000,Determining uptake of ‘non-labile’ soil cadmium by Thlaspi caerulescens using isotopic dilution techniques,,https://nph.onlinelibrary.wiley.com/doi/pdf/10.1046/j.1469-8137.2000.00657.x,,Lepidium,heterophyllum,,shoots,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,17.4,mg/kg,,study reports concentration values for plants from different populations grown in pots with soils in three sites within the sewage and mine contaminated regions. I take the average of these (see Table 2),herbaceous,"pH: mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,SN,.3 m,M,,,,,white flower,white flower,,
-Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,leaves,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,353,mg/kg,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8 ,,,,flower,color ranges from yellowish to bluish color. ,foliage is yellowis ,multi-stemmed shrub. foliage can persist in winter. 
-Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,stems,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,96,mg/kg,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8 ,,,,flower,color ranges from yellowish to bluish color. ,foliage is yellowis ,multi-stemmed shrub. foliage can persist in winter. 
-Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,roots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,181,mg/kg,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8 ,,,,flower,color ranges from yellowish to bluish color. ,foliage is yellowis ,multi-stemmed shrub. foliage can persist in winter. 
-Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,leaves,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,3.56,mg/kg,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8 ,,,,flower,color ranges from yellowish to bluish color. ,foliage is yellowis ,multi-stemmed shrub. foliage can persist in winter. 
-Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,stems,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,1.77,mg/kg,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8 ,,,,flower,color ranges from yellowish to bluish color. ,foliage is yellowis ,multi-stemmed shrub. foliage can persist in winter. 
-Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,roots,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,1.49,mg/kg,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8 ,,,,flower,color ranges from yellowish to bluish color. ,foliage is yellowis ,multi-stemmed shrub. foliage can persist in winter. 
-Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,leaves,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,2326,mg/kg,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8 ,,,,flower,color ranges from yellowish to bluish color. ,foliage is yellowis ,multi-stemmed shrub. foliage can persist in winter. 
-Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,stems,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,371,mg/kg,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8 ,,,,flower,color ranges from yellowish to bluish color. ,foliage is yellowis ,multi-stemmed shrub. foliage can persist in winter. 
-Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,roots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,1374,mg/kg,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8 ,,,,flower,color ranges from yellowish to bluish color. ,foliage is yellowis ,multi-stemmed shrub. foliage can persist in winter. 
-Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,leaves,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,4.87,mg/kg,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8 ,,,,flower,color ranges from yellowish to bluish color. ,foliage is yellowis ,multi-stemmed shrub. foliage can persist in winter. 
-Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,stems,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,1.75,mg/kg,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8 ,,,,flower,color ranges from yellowish to bluish color. ,foliage is yellowis ,multi-stemmed shrub. foliage can persist in winter. 
-Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,roots,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,1.04,mg/kg,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8 ,,,,flower,color ranges from yellowish to bluish color. ,foliage is yellowis ,multi-stemmed shrub. foliage can persist in winter. 
-Bi 2003,Influence of early stages of arbuscular mycorrhiza on uptake of zinc and phosphorus by red clover from a low-phosphorus soil amended with zinc and phosphorus,,https://www.sciencedirect.com/science/article/pii/S0045653502002278?casa_token=Lwto6m48KwUAAAAA:ajlKd9HDoTq600k79a7Q2q63l9r-9AjIIx7uCwG9Kr6PVXA4ELHVf8qkuIzfn4sCOQpd26zho44,,Trifolium,pratense,Merwe,shoots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,1430,mg/kg,,"values are from non-fert, non-AM plants with the highest Zn concentration (400 mg/kg)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
-Bi 2003,Influence of early stages of arbuscular mycorrhiza on uptake of zinc and phosphorus by red clover from a low-phosphorus soil amended with zinc and phosphorus,,https://www.sciencedirect.com/science/article/pii/S0045653502002278?casa_token=Lwto6m48KwUAAAAA:ajlKd9HDoTq600k79a7Q2q63l9r-9AjIIx7uCwG9Kr6PVXA4ELHVf8qkuIzfn4sCOQpd26zho44,,Trifolium,pratense,Merwe,shoots,inorganic,phytometabolism and phytostabilization,heavy metal,copper,Cu,26.1,mg/kg,,"values are from non-fert, non-AM plants with the highest Zn concentration (400 mg/kg)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
-Bi 2003,Influence of early stages of arbuscular mycorrhiza on uptake of zinc and phosphorus by red clover from a low-phosphorus soil amended with zinc and phosphorus,,https://www.sciencedirect.com/science/article/pii/S0045653502002278?casa_token=Lwto6m48KwUAAAAA:ajlKd9HDoTq600k79a7Q2q63l9r-9AjIIx7uCwG9Kr6PVXA4ELHVf8qkuIzfn4sCOQpd26zho44,,Trifolium,pratense,Merwe,roots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,9791,mg/kg,,"values are from non-fert, non-AM plants with the highest Zn concentration (400 mg/kg)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
-Bi 2003,Influence of early stages of arbuscular mycorrhiza on uptake of zinc and phosphorus by red clover from a low-phosphorus soil amended with zinc and phosphorus,,https://www.sciencedirect.com/science/article/pii/S0045653502002278?casa_token=Lwto6m48KwUAAAAA:ajlKd9HDoTq600k79a7Q2q63l9r-9AjIIx7uCwG9Kr6PVXA4ELHVf8qkuIzfn4sCOQpd26zho44,,Trifolium,pratense,Merwe,roots,inorganic,phytometabolism and phytostabilization,heavy metal,copper,Cu,51,mg/kg,,"values are from non-fert, non-AM plants with the highest Zn concentration (400 mg/kg)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
-Chen 2003,The role of arbuscular mycorrhiza in zinc uptake by red clover growing in a calcareous soil spiked with various quantities of zinc,,https://www.sciencedirect.com/science/article/pii/S004565350200228X?casa_token=iX2CKSljzMsAAAAA:4YeGpqHEPKNzAoJ3jN3Au3daFX0iN4p-WOU50FGb2g-VMzD_YWY5gXnXS-fZ_vSShX6VmlOMprg,,Trifolium,pratense,,shoots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,153.1,mg/kg,,study has three levels of Zn addition crossed with AM-fungi innoculation. Report values from max Zn conc (400 mg/kg) and no AM-fungi. NB AM-Fungi did increase concentrations,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
-Chen 2003,The role of arbuscular mycorrhiza in zinc uptake by red clover growing in a calcareous soil spiked with various quantities of zinc,,https://www.sciencedirect.com/science/article/pii/S004565350200228X?casa_token=iX2CKSljzMsAAAAA:4YeGpqHEPKNzAoJ3jN3Au3daFX0iN4p-WOU50FGb2g-VMzD_YWY5gXnXS-fZ_vSShX6VmlOMprg,,Trifolium,pratense,,roots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,298.6,mg/kg,,study has three levels of Zn addition crossed with AM-fungi innoculation. Report values from max Zn conc (400 mg/kg) and no AM-fungi. NB AM-Fungi did increase concentrations,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
-Delorme 2001,Influence of the zinc hyperaccumulator Thlaspi caerulescens J. & C. Presl. and the nonmetal accumulator Trifolium pratense L. on soil microbial populations,,https://cdnsciencepub.com/doi/abs/10.1139/w01-067?casa_token=0QDiSQhG2F4AAAAA:SIAtDkvt3GSPcfIQFL73FuWreda8HeL617uutkof-8-t0GtynQrI6azWjQSI0ypOUKseVb-5WlthSQ,,Trifolium,pratense,,shoots,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,15.3,mg/kg,,report values from the heavy metal soils and pH 5.8. ,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
-Delorme 2001,Influence of the zinc hyperaccumulator Thlaspi caerulescens J. & C. Presl. and the nonmetal accumulator Trifolium pratense L. on soil microbial populations,,https://cdnsciencepub.com/doi/abs/10.1139/w01-067?casa_token=0QDiSQhG2F4AAAAA:SIAtDkvt3GSPcfIQFL73FuWreda8HeL617uutkof-8-t0GtynQrI6azWjQSI0ypOUKseVb-5WlthSQ,,Trifolium,pratense,,shoots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,281.9,mg/kg,,report values from the heavy metal soils and pH 5.8. ,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
-Li 2001,Changes in soil solution Zn and pH and uptake of Zn by arbuscular mycorrhizal red clover in Zn-contaminated soil,,10.1016/s0045-6535(00)00126-0,,Trifolium,pratense,Merwe,shoots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,218.2,mg/kg,,values are from  non-AM plants with the highest Zn concentration (1000 mg/kg),herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
-Li 2001,Changes in soil solution Zn and pH and uptake of Zn by arbuscular mycorrhizal red clover in Zn-contaminated soil,,10.1016/s0045-6535(00)00126-0,,Trifolium,pratense,Merwe,roots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,721.8,mg/kg,,values are from  non-AM plants with the highest Zn concentration (1000 mg/kg),herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
-"Cook and Hesterberg, 2012 Fagiolo and Ferro, 2004",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Acer,platanoides,,,organic,"phytovolatilzation, phytodegradation and Rhizodegradation",petroleum,"benzene, toluene, ethyl benzene, and xylene",BTEX,,,,,tree,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very alkaline soils",LMH,M,SN,21,F,3 - 7,,,,green bloom,green foliage,"foliage of yellows, oranges, and browns.","form is rounded, spreading or horizontal, upright or erect."
-"Tischer and Hubner, 2002",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Alnus,glutinosa,,,organic,"phytovolatilzation, phytodegradation and Rhizodegradation",petroleum,motor oil hydrocarbon,MOH,,,,,tree,"mildly acid, neutral and basic (mildly alkaline) soils",MH,MWe,SN,25 m,F,3 - 7,,,,bloom,green foliage,catkins,tall form
-"Cook and Hesterberg, 2012 Rezek et al., 2009",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Betula,pendula,,,organic,rhizodegradation and phytodegradation,petroleum,polycyclic aromatic hydrocarbons,PAH,,,,,tree,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid soils",LMH,DM,N,20,F,2 - 6,,,,brown bloom,green foliage. seeds ripen.,foligae of gold and yellow,"form is oval, pyramidal, weeping"
-"Kilakow, 2006c, Palmrith et al., 2006",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Poa,pratensis,,,organic,,petroleum,total petroleum hydrocarbon,TPH,,,,,grasses and sedges,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,15-100 cm,M,3 - 9,,,,,bloom,,
-"Kilakow, 2006c, Palmrith et al., 2006",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Poa,pratensis,,,organic,rhizodegradation and phytodegradation,petroleum,polycyclic aromatic hydrocarbons,PAH,,,,,grasses and sedges,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,15-100 cm,M,3 - 9,,,,,bloom,,
-"Liužinas et al., 2003",,"Fitoremediācijas izmantošanas iespējas Latvijā, 2011, Valujeva, Grīnfelde and Straupe",http://www.murzl.llu.lv/?p=528,,Tanacetum,vulgare,,,organic,"phytovolatilzation, phytodegradation and Rhizodegradation",petroleum,mazuts,Aliphatic petrochemicals,,,,,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,DM,N,40-160 cm,F,3 - 9,,,,,yellow bloom,yellow bloom,
-"Palmroth et al., 2002",,"Fitoremediācijas izmantošanas iespējas Latvijā, 2011, Valujeva, Grīnfelde and Straupe",http://www.murzl.llu.lv/?p=528,,Pinus,sylvestris,,,organic,"phytovolatilzation, phytodegradation and Rhizodegradation",petroleum,diesel,Aliphatic petrochemicals,,,,,tree,"mildly acid, neutral and basic (mildly alkaline)",LM,DMWe,SN,20-30 m,F,3 - 7,,,,yellow bloom,"form is oval, pyramidal","form is oval, pyramidal","form is oval, pyramidal"
-"Liužinas et al., 2003",,"Fitoremediācijas izmantošanas iespējas Latvijā, 2011, Valujeva, Grīnfelde and Straupe",http://www.murzl.llu.lv/?p=528,,Tussilago,farfara,,,organic,"phytovolatilzation, phytodegradation and Rhizodegradation",petroleum,mazuts,Aliphatic petrochemicals,,,,,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very alkaline soils",LMH,M,SN,5-15 cm,F,4 - 8,,,,yellow flowers,,,yellow flowers
-"Liužinas et al., 2003",,"Fitoremediācijas izmantošanas iespējas Latvijā, 2011, Valujeva, Grīnfelde and Straupe",http://www.murzl.llu.lv/?p=528,,Artemisia,campestris,,,organic,"phytovolatilzation, phytodegradation and Rhizodegradation",petroleum,mazuts,Aliphatic petrochemicals,,,,,herbaceous,neutral and basic (mildly alkaline) soils,LM,DM,SN,30-150 cm,,4 - 8,,,,,yellow flowers,yellow flowers,
-"Pivetz, 2001",,"Fitoremediācijas izmantošanas iespējas Latvijā, 2011, Valujeva, Grīnfelde and Straupe",http://www.murzl.llu.lv/?p=528,,Salix,schwerinii x viminalis,,,organic,"phytovolatilzation, phytodegradation and Rhizodegradation",petroleum,mazuts,Aliphatic petrochemicals,,,,,tree,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6 m,F,4 - 8,,,,flowers,seeds,foliage,from
-"Applied Natural Sciences, Inc., 2997
-Barac et al., 2009
-Burken and Schnoor, 1997a
-Coltrain,2004
-Cook et al., 2010
-Cook and Hesterberg, 2012
-El-Gendy et al., 2009
-Euliss et al., 2008
-Fagiolo and Ferro, 2004
-Ferro et al., 2013
-Ferro, 2006
-ITRC PHYTO 3
-Kulakow, 2006b
-Kulakow, 2006
-Luce, 2006
-Ma et al., 2004
-Olderbak and Erickson, 2004
-Palmroth et al., 2006
-Spriggs et al., 2005
-Tossell, 2006
-Unterbrunner et al., 2007
-Weishaar et al., 2009
-Widdowson et al., 2005",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Populus,spp.,,,organic,,petroleum,,Aniline,,,,,tree,,LMH,M,N,varies,F,0 - 10,,,,flowers,,,
-"Applied Natural Sciences, Inc., 2997
-Barac et al., 2009
-Burken and Schnoor, 1997a
-Coltrain,2004
-Cook et al., 2010
-Cook and Hesterberg, 2012
-El-Gendy et al., 2009
-Euliss et al., 2008
-Fagiolo and Ferro, 2004
-Ferro et al., 2013
-Ferro, 2006
-ITRC PHYTO 3
-Kulakow, 2006b
-Kulakow, 2006
-Luce, 2006
-Ma et al., 2004
-Olderbak and Erickson, 2004
-Palmroth et al., 2006
-Spriggs et al., 2005
-Tossell, 2006
-Unterbrunner et al., 2007
-Weishaar et al., 2009
-Widdowson et al., 2005",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Populus,spp.,,,organic,,petroleum,,Benzene,,,,,tree,,LMH,M,N,varies,F,0 - 10,,,,flowers,,,
-"Applied Natural Sciences, Inc., 2997
-Barac et al., 2009
-Burken and Schnoor, 1997a
-Coltrain,2004
-Cook et al., 2010
-Cook and Hesterberg, 2012
-El-Gendy et al., 2009
-Euliss et al., 2008
-Fagiolo and Ferro, 2004
-Ferro et al., 2013
-Ferro, 2006
-ITRC PHYTO 3
-Kulakow, 2006b
-Kulakow, 2006
-Luce, 2006
-Ma et al., 2004
-Olderbak and Erickson, 2004
-Palmroth et al., 2006
-Spriggs et al., 2005
-Tossell, 2006
-Unterbrunner et al., 2007
-Weishaar et al., 2009
-Widdowson et al., 2005",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Populus,spp.,,,organic,,petroleum,,Ethylbenzene,,,,,tree,,LMH,M,N,varies,F,0 - 10,,,,flowers,,,
-"Applied Natural Sciences, Inc., 2997
-Barac et al., 2009
-Burken and Schnoor, 1997a
-Coltrain,2004
-Cook et al., 2010
-Cook and Hesterberg, 2012
-El-Gendy et al., 2009
-Euliss et al., 2008
-Fagiolo and Ferro, 2004
-Ferro et al., 2013
-Ferro, 2006
-ITRC PHYTO 3
-Kulakow, 2006b
-Kulakow, 2006
-Luce, 2006
-Ma et al., 2004
-Olderbak and Erickson, 2004
-Palmroth et al., 2006
-Spriggs et al., 2005
-Tossell, 2006
-Unterbrunner et al., 2007
-Weishaar et al., 2009
-Widdowson et al., 2005",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Populus,spp.,,,organic,,petroleum,,Phenol,,,,,tree,,LMH,M,N,varies,F,0 - 10,,,,flowers,,,
-"Applied Natural Sciences, Inc., 2997
-Barac et al., 2009
-Burken and Schnoor, 1997a
-Coltrain,2004
-Cook et al., 2010
-Cook and Hesterberg, 2012
-El-Gendy et al., 2009
-Euliss et al., 2008
-Fagiolo and Ferro, 2004
-Ferro et al., 2013
-Ferro, 2006
-ITRC PHYTO 3
-Kulakow, 2006b
-Kulakow, 2006
-Luce, 2006
-Ma et al., 2004
-Olderbak and Erickson, 2004
-Palmroth et al., 2006
-Spriggs et al., 2005
-Tossell, 2006
-Unterbrunner et al., 2007
-Weishaar et al., 2009
-Widdowson et al., 2005",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Populus,spp.,,,organic,,petroleum,,Toluene,,,,,tree,,LMH,M,N,varies,F,0 - 10,,,,flowers,,,
-"Applied Natural Sciences, Inc., 2997
-Barac et al., 2009
-Burken and Schnoor, 1997a
-Coltrain,2004
-Cook et al., 2010
-Cook and Hesterberg, 2012
-El-Gendy et al., 2009
-Euliss et al., 2008
-Fagiolo and Ferro, 2004
-Ferro et al., 2013
-Ferro, 2006
-ITRC PHYTO 3
-Kulakow, 2006b
-Kulakow, 2006
-Luce, 2006
-Ma et al., 2004
-Olderbak and Erickson, 2004
-Palmroth et al., 2006
-Spriggs et al., 2005
-Tossell, 2006
-Unterbrunner et al., 2007
-Weishaar et al., 2009
-Widdowson et al., 2005",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Populus,spp.,,,organic,,petroleum,, m-Xylene,,,,,tree,,LMH,M,N,varies,F,0 - 10,,,,flowers,,,
-"Applied Natural Sciences, Inc., 2997
-Barac et al., 2009
-Burken and Schnoor, 1997a
-Coltrain,2004
-Cook et al., 2010
-Cook and Hesterberg, 2012
-El-Gendy et al., 2009
-Euliss et al., 2008
-Fagiolo and Ferro, 2004
-Ferro et al., 2013
-Ferro, 2006
-ITRC PHYTO 3
-Kulakow, 2006b
-Kulakow, 2006
-Luce, 2006
-Ma et al., 2004
-Olderbak and Erickson, 2004
-Palmroth et al., 2006
-Spriggs et al., 2005
-Tossell, 2006
-Unterbrunner et al., 2007
-Weishaar et al., 2009
-Widdowson et al., 2005",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Populus,spp.,,,organic,rhizodegradation and phytodegradation,petroleum,,PAH,,,,,tree,,LMH,M,N,varies,F,0 - 10,,,,flowers,,,
-"Applied Natural Sciences, Inc., 2997
-Barac et al., 2009
-Burken and Schnoor, 1997a
-Coltrain,2004
-Cook et al., 2010
-Cook and Hesterberg, 2012
-El-Gendy et al., 2009
-Euliss et al., 2008
-Fagiolo and Ferro, 2004
-Ferro et al., 2013
-Ferro, 2006
-ITRC PHYTO 3
-Kulakow, 2006b
-Kulakow, 2006
-Luce, 2006
-Ma et al., 2004
-Olderbak and Erickson, 2004
-Palmroth et al., 2006
-Spriggs et al., 2005
-Tossell, 2006
-Unterbrunner et al., 2007
-Weishaar et al., 2009
-Widdowson et al., 2005",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Populus,spp.,,,organic,"rhizodegradation, phytodegradation and phytovolatilization",petroleum,,BTEX,,,,,tree,,LMH,M,N,varies,F,0 - 10,,,,flowers,,,
-"Applied Natural Sciences, Inc., 2997
-Barac et al., 2009
-Burken and Schnoor, 1997a
-Coltrain,2004
-Cook et al., 2010
-Cook and Hesterberg, 2012
-El-Gendy et al., 2009
-Euliss et al., 2008
-Fagiolo and Ferro, 2004
-Ferro et al., 2013
-Ferro, 2006
-ITRC PHYTO 3
-Kulakow, 2006b
-Kulakow, 2006
-Luce, 2006
-Ma et al., 2004
-Olderbak and Erickson, 2004
-Palmroth et al., 2006
-Spriggs et al., 2005
-Tossell, 2006
-Unterbrunner et al., 2007
-Weishaar et al., 2009
-Widdowson et al., 2005",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Populus,spp.,,,organic,phytodegradation and phytovolatilization,petroleum,,MTBE,,,,,tree,,LMH,M,N,varies,F,0 - 10,,,,flowers,,,
-"Applied Natural Sciences, Inc., 2997
-Barac et al., 2009
-Burken and Schnoor, 1997a
-Coltrain,2004
-Cook et al., 2010
-Cook and Hesterberg, 2012
-El-Gendy et al., 2009
-Euliss et al., 2008
-Fagiolo and Ferro, 2004
-Ferro et al., 2013
-Ferro, 2006
-ITRC PHYTO 3
-Kulakow, 2006b
-Kulakow, 2006
-Luce, 2006
-Ma et al., 2004
-Olderbak and Erickson, 2004
-Palmroth et al., 2006
-Spriggs et al., 2005
-Tossell, 2006
-Unterbrunner et al., 2007
-Weishaar et al., 2009
-Widdowson et al., 2005",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Populus,spp.,,,organic,,petroleum,,DRO,,,,,tree,,LMH,M,N,varies,F,0 - 10,,,,flowers,,,
-"Applied Natural Sciences, Inc., 2997
-Barac et al., 2009
-Burken and Schnoor, 1997a
-Coltrain,2004
-Cook et al., 2010
-Cook and Hesterberg, 2012
-El-Gendy et al., 2009
-Euliss et al., 2008
-Fagiolo and Ferro, 2004
-Ferro et al., 2013
-Ferro, 2006
-ITRC PHYTO 3
-Kulakow, 2006b
-Kulakow, 2006
-Luce, 2006
-Ma et al., 2004
-Olderbak and Erickson, 2004
-Palmroth et al., 2006
-Spriggs et al., 2005
-Tossell, 2006
-Unterbrunner et al., 2007
-Weishaar et al., 2009
-Widdowson et al., 2005",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Populus,spp.,,,organic,,petroleum,,TPH,,,,,tree,,LMH,M,N,varies,F,0 - 10,,,,flowers,,,
-"Banks and Schwab, 1998 Cook & Hesterberg, 2012, Flathman and Lanza, 2998, ITRC PHYTO 3, Johnson et al., 2005, Kulakow, 2006c",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Trifolium,rapens,,,organic,,petroleum,,Fluoranthene,,,,,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very alkaline soils",LMH,M,N,.1 m,M,4 - 8,,,,,white flowers and ground cover,ground cover,
-"Banks and Schwab, 1998 Cook & Hesterberg, 2012, Flathman and Lanza, 2998, ITRC PHYTO 3, Johnson et al., 2005, Kulakow, 2006c",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Trifolium,rapens,,,organic,,petroleum,,Phenanthrene,,,,,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very alkaline soils",LMH,M,N,.1 m,M,4 - 8,,,,,white flowers and ground cover,ground cover,
-"Banks and Schwab, 1998 Cook & Hesterberg, 2012, Flathman and Lanza, 2998, ITRC PHYTO 3, Johnson et al., 2005, Kulakow, 2006c",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Trifolium,rapens,,,organic,,petroleum,,Pyrene,,,,,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very alkaline soils",LMH,M,N,.1 m,M,4 - 8,,,,,white flowers and ground cover,ground cover,
-"Banks and Schwab, 1998 Cook & Hesterberg, 2012, Flathman and Lanza, 2998, ITRC PHYTO 3, Johnson et al., 2005, Kulakow, 2006c",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Trifolium,rapens,,,organic,,petroleum,,TPH,,,,,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very alkaline soils",LMH,M,N,.1 m,M,4 - 8,,,,,white flowers and ground cover,ground cover,
-"Banks and Schwab, 1998 Cook & Hesterberg, 2012, Flathman and Lanza, 2998, ITRC PHYTO 3, Johnson et al., 2005, Kulakow, 2006c",,"Phyto, 2015 Kennen and Kirkwood",https://www.taylorfrancis.com/books/mono/10.4324/9781315746661/phyto-niall-kirkwood-kate-kennen,,Trifolium,rapens,,,organic,rhizodegradation and phytodegradation,petroleum,,PAH,,,,,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very alkaline soils",LMH,M,N,.1 m,M,4 - 8,,,,,white flowers and ground cover,ground cover,
-"Kadlec, Knight, 1996; EPA, 2004",,"Fitoremediācijas izmantošanas iespējas Latvijā, 2011, Valujeva, Grīnfelde and Straupe",http://www.murzl.llu.lv/?p=528,,Typha,latifolia,,,inorganic,phytoextraction and phytostabaliztion,heavy metal,arsenic,As,,,,,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,WeWa,N,1.2-2.2 m,F,3 - 10,,,,,brown bloom,,
-"Kadlec, Knight, 1996; EPA, 2004",,"Fitoremediācijas izmantošanas iespējas Latvijā, 2011, Valujeva, Grīnfelde and Straupe",http://www.murzl.llu.lv/?p=528,,Typha,latifolia,,,inorganic,phytostabilization,heavy metal,lead,Pb,,,,,herbaceous,,,,,1.2-2.2 m,,,,,,,,,
-"Kadlec, Knight, 1996; EPA, 2004",,"Fitoremediācijas izmantošanas iespējas Latvijā, 2011, Valujeva, Grīnfelde and Straupe",http://www.murzl.llu.lv/?p=528,,Typha,latifolia,,,inorganic,,,plutonium,Pu,,,,,herbaceous,,,,,1.2-2.2 m,,,,,,,,,
-"Kadlec, Knight, 1996; EPA, 2004",,"Fitoremediācijas izmantošanas iespējas Latvijā, 2011, Valujeva, Grīnfelde and Straupe",http://www.murzl.llu.lv/?p=528,,Typha,latifolia,,,inorganic,phytometabolism and phytostabilization,heavy metal,copper,Cu,,,,,herbaceous,,,,,1.2-2.2 m,,,,,,,,,
-"Kadlec, Knight, 1996; EPA, 2004",,"Fitoremediācijas izmantošanas iespējas Latvijā, 2011, Valujeva, Grīnfelde and Straupe",http://www.murzl.llu.lv/?p=528,,Typha,latifolia,,,inorganic,phytostabilization,heavy metal,manganese,Mn,,,,,herbaceous,,,,,1.2-2.2 m,,,,,,,,,
-"Kadlec, Knight, 1996; EPA, 2004",,"Fitoremediācijas izmantošanas iespējas Latvijā, 2011, Valujeva, Grīnfelde and Straupe",http://www.murzl.llu.lv/?p=528,,Typha,latifolia,,,inorganic,phytostabilization,heavy metal,chromium,Cr,,,,,herbaceous,,,,,1.2-2.2 m,,,,,,,,,
-"McCutcheon, Schnoor, 2003",,Fitoremediācijas izmantošanas iespējas Latvijā,http://www.murzl.llu.lv/?p=528,,Lolium,multiflorum,,,inorganic,phytostabilization,radio-nuclides,cesium,Cs,,,,,grasses and sedges,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.3 m,F,4 - 8,,,,,bloom,,
-"McCutcheon, Schnoor, 2003",,Fitoremediācijas izmantošanas iespējas Latvijā,http://www.murzl.llu.lv/?p=528,,Lolium,multiflorum,,,inorganic,phytostabilization,heavy metal,chromium,Cr,,,,,grasses and sedges,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.3 m,F,4 - 8,,,,bloom,bloom,,
-"McCutcheon, Schnoor, 2003",,Fitoremediācijas izmantošanas iespējas Latvijā,http://www.murzl.llu.lv/?p=528,,Sorghum,halepense,,,inorganic,phytostabilization,heavy metal,aluminum,Al,,,,,grasses and sedges,,LMH,DM,N,2 m,F,7 -10,,,,,bloom,bloom,
-"McCutcheon, Schnoor, 2003",,Fitoremediācijas izmantošanas iespējas Latvijā,http://www.murzl.llu.lv/?p=528,,Sorghum,halepense,,,inorganic,phytoextraction and phytostabilization,heavy metal,arsenic,As,,,,,grasses and sedges,,LMH,DM,N,3 m,F,8 -10,,,,,bloom,bloom,
-"McCutcheon, Schnoor, 2003",,Fitoremediācijas izmantošanas iespējas Latvijā,http://www.murzl.llu.lv/?p=528,,Sorghum,halepense,,,inorganic,phytostabilization,radio-nuclides,cesium,Cs,,,,,grasses and sedges,,LMH,DM,N,4 m,F,9 -10,,,,,bloom,bloom,
-"McCutcheon, Schnoor, 2003",,Fitoremediācijas izmantošanas iespējas Latvijā,http://www.murzl.llu.lv/?p=528,,Sorghum,halepense,,,inorganic,phytometabolism and phytostabilization,heavy metal,copper,Cu,,,,,grasses and sedges,,LMH,DM,N,5 m,F,10 -10,,,,,bloom,bloom,
-"McCutcheon, Schnoor, 2003",,Fitoremediācijas izmantošanas iespējas Latvijā,http://www.murzl.llu.lv/?p=528,,Sorghum,halepense,,,inorganic,phytostabilization,heavy metal,manganese,Mn,,,,,grasses and sedges,,LMH,DM,N,6 m,F,11 -10,,,,,bloom,bloom,
-"McCutcheon, Schnoor, 2003",,Fitoremediācijas izmantošanas iespējas Latvijā,http://www.murzl.llu.lv/?p=528,,Sorghum,halepense,,,inorganic,"phytostabalization, phytometabolism and phytoextraction",heavy metal,nickel,Ni,,,,,grasses and sedges,,LMH,DM,N,7 m,F,12 -10,,,,,bloom,bloom,
-"McCutcheon, Schnoor, 2003",,Fitoremediācijas izmantošanas iespējas Latvijā,http://www.murzl.llu.lv/?p=528,,Sorghum,halepense,,,inorganic,phytostabilization,radio-nuclides,uranium,U,,,,,grasses and sedges,,LMH,DM,N,8 m,F,13 -10,,,,,bloom,bloom,
-"McCutcheon, Schnoor, 2003",,Fitoremediācijas izmantošanas iespējas Latvijā,http://www.murzl.llu.lv/?p=528,,Sorghum,halepense,,,inorganic,"phytoextraction, phytostabilization and phytometabolism",,zinc,Zn,,,,,grasses and sedges,,LMH,DM,N,9 m,F,14 -10,,,,,bloom,bloom,
-,,,,,Achillea,millefolium,,,,,,,,,,,,herbaceous,,,,,,,,,,,,,,
-,,,,,Hydrangea,,,,,,,,,,,,,shrub,,,,,,,,,,,,,,
-,,,,,Cannabis,sativa,,,,,,,,,,,,herbaceous,neutral to alkaline,,,,"1,5-4 m",F,,,,,,,,
+Article Reference,Article Title,Book Reference,Article Link,Book Link,Plant Genus,Plant Species,Plant Cultivar,Plant Tissue,Organic or Inorganic,Phyto Process,Contaminant Type,Contaminant,Contaminant Abbreviation,Removal Rate,Removal Rate Units,Mass KG M2,Timeline,Notes,Plant Category,Soil Ph,Soil type,Moisture,Shade,Height,Growth Rate,US Hardiness Zone,Plant Image,Contaminant Image,Geography,Seasonal Interest Spring,Seasonal Interest Summer,Seasonal Interest Fall,Seasonal Interest Winter
+Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,shoots,inorganic,phytoextraction and phytometabilization,heavy metal,cadmium,Cd,0,mg/kg,,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
+Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,roots,inorganic,phytoextraction and phytometabilization,heavy metal,cadmium,Cd,23.5,mg/kg,,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
+Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,shoots,inorganic,phytostabilization,heavy metal,chromium,Cr,0.77,mg/kg,,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
+Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,roots,inorganic,phytostabilization,heavy metal,chromium,Cr,82.5,mg/kg,,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
+Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,shoots,inorganic,phytometabolism,heavy metal,copper,Cu,23.6,mg/kg,,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
+Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,roots,inorganic,phytostabilization and phytometabolism,heavy metal,copper,Cu,414,mg/kg,,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
+Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,shoots,inorganic,"phytostabilization, phytometabolism and phytoextraction",heavy metal,nickel,Ni,4.12,mg/kg,,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
+Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,roots,inorganic,"phytostabilization, phytometabolism and phytoextraction",heavy metal,nickel,Ni,45.7,mg/kg,,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
+Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,shoots,inorganic,phytostabilization,heavy metal,lead,Pb,5.48,mg/kg,,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
+Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,roots,inorganic,phytostabilization,heavy metal,lead,Pb,472,mg/kg,,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
+Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,shoots,inorganic,"phytoextraction, phytostabilization and phytometabolizm",heavy metal,zinc,Zn,1305,mg/kg,,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
+Marchiol 2004,Phytoextraction of heavy metals by canola (Brassica napus) and radish (Raphanus sativus) grown on multicontaminated soil,,https://doi.org/10.1016/j.envpol.2004.04.001,,Brassica,napus,Kabel,roots,inorganic,"phytoextraction, phytostabilization and phytometabolizm",heavy metal,zinc,Zn,5983,mg/kg,,,"values are from the 'treated' soils (i.e., contaminated soils)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils and can grow in very acid and very alkaline soils",LMH,M,SN,1.2,,6 - 9,,,,yellow flowers,yellow flowers,,
+Lotfy & Mostafa 2014,Phytoremediation of contaminated soil with cobalt and chromium,,https://www.sciencedirect.com/science/article/pii/S0375674213001362?casa_token=avMaI_GIqXQAAAAA:4qVVJ3j0toZuZDFyZpaixE2s5DPYcgeQjEoDBNq730LgGsr5Tlm0bX9UIWaqSDQX3i565M29KM4,,Helianthus,annuus,,roots/shoots,inorganic,phytostabilization,heavy metal,cobalt,Co,57.7,mg/kg,,,"Total uptake by whole plant, authors also provide root and shoot rates too",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,DM,SN,3,F,6 - 9,,,,,"upright orange, red, yellow flowers","upright orange, red, yellow flowers",
+Lotfy & Mostafa 2014,Phytoremediation of contaminated soil with cobalt and chromium,,https://www.sciencedirect.com/science/article/pii/S0375674213001362?casa_token=avMaI_GIqXQAAAAA:4qVVJ3j0toZuZDFyZpaixE2s5DPYcgeQjEoDBNq730LgGsr5Tlm0bX9UIWaqSDQX3i565M29KM4,,Helianthus,annuus,,roots/shoots,inorganic,phytostabilization,heavy metal,cobalt,Co,36.3,mg/kg,,,"Total uptake by whole plant, authors also provide root and shoot rates too",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,DM,SN,3,F,6 - 9,,,,,"upright orange, red, yellow flowers","upright orange, red, yellow flowers",
+Lotfy & Mostafa 2014,Phytoremediation of contaminated soil with cobalt and chromium,,https://www.sciencedirect.com/science/article/pii/S0375674213001362?casa_token=avMaI_GIqXQAAAAA:4qVVJ3j0toZuZDFyZpaixE2s5DPYcgeQjEoDBNq730LgGsr5Tlm0bX9UIWaqSDQX3i565M29KM4,,Helianthus,annuus,,roots/shoots,inorganic,phytostabilization,heavy metal,chromium,Cr,75.8,mg/kg,,,"Total uptake by whole plant, authors also provide root and shoot rates too",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,DM,SN,3,F,6 - 9,,,,,"upright orange, red, yellow flowers","upright orange, red, yellow flowers",
+Lotfy & Mostafa 2014,Phytoremediation of contaminated soil with cobalt and chromium,,https://www.sciencedirect.com/science/article/pii/S0375674213001362?casa_token=avMaI_GIqXQAAAAA:4qVVJ3j0toZuZDFyZpaixE2s5DPYcgeQjEoDBNq730LgGsr5Tlm0bX9UIWaqSDQX3i565M29KM4,,Helianthus,annuus,,roots/shoots,inorganic,phytostabilization,heavy metal,chromium,Cr,61.6,mg/kg,,,"Total uptake by whole plant, authors also provide root and shoot rates too",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,DM,SN,3,F,6 - 9,,,,,"upright orange, red, yellow flowers","upright orange, red, yellow flowers",
+Hutchinson 2000,Determining uptake of ‘non-labile’ soil cadmium by Thlaspi caerulescens using isotopic dilution techniques,,https://nph.onlinelibrary.wiley.com/doi/pdf/10.1046/j.1469-8137.2000.00657.x,,Lepidium,heterophyllum,,shoots,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,17.4,mg/kg,,,study reports concentration values for plants from different populations grown in pots with soils in three sites within the sewage and mine contaminated regions. I take the average of these (see Table 2),herbaceous,"pH: mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,SN,.3 m,M,,,,,white flower,white flower,,
+Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,leaves,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,353,mg/kg,,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8,,,,flower,color ranges from yellowish to bluish color.,foliage is yellowis,multi-stemmed shrub. foliage can persist in winter.
+Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,stems,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,96,mg/kg,,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8,,,,flower,color ranges from yellowish to bluish color.,foliage is yellowis,multi-stemmed shrub. foliage can persist in winter.
+Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,roots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,181,mg/kg,,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8,,,,flower,color ranges from yellowish to bluish color.,foliage is yellowis,multi-stemmed shrub. foliage can persist in winter.
+Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,leaves,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,3.56,mg/kg,,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8,,,,flower,color ranges from yellowish to bluish color.,foliage is yellowis,multi-stemmed shrub. foliage can persist in winter.
+Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,stems,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,1.77,mg/kg,,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8,,,,flower,color ranges from yellowish to bluish color.,foliage is yellowis,multi-stemmed shrub. foliage can persist in winter.
+Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,roots,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,1.49,mg/kg,,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8,,,,flower,color ranges from yellowish to bluish color.,foliage is yellowis,multi-stemmed shrub. foliage can persist in winter.
+Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,leaves,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,2326,mg/kg,,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8,,,,flower,color ranges from yellowish to bluish color.,foliage is yellowis,multi-stemmed shrub. foliage can persist in winter.
+Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,stems,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,371,mg/kg,,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8,,,,flower,color ranges from yellowish to bluish color.,foliage is yellowis,multi-stemmed shrub. foliage can persist in winter.
+Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,roots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,1374,mg/kg,,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8,,,,flower,color ranges from yellowish to bluish color.,foliage is yellowis,multi-stemmed shrub. foliage can persist in winter.
+Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,leaves,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,4.87,mg/kg,,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8,,,,flower,color ranges from yellowish to bluish color.,foliage is yellowis,multi-stemmed shrub. foliage can persist in winter.
+Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,stems,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,1.75,mg/kg,,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8,,,,flower,color ranges from yellowish to bluish color.,foliage is yellowis,multi-stemmed shrub. foliage can persist in winter.
+Hammer 2002,Changes in the Rhizosphere of Metal-Accumulating Plants Evidenced by Chemical Extractants,,https://acsess.onlinelibrary.wiley.com/doi/pdfdirect/10.2134/jeq2002.1561?casa_token=TYQqZ4bAMZQAAAAA:mZJGZLuPBBiHfLZ6laM6OCHqBH-OJDrsxcU9M1Bl6ILyYwKAqwFtgAMaYrEKjPNil2EdYTKOYLgAC9o,,Salix,viminalis,,roots,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,1.04,mg/kg,,,"Study reports other minerals (e.g., Mg, P, Fe, CA). grew plants on two soils types. Also includes T. arvense as a non-accumulator 'control' plant, but excluded here bc non-acc plant. report means from 4 'reps' (plants?)",shrub,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,MWe,N,6,F,4  - 8,,,,flower,color ranges from yellowish to bluish color.,foliage is yellowis,multi-stemmed shrub. foliage can persist in winter.
+Bi 2003,Influence of early stages of arbuscular mycorrhiza on uptake of zinc and phosphorus by red clover from a low-phosphorus soil amended with zinc and phosphorus,,https://www.sciencedirect.com/science/article/pii/S0045653502002278?casa_token=Lwto6m48KwUAAAAA:ajlKd9HDoTq600k79a7Q2q63l9r-9AjIIx7uCwG9Kr6PVXA4ELHVf8qkuIzfn4sCOQpd26zho44,,Trifolium,pratense,Merwe,shoots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,1430,mg/kg,,,"values are from non-fert, non-AM plants with the highest Zn concentration (400 mg/kg)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
+Bi 2003,Influence of early stages of arbuscular mycorrhiza on uptake of zinc and phosphorus by red clover from a low-phosphorus soil amended with zinc and phosphorus,,https://www.sciencedirect.com/science/article/pii/S0045653502002278?casa_token=Lwto6m48KwUAAAAA:ajlKd9HDoTq600k79a7Q2q63l9r-9AjIIx7uCwG9Kr6PVXA4ELHVf8qkuIzfn4sCOQpd26zho44,,Trifolium,pratense,Merwe,shoots,inorganic,phytometabolism and phytostabilization,heavy metal,copper,Cu,26.1,mg/kg,,,"values are from non-fert, non-AM plants with the highest Zn concentration (400 mg/kg)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
+Bi 2003,Influence of early stages of arbuscular mycorrhiza on uptake of zinc and phosphorus by red clover from a low-phosphorus soil amended with zinc and phosphorus,,https://www.sciencedirect.com/science/article/pii/S0045653502002278?casa_token=Lwto6m48KwUAAAAA:ajlKd9HDoTq600k79a7Q2q63l9r-9AjIIx7uCwG9Kr6PVXA4ELHVf8qkuIzfn4sCOQpd26zho44,,Trifolium,pratense,Merwe,roots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,9791,mg/kg,,,"values are from non-fert, non-AM plants with the highest Zn concentration (400 mg/kg)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
+Bi 2003,Influence of early stages of arbuscular mycorrhiza on uptake of zinc and phosphorus by red clover from a low-phosphorus soil amended with zinc and phosphorus,,https://www.sciencedirect.com/science/article/pii/S0045653502002278?casa_token=Lwto6m48KwUAAAAA:ajlKd9HDoTq600k79a7Q2q63l9r-9AjIIx7uCwG9Kr6PVXA4ELHVf8qkuIzfn4sCOQpd26zho44,,Trifolium,pratense,Merwe,roots,inorganic,phytometabolism and phytostabilization,heavy metal,copper,Cu,51,mg/kg,,,"values are from non-fert, non-AM plants with the highest Zn concentration (400 mg/kg)",herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
+Chen 2003,The role of arbuscular mycorrhiza in zinc uptake by red clover growing in a calcareous soil spiked with various quantities of zinc,,https://www.sciencedirect.com/science/article/pii/S004565350200228X?casa_token=iX2CKSljzMsAAAAA:4YeGpqHEPKNzAoJ3jN3Au3daFX0iN4p-WOU50FGb2g-VMzD_YWY5gXnXS-fZ_vSShX6VmlOMprg,,Trifolium,pratense,,shoots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,153.1,mg/kg,,,study has three levels of Zn addition crossed with AM-fungi innoculation. Report values from max Zn conc (400 mg/kg) and no AM-fungi. NB AM-Fungi did increase concentrations,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
+Chen 2003,The role of arbuscular mycorrhiza in zinc uptake by red clover growing in a calcareous soil spiked with various quantities of zinc,,https://www.sciencedirect.com/science/article/pii/S004565350200228X?casa_token=iX2CKSljzMsAAAAA:4YeGpqHEPKNzAoJ3jN3Au3daFX0iN4p-WOU50FGb2g-VMzD_YWY5gXnXS-fZ_vSShX6VmlOMprg,,Trifolium,pratense,,roots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,298.6,mg/kg,,,study has three levels of Zn addition crossed with AM-fungi innoculation. Report values from max Zn conc (400 mg/kg) and no AM-fungi. NB AM-Fungi did increase concentrations,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
+Delorme 2001,Influence of the zinc hyperaccumulator Thlaspi caerulescens J. & C. Presl. and the nonmetal accumulator Trifolium pratense L. on soil microbial populations,,https://cdnsciencepub.com/doi/abs/10.1139/w01-067?casa_token=0QDiSQhG2F4AAAAA:SIAtDkvt3GSPcfIQFL73FuWreda8HeL617uutkof-8-t0GtynQrI6azWjQSI0ypOUKseVb-5WlthSQ,,Trifolium,pratense,,shoots,inorganic,phytoextraction and phytostabilization,heavy metal,cadmium,Cd,15.3,mg/kg,,,report values from the heavy metal soils and pH 5.8.,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
+Delorme 2001,Influence of the zinc hyperaccumulator Thlaspi caerulescens J. & C. Presl. and the nonmetal accumulator Trifolium pratense L. on soil microbial populations,,https://cdnsciencepub.com/doi/abs/10.1139/w01-067?casa_token=0QDiSQhG2F4AAAAA:SIAtDkvt3GSPcfIQFL73FuWreda8HeL617uutkof-8-t0GtynQrI6azWjQSI0ypOUKseVb-5WlthSQ,,Trifolium,pratense,,shoots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,281.9,mg/kg,,,report values from the heavy metal soils and pH 5.8.,herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
+Li 2001,Changes in soil solution Zn and pH and uptake of Zn by arbuscular mycorrhizal red clover in Zn-contaminated soil,,10.1016/s0045-6535(00)00126-0,,Trifolium,pratense,Merwe,shoots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,218.2,mg/kg,,,values are from  non-AM plants with the highest Zn concentration (1000 mg/kg),herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,
+Li 2001,Changes in soil solution Zn and pH and uptake of Zn by arbuscular mycorrhizal red clover in Zn-contaminated soil,,10.1016/s0045-6535(00)00126-0,,Trifolium,pratense,Merwe,roots,inorganic,"phytoextraction, phytostabilization and phytometabolism",heavy metal,zinc,Zn,721.8,mg/kg,,,values are from  non-AM plants with the highest Zn concentration (1000 mg/kg),herbaceous,"mildly acid, neutral and basic (mildly alkaline) soils",LMH,M,N,.6 m,M,5 - 9,,,,green ground cover,green ground cover,,

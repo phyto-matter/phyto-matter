@@ -77,7 +77,7 @@ export function PlantDetailView() {
               gutterBottom
               color={phytoMatterBlackColor}
             >
-              {plant.species}, {plant.family}
+              {plant.genus}, {plant.species}
             </Typography>
             <Grid container>
               <Grid item xs={6}>
