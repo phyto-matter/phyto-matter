@@ -44,9 +44,6 @@ export function MaterialDetailView() {
       style={{
         backgroundColor: phytoMatterBrownColor,
         paddingTop: 150,
-        position: "fixed",
-        left: 0,
-        right: 0,
         minHeight: "100vh",
       }}
     >
@@ -54,7 +51,7 @@ export function MaterialDetailView() {
         <Grid container spacing={2}>
           <Grid item xs={12} md={3}>
             <Typography variant="h4" gutterBottom>
-              {results.common_name}
+              {results.name}
             </Typography>
             <Typography
               variant="subtitle1"
@@ -98,12 +95,7 @@ export function MaterialDetailView() {
             <Typography variant="h4" gutterBottom>
               Projects
             </Typography>
-            <Box
-              style={{
-                maxHeight: "70vh",
-                overflow: "auto",
-              }}
-            >
+            <Box>
               {results.projects.map((project) => (
                 <Container
                   sx={{

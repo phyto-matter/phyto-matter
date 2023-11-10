@@ -32,7 +32,6 @@ export type PlantEntry = {
   cultivar: string;
   category: string;
   species: string;
-  common_name: string;
   organic_inorganic: string;
   phyto_process: string;
   growth_rate: string;
@@ -67,7 +66,6 @@ function getNormalisedPhytoData() {
       genus: first.plant_genus.trim(),
       cultivar: first.plant_cultivar.trim(),
       category: lowerCase(first.plant_category).trim(),
-      common_name: first.common_name.trim(),
       contaminants: mapContaminants([first, ...rest]),
       us_hardiness_zone: kebabCase(first.us_hardiness_zone),
       shade: first.shade.trim(),

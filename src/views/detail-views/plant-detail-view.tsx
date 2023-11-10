@@ -70,7 +70,7 @@ export function PlantDetailView() {
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <Typography variant="h4" gutterBottom color={phytoMatterBlackColor}>
-              {plant.genus} ({plant.common_name})
+              {plant.genus}, {plant.species}
             </Typography>
             <Typography
               variant="subtitle1"

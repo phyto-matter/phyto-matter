@@ -15,7 +15,7 @@ export type MatterEntry = {
   id: string;
   plant_species: string;
   plant_genus: string;
-  common_name: string;
+  name: string;
   processing: string;
   function: string;
   type: string;
@@ -36,7 +36,7 @@ function getNormalisedMatterData(): MatterEntry[] {
       id: first.id,
       plant_species: first.plant_species,
       plant_genus: first.plant_genus,
-      common_name: first.common_name,
+      name: first.material_name,
       processing: (first.processing || "none")
         .toLowerCase()
         .split(",")

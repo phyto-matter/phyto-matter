@@ -57,7 +57,7 @@ export function MaterialsView() {
       NORMALISED_MATTER_DATA.filter((e) => {
         return (
           (!filters.name ||
-            lowerCase(e.common_name).includes(lowerCase(filters.name))) &&
+            lowerCase(e.name).includes(lowerCase(filters.name))) &&
           (!filters.category || e.type.includes(filters.category)) &&
           (!filters.plant_genus || e.plant_genus === filters.plant_genus) &&
           (!filters.material_function ||
@@ -130,7 +130,7 @@ export function MaterialsView() {
                                 textDecoration: "none",
                               }}
                             >
-                              {capitalize(material.common_name)}
+                              {capitalize(material.name)}
                             </Link>
                           }
                         />
@@ -174,7 +174,7 @@ function Controls({
   );
 
   const uniqueName = useMemo(
-    () => [...new Set(displayData.map((option) => option.common_name))],
+    () => [...new Set(displayData.map((option) => option.name))],
     [displayData],
   );
 
