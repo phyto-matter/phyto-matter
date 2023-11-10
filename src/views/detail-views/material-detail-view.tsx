@@ -74,7 +74,6 @@ export function MaterialDetailView() {
                       Vegetation Type
                     </Typography>
                   }
-                  secondary={capitalize(results.vegetation_type)}
                 />
               </ListItem>
               <ListItem>
@@ -130,7 +129,7 @@ export function MaterialDetailView() {
                               Category
                             </Typography>
                           }
-                          secondary={capitalize(results.category)}
+                          secondary={capitalize(results.type)}
                         />
                       </ListItem>
                       <ListItem>
@@ -147,7 +146,7 @@ export function MaterialDetailView() {
                               Material Function
                             </Typography>
                           }
-                          secondary={capitalize(results.material_function)}
+                          secondary={capitalize(results.function)}
                         />
                       </ListItem>
                       <ListItem>

@@ -9,3 +9,10 @@ export function allValid(
     .map((_) => _.trim().toLowerCase())
     .every((t) => values.includes(t));
 }
+
+export function allValidOrEmpty(
+  toTest: string,
+  validation: { [key: string]: string },
+) {
+  return !toTest || allValid(toTest, validation);
+}

@@ -58,10 +58,10 @@ export function MaterialsView() {
         return (
           (!filters.name ||
             lowerCase(e.common_name).includes(lowerCase(filters.name))) &&
-          (!filters.category || e.category.includes(filters.category)) &&
+          (!filters.category || e.type.includes(filters.category)) &&
           (!filters.plant_genus || e.plant_genus === filters.plant_genus) &&
           (!filters.material_function ||
-            e.material_function.includes(filters.material_function)) &&
+            e.function.includes(filters.material_function)) &&
           (!filters.processing || e.processing.includes(filters.processing))
         );
       }),
@@ -160,7 +160,7 @@ function Controls({
 }) {
   const uniqueFuncion = useMemo(
     () =>
-      [...new Set(displayData.flatMap((e) => e.material_function))]
+      [...new Set(displayData.flatMap((e) => e.function))]
         .sort()
         .filter(Boolean),
     [displayData],
