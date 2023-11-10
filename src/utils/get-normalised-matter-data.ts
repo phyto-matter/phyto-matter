@@ -13,13 +13,12 @@ export type ProjectEntry = {
 
 export type MatterEntry = {
   id: string;
-  vegetation_type: string;
   plant_species: string;
   plant_genus: string;
   common_name: string;
   processing: string;
-  material_function: string;
-  category: string;
+  function: string;
+  type: string;
   projects: ProjectEntry[];
 };
 
@@ -38,16 +37,15 @@ function getNormalisedMatterData(): MatterEntry[] {
       plant_species: first.plant_species,
       plant_genus: first.plant_genus,
       common_name: first.common_name,
-      vegetation_type: first.vegetation_type,
-      processing: first.processing
+      processing: (first.processing || "none")
         .toLowerCase()
         .split(",")
         .map((_: string) => _.trim()),
-      material_function: first.building_material_function
+      function: (first.function || "none")
         .toLowerCase()
         .split(",")
         .map((_: string) => _.trim()),
-      category: first.category
+      type: (first.type || "none")
         .toLowerCase()
         .split(",")
         .map((_: string) => _.trim()),

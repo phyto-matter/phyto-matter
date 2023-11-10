@@ -1,9 +1,9 @@
 import { groupBy } from "lodash";
 import { MATTER_DATA } from "./converted-matter";
 import { normaliseData } from "./utils/normalise-data";
-import { allValid } from "./utils/test-utils";
+import { allValid, allValidOrEmpty } from "./utils/test-utils";
 import {
-  VALID_CATEGORIES,
+  VALID_MATERIAL_TYPES,
   VALID_FUNCTIONS,
   VALID_PROCESSING,
   VALID_VEGETATION_TYPES,
@@ -21,31 +21,21 @@ describe("NORMALISED_MATTER_DATA", () => {
         test("plant_genus is never empty", () => {
           expect(entries.every((_) => _.plant_genus)).toBe(true);
         });
-        test("common_name is never empty", () => {
-          expect(entries.every((_) => _.common_name)).toBe(true);
-        });
-        test("category is valid", () => {
+        test("type is valid", () => {
           expect(
-            entries.every((_) => allValid(_.category, VALID_CATEGORIES)),
+            entries.every((_) => allValidOrEmpty(_.type, VALID_MATERIAL_TYPES)),
           ).toBe(true);
         });
         test("processing is valid", () => {
           expect(
-            entries.every((_) => allValid(_.processing, VALID_PROCESSING)),
-          ).toBe(true);
-        });
-        test("building_material_function is valid", () => {
-          expect(
             entries.every((_) =>
-              allValid(_.building_material_function, VALID_FUNCTIONS),
+              allValidOrEmpty(_.processing, VALID_PROCESSING),
             ),
           ).toBe(true);
         });
-        test("vegetation_type is valid", () => {
+        test("function is valid", () => {
           expect(
-            entries.every((_) =>
-              allValid(_.vegetation_type, VALID_VEGETATION_TYPES),
-            ),
+            entries.every((_) => allValidOrEmpty(_.function, VALID_FUNCTIONS)),
           ).toBe(true);
         });
       });

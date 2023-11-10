@@ -7,16 +7,19 @@ export const phytoMatterGreenColor = "#6CDA98";
 export const phytoMatterBrownColor = "#AE8E5E";
 
 export const phytoMatterBlackColor = "#323232";
-export enum VALID_CATEGORIES {
-  root = "roof",
+export enum VALID_MATERIAL_TYPES {
+  roof = "roof",
   paving = "paving and bricks",
   walls = "walls",
-  decor = "decor and paint",
+  decor = "decor",
+  details = "details",
+  detailsAndPaint = "details and paint",
   edges = "edges",
   furniture = "furniture",
 }
 export enum VALID_PROCESSING {
   dry = "dry",
+  mix = "mix",
   burn = "burn",
   braid = "braid",
   soak = "soak",
