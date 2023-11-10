@@ -64,7 +64,7 @@ export function ContaminantDetailView() {
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <Typography variant="h4" gutterBottom>
-              {capitalize(contaminant.name)} ({contaminant.symbol})
+              {capitalize(contaminant.name)} ({contaminant.abbreviation})
             </Typography>
             <Typography variant="subtitle1" gutterBottom>
               {capitalize(contaminant.category)}
@@ -93,7 +93,7 @@ export function ContaminantDetailView() {
                         <TableCell>
                           <Link to={`/plants/${p.id}`}>
                             <Chip
-                              label={p.latin_name}
+                              label={p.genus}
                               size="small"
                               variant="outlined"
                               sx={{
@@ -139,10 +139,7 @@ export function ContaminantDetailView() {
                       <b>Title</b>
                     </TableCell>
                     <TableCell>
-                      <b>Author</b>
-                    </TableCell>
-                    <TableCell>
-                      <b>Year</b>
+                      <b>Type</b>
                     </TableCell>
                     <TableCell>
                       <b>Source</b>
@@ -154,8 +151,7 @@ export function ContaminantDetailView() {
                     <TableRow>
                       <TableCell>{i + 1}</TableCell>
                       <TableCell>{ref.title}</TableCell>
-                      <TableCell>{ref.author}</TableCell>
-                      <TableCell>{ref.year}</TableCell>
+                      <TableCell>{ref.type}</TableCell>
                       <TableCell>
                         <a href={ref.link} target="_blank" rel="noreferrer">
                           {ref.reference}

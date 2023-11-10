@@ -50,13 +50,13 @@ export function usePlantSuggestions(
           )
           .reduce(
             (agg, [pla, con]) => {
-              const existing = agg[con.symbol];
+              const existing = agg[con.abbreviation];
               const suggestion: ContaminantSuggestion = existing || {
                 contaminantId: con.id,
                 contaminant: con.name,
                 plantId: pla.id,
-                plant: pla.latin_name,
-                vegetation_type: pla.vegetation_type,
+                plant: pla.genus,
+                vegetation_type: pla.category,
                 tissue_type: con.tissue_type,
                 mass_kg_m2: con.mass_kg_m2,
                 lower_rate: 0,
@@ -74,7 +74,7 @@ export function usePlantSuggestions(
 
               return {
                 ...agg,
-                [con.symbol]: {
+                [con.abbreviation]: {
                   ...suggestion,
                   lower_rate: allRates.at(0) || 0,
                   upper_rate: allRates.at(-1) || 0,

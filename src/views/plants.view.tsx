@@ -66,15 +66,14 @@ export function PlantsView() {
       NORMALISED_PHYTO_DATA.filter((e) => {
         return (
           (!filters.latin_name ||
-            lowerCase(e.latin_name).includes(lowerCase(filters.latin_name))) &&
+            lowerCase(e.genus).includes(lowerCase(filters.latin_name))) &&
           (!filters.contaminant ||
             e.contaminants.some((c) => c.name === filters.contaminant)) &&
           (!filters.hardiness_zone ||
-            e.hardiness_zone === filters.hardiness_zone) &&
+            e.us_hardiness_zone === filters.hardiness_zone) &&
           (!filters.shade || e.shade === filters.shade) &&
-          (!filters.soil || e.soil === filters.soil) &&
-          (!filters.vegetation_type ||
-            e.vegetation_type === filters.vegetation_type)
+          (!filters.soil || e.soil_type === filters.soil) &&
+          (!filters.vegetation_type || e.category === filters.vegetation_type)
         );
       }),
     [filters],
@@ -141,7 +140,7 @@ export function PlantsView() {
                                 textDecoration: "none",
                               }}
                             >
-                              {capitalize(plant.latin_name)}
+                              {capitalize(plant.genus)}
                             </Link>
                           }
                         />
@@ -182,14 +181,16 @@ function Controls({
   );
   const uniqueHardiness = useMemo(
     () =>
-      [...new Set(displayData.flatMap((e) => e.hardiness_zone))]
+      [...new Set(displayData.flatMap((e) => e.us_hardiness_zone))]
         .sort()
         .filter(Boolean),
     [displayData],
   );
   const uniqueSoil = useMemo(
     () =>
-      [...new Set(displayData.flatMap((e) => e.soil))].sort().filter(Boolean),
+      [...new Set(displayData.flatMap((e) => e.soil_type))]
+        .sort()
+        .filter(Boolean),
     [displayData],
   );
   const uniqueShade = useMemo(
@@ -199,7 +200,7 @@ function Controls({
   );
   const uniqueType = useMemo(
     () =>
-      [...new Set(displayData.flatMap((e) => e.vegetation_type))]
+      [...new Set(displayData.flatMap((e) => e.category))]
         .sort()
         .filter(Boolean),
     [displayData],
@@ -224,7 +225,7 @@ function Controls({
           <Autocomplete
             disablePortal
             freeSolo
-            options={displayData.map((option) => option.latin_name)}
+            options={displayData.map((option) => option.genus)}
             sx={{ width: 300, maxWidth: "100%" }}
             onInputChange={(_, val) => updateFilters({ latin_name: val })}
             renderInput={(params) => (
