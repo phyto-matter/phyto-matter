@@ -18,7 +18,6 @@ import { capitalize, startCase } from "lodash";
 import React from "react";
 import { NORMALISED_MATTER_DATA } from "../../utils/get-normalised-matter-data";
 import { Link, useParams } from "react-router-dom";
-import ParkIcon from "@mui/icons-material/Park";
 import LocalFloristIcon from "@mui/icons-material/LocalFlorist";
 import ConstructionIcon from "@mui/icons-material/Construction";
 import HomeIcon from "@mui/icons-material/Home";

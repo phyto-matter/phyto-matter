@@ -2,12 +2,7 @@ import React from "react";
 import {
   Chip,
   Container,
-  Box,
   Grid,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
   Paper,
   Table,
   TableBody,
@@ -18,28 +13,15 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import ParkIcon from "@mui/icons-material/Park";
-import LayersIcon from "@mui/icons-material/Layers";
-import HardwareIcon from "@mui/icons-material/Hardware";
-import WaterfallChartIcon from "@mui/icons-material/WaterfallChart";
 import { Link, useParams } from "react-router-dom";
 import { NORMALISED_PHYTO_DATA } from "../../utils/get-normalised-phyto-data";
-import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
-import AcUnitIcon from "@mui/icons-material/AcUnit";
-import EmojiNatureIcon from "@mui/icons-material/EmojiNature";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import SpaIcon from "@mui/icons-material/Spa";
 
 import { capitalize, keyBy, snakeCase } from "lodash";
 import {
-  HardinessDescription,
   IconStyle,
-  MoistureDescription,
   phytoMatterBlackColor,
   phytoMatterGreenColor,
   phytoMatterYellowColor,
-  SoilDescription,
-  StyledAvatar,
 } from "../../global-constants";
 import { PlantDetailSeasonDescriptions } from "../../components/plant-detail-season-descriptions";
 import { PlantDetailInfo } from "../../components/plant-detail-info";

@@ -1,12 +1,11 @@
 import { groupBy } from "lodash";
 import { MATTER_DATA } from "./converted-matter";
 import { normaliseData } from "./utils/normalise-data";
-import { allValid, allValidOrEmpty } from "./utils/test-utils";
+import { allValidOrEmpty } from "./utils/test-utils";
 import {
   VALID_MATERIAL_TYPES,
   VALID_FUNCTIONS,
   VALID_PROCESSING,
-  VALID_VEGETATION_TYPES,
 } from "./global-constants";
 
 describe("NORMALISED_MATTER_DATA", () => {

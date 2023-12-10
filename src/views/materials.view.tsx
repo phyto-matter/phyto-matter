@@ -22,7 +22,6 @@ import {
   capitalize,
   first,
   groupBy,
-  last,
   lowerCase,
   omitBy,
   snakeCase,
