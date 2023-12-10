@@ -16,9 +16,9 @@ export type MatterEntry = {
   plant_species: string;
   plant_genus: string;
   name: string;
-  processing: string;
-  function: string;
-  type: string;
+  processing: string[];
+  function: string[];
+  type: string[];
   projects: ProjectEntry[];
 };
 
@@ -27,7 +27,7 @@ export const NORMALISED_MATTER_DATA = getNormalisedMatterData();
 function getNormalisedMatterData(): MatterEntry[] {
   const normalised = normaliseData(
     MATTER_DATA,
-    (e) => `${e.plant_genus}-${e.category}`,
+    (e) => `${e.plant_genus}-${e.type}`,
   );
   const grouped = groupBy(normalised, "id");
 

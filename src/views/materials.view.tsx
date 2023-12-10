@@ -18,7 +18,15 @@ import {
   NORMALISED_MATTER_DATA,
 } from "../utils/get-normalised-matter-data";
 import { IconStyle, phytoMatterBrownColor } from "../global-constants";
-import { capitalize, groupBy, lowerCase, omitBy, snakeCase } from "lodash";
+import {
+  capitalize,
+  first,
+  groupBy,
+  last,
+  lowerCase,
+  omitBy,
+  snakeCase,
+} from "lodash";
 import { useCallback, useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { fontTheme } from "../global-themes";
@@ -68,10 +76,17 @@ export function MaterialsView() {
     [filters],
   );
 
-  const byCategory = useMemo(
-    () => Object.entries(groupBy(displayData, "category")),
-    [displayData],
-  );
+  const byCategory = useMemo(() => {
+    const keyed = displayData.flatMap((d) =>
+      d.type.map((t): [string, MatterEntry] => [t, d]),
+    );
+    const grouped = groupBy(keyed, first);
+    const mapped = Object.entries(grouped).map(
+      ([k, v]): [string, MatterEntry[]] => [k, v.map(([, e]) => e)],
+    );
+
+    return mapped;
+  }, [displayData]);
 
   return (
     <div
@@ -109,7 +124,7 @@ export function MaterialsView() {
           style={{ margin: 0 }}
         >
           {[...byCategory].map(([category, materials]) => (
-            <Grid key={category} item xs={6} md={2}>
+            <Grid key={category} item xs={12} sm={6} md={4} lg={3}>
               <List dense={true}>
                 <ListItemIcon>
                   <IconStyle src={`/icons/${snakeCase(category)}.png`} />

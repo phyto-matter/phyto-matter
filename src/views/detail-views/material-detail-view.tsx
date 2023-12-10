@@ -49,7 +49,7 @@ export function MaterialDetailView() {
     >
       <Container>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} sm={6} md={4} lg={3}>
             <Typography variant="h4" gutterBottom>
               {results.name}
             </Typography>
@@ -62,30 +62,20 @@ export function MaterialDetailView() {
               <ListItem>
                 <ListItemAvatar>
                   <StyledAvatar>
-                    <ParkIcon />
-                  </StyledAvatar>
-                </ListItemAvatar>
-                <ListItemText
-                  primary={
-                    <Typography style={{ color: phytoMatterBlackColor }}>
-                      Vegetation Type
-                    </Typography>
-                  }
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemAvatar>
-                  <StyledAvatar>
                     <LocalFloristIcon />
                   </StyledAvatar>
                 </ListItemAvatar>
                 <ListItemText
                   primary={
                     <Typography style={{ color: phytoMatterBlackColor }}>
-                      Plant Species
+                      Plant
                     </Typography>
                   }
-                  secondary={results.plant_species}
+                  secondary={capitalize(
+                    results.plant_species
+                      ? `${results.plant_genus} ${results.plant_genus}`
+                      : results.plant_genus,
+                  )}
                 />
               </ListItem>
               <ListItem>
@@ -100,7 +90,7 @@ export function MaterialDetailView() {
                       Category
                     </Typography>
                   }
-                  secondary={"Category"}
+                  secondary={capitalize(results.type.join(", "))}
                 />
               </ListItem>
               <ListItem>
@@ -115,7 +105,7 @@ export function MaterialDetailView() {
                       Material Function
                     </Typography>
                   }
-                  secondary={capitalize(results.function)}
+                  secondary={capitalize(results.function.join(", "))}
                 />
               </ListItem>
               <ListItem>
@@ -130,13 +120,13 @@ export function MaterialDetailView() {
                       Processing
                     </Typography>
                   }
-                  secondary={capitalize(results.processing)}
+                  secondary={capitalize(results.processing.join(", "))}
                 />
               </ListItem>
             </List>
           </Grid>
 
-          <Grid item xs={12} md={9}>
+          <Grid item xs={12} sm={6} md={8} lg={9}>
             <Typography variant="h4" gutterBottom>
               Projects
             </Typography>
@@ -150,7 +140,7 @@ export function MaterialDetailView() {
                 }}
               >
                 <Grid container>
-                  <Grid item xs={9}>
+                  <Grid item xs={12} md={8}>
                     <List>
                       <ListItemText
                         primary={
@@ -183,7 +173,7 @@ export function MaterialDetailView() {
                               Comment on phytoremediation process:
                             </Typography>
                           }
-                          secondary={capitalize(results.type)}
+                          secondary={capitalize(results.type.join(", "))}
                         />
                       ) : (
                         <></>
@@ -195,12 +185,12 @@ export function MaterialDetailView() {
                           }}
                         />
                         <Grid container>
-                          <Grid item xs={1}>
+                          <Grid item xs={3} md={2}>
                             <StyledAvatar>
                               <LinkIcon />
                             </StyledAvatar>
                           </Grid>
-                          <Grid item xs={11} style={{ marginTop: 5 }}>
+                          <Grid item xs={9} md={10} style={{ marginTop: 5 }}>
                             <Link
                               to={project.link}
                               rel="noopener noreferrer"
@@ -217,7 +207,7 @@ export function MaterialDetailView() {
                       </Box>
                     </List>
                   </Grid>
-                  <Grid item xs={2} zeroMinWidth>
+                  <Grid item xs={12} md={4} zeroMinWidth>
                     <img src={project.image} alt={""} width={200} />
                   </Grid>
                 </Grid>

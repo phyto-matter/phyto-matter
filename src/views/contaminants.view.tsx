@@ -116,7 +116,7 @@ export function ContaminantsView() {
       <Container style={{ marginTop: 80 }}>
         {[...byType].map(([contType, contaminants]) => (
           <Grid container spacing={2}>
-            <Grid item xs={2}>
+            <Grid item xs={12} sm={2}>
               <List sx={{ width: "100%" }} key={contType}>
                 {contaminants.map((contaminant, index) => (
                   <ListItem disablePadding key={contaminant.id}>
@@ -138,7 +138,7 @@ export function ContaminantsView() {
                 ))}
               </List>
             </Grid>
-            <Grid item xs={10}>
+            <Grid item xs={12} sm={10}>
               <List sx={{ width: "100%", paddingBottom: 5 }} key={contType}>
                 {contaminants.map((contaminant, index) => (
                   <ListItem disablePadding key={contaminant.id}>

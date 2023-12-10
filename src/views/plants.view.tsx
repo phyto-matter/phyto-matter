@@ -119,7 +119,7 @@ export function PlantsView() {
           style={{ margin: 0 }}
         >
           {[...byVegetationType].map(([vegType, plants]) => (
-            <Grid key={vegType} item xs={6} md={3}>
+            <Grid key={vegType} item xs={12} sm={6} md={4} lg={3}>
               <List dense={true}>
                 <ListItemIcon>
                   <IconStyle src={`/icons/${snakeCase(vegType)}.png`} />
