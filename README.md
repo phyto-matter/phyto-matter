@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+# Phyto Matter
+A collaboration between [@Phyto-Matter-Johanna](https://github.com/Phyto-Matter-Johanna) and [@Phyto-Matter-Nina](https://github.com/Phyto-Matter-Nina)
+Are you interested in remediating soils with plants (phyto) and making
+local plant-based materials (matter) on your site? Phyto-matter is an
+open-source platform that connects research and practice to improve
+current landscape development made by landscape architecture master
+students Nina Safavi and Johanna Larsson from Swedish University of
+Agricultural Sciences at Alnarp, Sweden.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Contributing to the project
+We accept pull requests! If you'd like to contribute data to the project, please open a PR with a CSV.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+To get started:
+1. Go to the relevant [data folder](https://github.com/phyto-matter/phyto-matter/tree/main/data)
+    - [Matter](https://github.com/phyto-matter/phyto-matter/tree/main/data/matter) is for adding new materials
+    - [Phyto](https://github.com/phyto-matter/phyto-matter/tree/main/data/phyto) is for adding new plants, contaminants, and removal rates
+2. View one of the added CSV files, and select "Download raw file" in the top right to get a local copy
+3. Create a new CSV file with your data, using the exact same columns as in the one you downloaded.
+4. Once satisfied, go to the folder in GitHub and select "Add File" in the top right to upload your CSV.
+   - Only approved collaborators can upload
+   - If you do not see the "Add file" option, please reach out to us to get added to the project
+5. You will be prompted to upload a file, and provide a commit message. Also be sure you select the "Create a new branch for this commit and start a pull request." option when you commit your changes.
+6. The PR will have a template filled in. Please update it with a proper title, description, and go through the check list.
+7. Assign us as reviewers, and we will reply to you with any changes needed
+   - Your data will automatically get tested to verify it meets our expectations
+   - If you get a red cross on your commit, please check what the errors are and fix them
