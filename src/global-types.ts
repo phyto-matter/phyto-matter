@@ -8,6 +8,7 @@ export type MaterialFilters = {
 
 export type PlantFilters = {
   latin_name: string;
+  common_name: string;
   contaminant: string;
   vegetation_type: string;
   hardiness_zone: string;

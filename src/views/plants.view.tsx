@@ -38,6 +38,7 @@ export function PlantsView() {
   const filters: PlantFilters = useMemo(
     () => ({
       latin_name: searchParams.get("latin_name") || "",
+      common_name: searchParams.get("common_name") || "",
       contaminant: searchParams.get("contaminant") || "",
       vegetation_type: searchParams.get("vegetation_type") || "",
       hardiness_zone: searchParams.get("hardiness_zone") || "",
@@ -78,7 +79,7 @@ export function PlantsView() {
     [filters],
   );
   const byVegetationType = useMemo(
-    () => Object.entries(groupBy(displayData, "vegetation_type")),
+    () => Object.entries(groupBy(displayData, "category")),
     [displayData],
   );
 

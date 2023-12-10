@@ -1,7 +1,7 @@
 import {
-  Box,
   Container,
   Divider,
+  Box,
   Grid,
   List,
   ListItem,
@@ -88,6 +88,51 @@ export function MaterialDetailView() {
                   secondary={results.plant_species}
                 />
               </ListItem>
+              <ListItem>
+                <ListItemAvatar>
+                  <StyledAvatar>
+                    <HomeIcon />
+                  </StyledAvatar>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={
+                    <Typography style={{ color: phytoMatterBlackColor }}>
+                      Category
+                    </Typography>
+                  }
+                  secondary={"Category"}
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemAvatar>
+                  <StyledAvatar>
+                    <CarpenterIcon />
+                  </StyledAvatar>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={
+                    <Typography style={{ color: phytoMatterBlackColor }}>
+                      Material Function
+                    </Typography>
+                  }
+                  secondary={capitalize(results.function)}
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemAvatar>
+                  <StyledAvatar>
+                    <ConstructionIcon />
+                  </StyledAvatar>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={
+                    <Typography style={{ color: phytoMatterBlackColor }}>
+                      Processing
+                    </Typography>
+                  }
+                  secondary={capitalize(results.processing)}
+                />
+              </ListItem>
             </List>
           </Grid>
 
@@ -95,77 +140,67 @@ export function MaterialDetailView() {
             <Typography variant="h4" gutterBottom>
               Projects
             </Typography>
-            <Box>
-              {results.projects.map((project) => (
-                <Container
-                  sx={{
-                    bgcolor: "background.paper",
-                    marginBottom: 2,
-                    paddingTop: 2,
-                    paddingBottom: 2,
-                  }}
-                >
-                  <Grid container>
-                    <Grid item xs={3}>
-                      <ListItem>
-                        <ListItemAvatar>
-                          <StyledAvatar>
-                            <HomeIcon />
-                          </StyledAvatar>
-                        </ListItemAvatar>
+            {results.projects.map((project) => (
+              <Container
+                sx={{
+                  bgcolor: "background.paper",
+                  marginBottom: 2,
+                  paddingTop: 2,
+                  paddingBottom: 2,
+                }}
+              >
+                <Grid container>
+                  <Grid item xs={9}>
+                    <List>
+                      <ListItemText
+                        primary={
+                          <Typography
+                            variant="h6"
+                            style={{ color: phytoMatterBlackColor }}
+                          >
+                            <b>{project.title}</b>
+                          </Typography>
+                        }
+                        secondary={startCase(project.author)}
+                      />
+                      <ListItemText
+                        primary={
+                          <Typography style={{ color: phytoMatterBlackColor }}>
+                            {project.about}
+                          </Typography>
+                        }
+                      />
+                      {project.comment ? (
                         <ListItemText
+                          sx={{
+                            marginTop: 4,
+                          }}
                           primary={
                             <Typography
+                              variant="subtitle1"
                               style={{ color: phytoMatterBlackColor }}
                             >
-                              Category
+                              Comment on phytoremediation process:
                             </Typography>
                           }
                           secondary={capitalize(results.type)}
                         />
-                      </ListItem>
-                      <ListItem>
-                        <ListItemAvatar>
-                          <StyledAvatar>
-                            <CarpenterIcon />
-                          </StyledAvatar>
-                        </ListItemAvatar>
-                        <ListItemText
-                          primary={
-                            <Typography
-                              style={{ color: phytoMatterBlackColor }}
-                            >
-                              Material Function
-                            </Typography>
-                          }
-                          secondary={capitalize(results.function)}
+                      ) : (
+                        <></>
+                      )}
+                      <Box>
+                        <Divider
+                          style={{
+                            margin: 10,
+                          }}
                         />
-                      </ListItem>
-                      <ListItem>
-                        <ListItemAvatar>
-                          <StyledAvatar>
-                            <ConstructionIcon />
-                          </StyledAvatar>
-                        </ListItemAvatar>
-                        <ListItemText
-                          primary={
-                            <Typography
-                              style={{ color: phytoMatterBlackColor }}
-                            >
-                              Processing
-                            </Typography>
-                          }
-                          secondary={capitalize(results.processing)}
-                        />
-                      </ListItem>
-                      <ListItem>
-                        <ListItemAvatar>
-                          <StyledAvatar>
-                            <LinkIcon />
-                          </StyledAvatar>
-                        </ListItemAvatar>
-                        <ListItemText
-                          secondary={
+                        <Grid container>
+                          <Grid item xs={1}>
+                            <StyledAvatar>
+                              <LinkIcon />
+                            </StyledAvatar>
+                          </Grid>
+                          <Grid item xs={11} style={{ marginTop: 5 }}>
                             <Link
                               to={project.link}
                               rel="noopener noreferrer"
@@ -177,72 +212,17 @@ export function MaterialDetailView() {
                             >
                               Project Link
                             </Link>
-                          }
-                        />
-                      </ListItem>
-                    </Grid>
-                    <Divider
-                      orientation="vertical"
-                      variant="middle"
-                      flexItem
-                      sx={{ marginRight: 2 }}
-                    />
-                    <Grid item xs={6}>
-                      <List>
-                        <ListItemText
-                          primary={
-                            <Typography
-                              variant="h6"
-                              style={{ color: phytoMatterBlackColor }}
-                            >
-                              <b>{project.title}</b>
-                            </Typography>
-                          }
-                          secondary={startCase(project.author)}
-                        />
-                        <ListItemText
-                          primary={
-                            <Typography
-                              style={{ color: phytoMatterBlackColor }}
-                            >
-                              {project.about}
-                            </Typography>
-                          }
-                        />
-                        {project.comment ? (
-                          <ListItemText
-                            sx={{
-                              marginTop: 4,
-                            }}
-                            primary={
-                              <Typography
-                                variant="subtitle1"
-                                style={{ color: phytoMatterBlackColor }}
-                              >
-                                Comment on phytoremediation process:
-                              </Typography>
-                            }
-                            secondary={
-                              <Typography
-                                variant="body2"
-                                style={{ color: phytoMatterBlackColor }}
-                              >
-                                {project.comment}
-                              </Typography>
-                            }
-                          />
-                        ) : (
-                          <></>
-                        )}
-                      </List>
-                    </Grid>
-                    <Grid item xs={2} zeroMinWidth>
-                      <img src={project.image} alt={""} width={200} />
-                    </Grid>
+                          </Grid>
+                        </Grid>
+                      </Box>
+                    </List>
                   </Grid>
-                </Container>
-              ))}
-            </Box>
+                  <Grid item xs={2} zeroMinWidth>
+                    <img src={project.image} alt={""} width={200} />
+                  </Grid>
+                </Grid>
+              </Container>
+            ))}
           </Grid>
         </Grid>
       </Container>

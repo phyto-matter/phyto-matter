@@ -2,6 +2,7 @@ import React from "react";
 import {
   Chip,
   Container,
+  Box,
   Grid,
   List,
   ListItem,
@@ -23,6 +24,11 @@ import HardwareIcon from "@mui/icons-material/Hardware";
 import WaterfallChartIcon from "@mui/icons-material/WaterfallChart";
 import { Link, useParams } from "react-router-dom";
 import { NORMALISED_PHYTO_DATA } from "../../utils/get-normalised-phyto-data";
+import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
+import AcUnitIcon from "@mui/icons-material/AcUnit";
+import EmojiNatureIcon from "@mui/icons-material/EmojiNature";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import SpaIcon from "@mui/icons-material/Spa";
 
 import { capitalize, keyBy, snakeCase } from "lodash";
 import {
@@ -35,6 +41,8 @@ import {
   SoilDescription,
   StyledAvatar,
 } from "../../global-constants";
+import { PlantDetailSeasonDescriptions } from "../../components/plant-detail-season-descriptions";
+import { PlantDetailInfo } from "../../components/plant-detail-info";
 
 export function PlantDetailView() {
   const { id } = useParams();
@@ -68,117 +76,31 @@ export function PlantDetailView() {
     >
       <Container>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={6} md={3}>
             <Typography variant="h4" gutterBottom color={phytoMatterBlackColor}>
-              {plant.genus}, {plant.species}
+              {plant.genus} {plant.species}
             </Typography>
             <Typography
               variant="subtitle1"
               gutterBottom
               color={phytoMatterBlackColor}
             >
-              {plant.genus}, {plant.species}
+              {plant.cultivar}
             </Typography>
-            <Grid container>
-              <Grid item xs={6}>
-                {plant.image ? (
-                  <img src={plant.image} alt={""} />
-                ) : (
-                  <IconStyle src={`/icons/${snakeCase(plant.category)}.png`} />
-                )}
-              </Grid>
-              <Grid item xs={6}>
-                <List
-                  sx={{
-                    width: "100%",
-                    maxWidth: 360,
-                    bgcolor: phytoMatterGreenColor,
-                  }}
-                >
-                  <ListItem>
-                    <ListItemAvatar>
-                      <StyledAvatar>
-                        <ParkIcon />
-                      </StyledAvatar>
-                    </ListItemAvatar>
-                    <ListItemText
-                      primary={
-                        <Typography style={{ color: phytoMatterBlackColor }}>
-                          Vegetation Type
-                        </Typography>
-                      }
-                      secondary={capitalize(plant.category)}
-                    />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemAvatar>
-                      <StyledAvatar>
-                        <LayersIcon />
-                      </StyledAvatar>
-                    </ListItemAvatar>
-                    <ListItemText
-                      primary={
-                        <Typography style={{ color: phytoMatterBlackColor }}>
-                          Soil
-                        </Typography>
-                      }
-                      secondary={
-                        <Tooltip
-                          title={SoilDescription}
-                          placement="bottom-start"
-                        >
-                          <span>{plant.soil_type}</span>
-                        </Tooltip>
-                      }
-                    />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemAvatar>
-                      <StyledAvatar>
-                        <HardwareIcon />
-                      </StyledAvatar>
-                    </ListItemAvatar>
-                    <ListItemText
-                      primary={
-                        <Typography style={{ color: phytoMatterBlackColor }}>
-                          Hardiness
-                        </Typography>
-                      }
-                      secondary={
-                        <Tooltip
-                          title={HardinessDescription}
-                          placement="bottom-start"
-                        >
-                          <span>{plant.us_hardiness_zone}</span>
-                        </Tooltip>
-                      }
-                    />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemAvatar>
-                      <StyledAvatar>
-                        <WaterfallChartIcon />
-                      </StyledAvatar>
-                    </ListItemAvatar>
-                    <ListItemText
-                      primary={
-                        <Typography style={{ color: phytoMatterBlackColor }}>
-                          Moisture
-                        </Typography>
-                      }
-                      secondary={
-                        <Tooltip
-                          title={MoistureDescription}
-                          placement="bottom-start"
-                        >
-                          <span>{plant.moisture}</span>
-                        </Tooltip>
-                      }
-                    />
-                  </ListItem>
-                </List>
-              </Grid>
-            </Grid>
+            <Typography
+              variant="subtitle1"
+              gutterBottom
+              color={phytoMatterBlackColor}
+            >
+              <i>{plant.category}</i>
+            </Typography>
+          </Grid>
+          <Grid item xs={6} md={3}>
+            {plant.image ? (
+              <img src={plant.image} alt={""} />
+            ) : (
+              <IconStyle src={`/icons/${snakeCase(plant.category)}.png`} />
+            )}
           </Grid>
           <Grid item xs={12} md={6}>
             <TableContainer sx={{ maxHeight: 400 }} component={Paper}>
@@ -251,6 +173,8 @@ export function PlantDetailView() {
               </Table>
             </TableContainer>
           </Grid>
+          <PlantDetailInfo plant={plant} />
+          <PlantDetailSeasonDescriptions plant={plant} />
           <Grid item xs={12}>
             <Typography variant="h5" gutterBottom color={phytoMatterBlackColor}>
               References

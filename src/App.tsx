@@ -6,7 +6,7 @@ import { FrontPageView } from "./views/front-page.view";
 import { PlantsView } from "./views/plants.view";
 import { ContaminantsView } from "./views/contaminants.view";
 import { MaterialsView } from "./views/materials.view";
-import { TopMenu } from "./components/topMenu";
+import { TopMenu } from "./components/top-menu";
 import { PlantDetailView } from "./views/detail-views/plant-detail-view";
 import { ContaminantDetailView } from "./views/detail-views/contaminant-detail-view";
 import { MaterialDetailView } from "./views/detail-views/material-detail-view";

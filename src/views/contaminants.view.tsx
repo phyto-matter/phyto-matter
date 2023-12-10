@@ -113,7 +113,7 @@ export function ContaminantsView() {
           }}
         />
       </Container>
-      <Container style={{ marginTop: 50 }}>
+      <Container style={{ marginTop: 80 }}>
         {[...byType].map(([contType, contaminants]) => (
           <Grid container spacing={2}>
             <Grid item xs={2}>

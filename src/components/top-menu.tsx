@@ -38,7 +38,7 @@ export function TopMenu() {
       }}
     >
       <Grid container spacing={2} alignItems="center" justifyContent="center">
-        <Grid>
+        <Grid item xs={3}>
           <Link to="/">
             <img
               alt={""}
@@ -47,7 +47,7 @@ export function TopMenu() {
             />
           </Link>
         </Grid>
-        <Grid>
+        <Grid item xs={2}>
           <StyledButton
             disableRipple
             onClick={() => navigate("/plants")}
@@ -59,7 +59,7 @@ export function TopMenu() {
             }}
           ></StyledButton>
         </Grid>
-        <Grid>
+        <Grid item xs={3}>
           <StyledButton
             disableRipple
             onClick={() => navigate("/contaminants")}
@@ -71,21 +71,19 @@ export function TopMenu() {
             }}
           ></StyledButton>
         </Grid>
-        {
-          <Grid>
-            <StyledButton
-              disableRipple
-              onClick={() => navigate("/materials")}
-              style={{
-                width: 130,
-                backgroundImage: location.pathname.startsWith("/materials")
-                  ? "url(/icons/materials-brown-title.png)"
-                  : "url(/icons/materials-title.png)",
-              }}
-            ></StyledButton>
-          </Grid>
-        }
-        <Grid>
+        <Grid item xs={3}>
+          <StyledButton
+            disableRipple
+            onClick={() => navigate("/materials")}
+            style={{
+              width: 130,
+              backgroundImage: location.pathname.startsWith("/materials")
+                ? "url(/icons/materials-brown-title.png)"
+                : "url(/icons/materials-title.png)",
+            }}
+          ></StyledButton>
+        </Grid>
+        <Grid item xs={1}>
           <StyledButton
             disableRipple
             onClick={() => navigate("/calculator")}
