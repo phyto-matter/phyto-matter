@@ -107,7 +107,7 @@ function mapContaminants(entries: any[]): ContaminantEntry[] {
     .flatMap((v) => values(groupBy(v, "tissue_type")))
     .map(
       ([first, ...rest]): ContaminantEntry => ({
-        id: first.symbol,
+        id: first.name,
         name: first.name,
         abbreviation: first.abbreviation,
         category: first.category,
@@ -117,7 +117,7 @@ function mapContaminants(entries: any[]): ContaminantEntry[] {
             removal_rate: Number(rate.removal_rate.trim()),
             notes: rate.notes.trim(),
             reference: {
-              title: rate.titlee,
+              title: rate.title,
               reference: rate.reference,
               type: rate.reference_type,
               link: rate.link,
