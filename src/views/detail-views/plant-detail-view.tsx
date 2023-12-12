@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useMemo } from "react";
 import {
-  Chip,
   Container,
   Grid,
   Paper,
@@ -10,32 +9,35 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Tooltip,
   Typography,
 } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import { NORMALISED_PHYTO_DATA } from "../../utils/get-normalised-phyto-data";
 
-import { capitalize, keyBy, snakeCase } from "lodash";
+import { capitalize, snakeCase, uniqBy } from "lodash";
 import {
   IconStyle,
   phytoMatterBlackColor,
   phytoMatterGreenColor,
-  phytoMatterYellowColor,
 } from "../../global-constants";
 import { PlantDetailSeasonDescriptions } from "../../components/plant-detail-season-descriptions";
 import { PlantDetailInfo } from "../../components/plant-detail-info";
+import { getPlantRates } from "../../hooks/use-plant-suggestions";
 
 export function PlantDetailView() {
   const { id } = useParams();
-  const plant = NORMALISED_PHYTO_DATA.find((_) => _.id === id);
-  const references = Object.values(
-    keyBy(
-      (plant?.contaminants ?? [])
-        .flatMap((_) => _.removal_rates)
-        .map((_) => _.reference),
-      "reference",
-    ),
+  const [plant, results] = useMemo(() => {
+    const p = NORMALISED_PHYTO_DATA.filter((_) => _.id === id);
+
+    return [p[0], getPlantRates(p)];
+  }, [id]);
+  const references = useMemo(
+    () =>
+      uniqBy(
+        results.flatMap((_) => _.references),
+        "reference",
+      ),
+    [results],
   );
 
   if (!plant) {
@@ -53,6 +55,7 @@ export function PlantDetailView() {
       style={{
         backgroundColor: phytoMatterGreenColor,
         paddingTop: 150,
+        paddingBottom: 20,
         minHeight: "100vh",
       }}
     >
@@ -90,67 +93,46 @@ export function PlantDetailView() {
                 <TableHead>
                   <TableRow>
                     <TableCell>
-                      <Typography
-                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
-                      >
-                        <b>Contaminant</b>
-                      </Typography>
+                      <b>Contaminant</b>
                     </TableCell>
                     <TableCell>
-                      <Typography
-                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
-                      >
-                        <b>Tissue type</b>
-                      </Typography>
+                      <b>Tissue type</b>
                     </TableCell>
                     <TableCell>
-                      <Typography
-                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
-                      >
-                        <b>Removal Rate</b>
-                      </Typography>
+                      <b>Removal Rate</b>
                     </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {plant.contaminants.flatMap((c) =>
-                    c.removal_rates.map((r) => (
-                      <TableRow>
-                        <TableCell>
-                          <Link to={`/contaminants/${c.id}`}>
-                            <Tooltip
-                              title={capitalize(c.abbreviation)}
-                              placement="right"
-                            >
-                              <Chip
-                                label={capitalize(c.name)}
-                                size="small"
-                                variant="outlined"
-                                sx={{
-                                  backgroundColor: phytoMatterYellowColor,
-                                  borderColor: phytoMatterYellowColor,
-                                }}
-                              />
-                            </Tooltip>
-                          </Link>
-                        </TableCell>
-                        <TableCell>{capitalize(c.tissue_type)}</TableCell>
-                        <TableCell>
-                          {r.removal_rate
-                            ? r.removal_rate.toLocaleString()
-                            : "No data"}{" "}
-                          mg/kg
-                          <sup>
-                            (
-                            {references.findIndex(
-                              (_) => _.reference === r.reference.reference,
-                            ) + 1}
-                            )
-                          </sup>
-                        </TableCell>
-                      </TableRow>
-                    )),
-                  )}
+                  {results.map((suggestion) => (
+                    <TableRow>
+                      <TableCell>
+                        <Link to={`/contaminants/${suggestion.contaminantId}`}>
+                          {suggestion.contaminant}
+                        </Link>
+                      </TableCell>
+                      <TableCell>
+                        {capitalize(suggestion.tissue_type)}
+                      </TableCell>
+                      <TableCell>
+                        {suggestion.upper_rate
+                          ? suggestion.lower_rate
+                            ? `${suggestion.lower_rate.toLocaleString()} - ${suggestion.upper_rate.toLocaleString()} mg/kg`
+                            : `${suggestion.upper_rate.toLocaleString()} mg/kg`
+                          : "No data"}{" "}
+                        <sup>
+                          {suggestion.references.map(
+                            (r) =>
+                              `(${
+                                references.findIndex(
+                                  (_) => _.reference === r.reference,
+                                ) + 1
+                              })`,
+                          )}
+                        </sup>
+                      </TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             </TableContainer>
