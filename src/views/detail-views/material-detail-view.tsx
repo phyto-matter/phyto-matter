@@ -43,6 +43,7 @@ export function MaterialDetailView() {
       style={{
         backgroundColor: phytoMatterBrownColor,
         paddingTop: 150,
+        paddingBottom: 20,
         minHeight: "100vh",
       }}
     >

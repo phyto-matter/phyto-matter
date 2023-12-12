@@ -59,12 +59,9 @@ describe("NORMALISED_PHYTO_DATA", () => {
       });
 
       describe("removal_rates", () => {
-        test("removal_rate is never empty", () => {
-          expect(entries.every((_) => _.removal_rate)).toBe(true);
-        });
         test("removal_rate is numeric", () => {
           expect(
-            entries.every((_) => !Number.isNaN(Number(_.removal_rate))),
+            entries.every((_) => !Number.isNaN(Number(_.removal_rate || 0))),
           ).toBe(true);
         });
       });

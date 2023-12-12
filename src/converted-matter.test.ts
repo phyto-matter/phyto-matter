@@ -20,6 +20,9 @@ describe("NORMALISED_MATTER_DATA", () => {
         test("plant_genus is never empty", () => {
           expect(entries.every((_) => _.plant_genus)).toBe(true);
         });
+        test("name is never empty", () => {
+          expect(entries.every((_) => _.name)).toBe(true);
+        });
         test("type is valid", () => {
           expect(
             entries.every((_) => allValidOrEmpty(_.type, VALID_MATERIAL_TYPES)),

@@ -11,7 +11,8 @@ export type ReferenceEntry = {
 
 export type RemovalRateEntry = {
   removal_rate: number;
-  notes: string;
+  tissue_type: string;
+  notes?: string;
   reference: ReferenceEntry;
 };
 
@@ -20,34 +21,33 @@ export type ContaminantEntry = {
   name: string;
   abbreviation: string;
   category: string;
-  image: string;
+  image?: string;
   removal_rates: RemovalRateEntry[];
-  tissue_type: string;
   mass_kg_m2: number;
 };
 
 export type PlantEntry = {
   id: string;
   genus: string;
-  cultivar: string;
+  cultivar?: string;
   category: string;
   species: string;
-  organic_inorganic: string;
-  phyto_process: string;
-  growth_rate: string;
-  image: string;
+  organic_inorganic?: string;
+  phyto_process?: string;
+  growth_rate?: string;
+  image?: string;
   contaminants: ContaminantEntry[];
-  us_hardiness_zone: string;
-  shade: string;
-  soil_type: string;
-  soil_ph: string;
-  moisture: string;
-  height: string;
-  geography: string;
-  seasonal_interest_spring: string;
-  seasonal_interest_summer: string;
-  seasonal_interest_fall: string;
-  seasonal_interest_winter: string;
+  us_hardiness_zone?: string;
+  shade?: string;
+  soil_type?: string;
+  soil_ph?: string;
+  moisture?: string;
+  height?: string;
+  geography?: string;
+  seasonal_interest_spring?: string;
+  seasonal_interest_summer?: string;
+  seasonal_interest_fall?: string;
+  seasonal_interest_winter?: string;
   contributingCount: number;
 };
 
@@ -88,44 +88,44 @@ function getNormalisedPhytoData() {
 }
 
 function mapContaminants(entries: any[]): ContaminantEntry[] {
-  const mapped = entries.map((e): any => ({
-    name: e.contaminant.trim(),
-    abbreviation: e.contaminant_abbreviation.trim(),
-    category: lowerCase(e.contaminant_type.trim()) || "unknown",
-    removal_rate: e.removal_rate,
-    notes: e.notes,
-    tissue_type: e.plant_tissue.trim(),
-    title: e.article_title || e.book_title,
-    reference: e.article_reference || e.book_reference,
-    link: e.article_link || e.book_link,
-    reference_type: e.book_title ? "book" : "article",
-    mass_kg_m2: e.plant_mass_kg_m_2,
-    image: e.contaminant_image,
-  }));
+  const mapped = entries
+    .map((e): any => ({
+      name: e.contaminant.trim(),
+      abbreviation: e.contaminant_abbreviation.trim(),
+      category: lowerCase(e.contaminant_type.trim()) || "unknown",
+      removal_rate: e.removal_rate,
+      notes: e.notes,
+      tissue_type: e.plant_tissue.trim(),
+      title: e.book_title || e.article_title,
+      reference: e.book_reference || e.article_reference,
+      link: e.book_link || e.article_link,
+      reference_type: e.book_title ? "book" : "article",
+      mass_kg_m2: e.mass_kg_m_2,
+      image: e.contaminant_image,
+    }))
+    .map((e) => ({ ...e, id: `${e.name}` }));
 
-  return values(groupBy(mapped, "id"))
-    .flatMap((v) => values(groupBy(v, "tissue_type")))
-    .map(
-      ([first, ...rest]): ContaminantEntry => ({
-        id: first.name,
-        name: first.name,
-        abbreviation: first.abbreviation,
-        category: first.category,
-        image: first.image,
-        removal_rates: [first, ...rest].map(
-          (rate): RemovalRateEntry => ({
-            removal_rate: Number(rate.removal_rate.trim()),
-            notes: rate.notes.trim(),
-            reference: {
-              title: rate.title,
-              reference: rate.reference,
-              type: rate.reference_type,
-              link: rate.link,
-            },
-          }),
-        ),
-        tissue_type: first.tissue_type,
-        mass_kg_m2: Number(first.mass_kg_m2 || 0),
-      }),
-    );
+  return values(groupBy(mapped, "id")).map(
+    ([first, ...rest]): ContaminantEntry => ({
+      id: first.id,
+      name: first.name,
+      abbreviation: first.abbreviation,
+      category: first.category,
+      image: first.image,
+      removal_rates: [first, ...rest].map(
+        (rate): RemovalRateEntry => ({
+          removal_rate: Number(rate.removal_rate.trim()),
+          notes: rate.notes.trim(),
+          tissue_type: rate.tissue_type,
+          reference: {
+            title: rate.title,
+            reference: rate.reference,
+            type: rate.reference_type,
+            link: rate.link,
+          },
+        }),
+      ),
+      mass_kg_m2: Number(first.mass_kg_m2 || 0),
+    }),
+  );
 }

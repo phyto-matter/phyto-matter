@@ -7,13 +7,13 @@ export type ProjectEntry = {
   author: string;
   about: string;
   link: string;
-  image: string;
-  comment: string;
+  image?: string;
+  comment?: string;
 };
 
 export type MatterEntry = {
   id: string;
-  plant_species: string;
+  plant_species?: string;
   plant_genus: string;
   name: string;
   processing: string[];

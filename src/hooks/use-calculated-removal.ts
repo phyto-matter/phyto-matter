@@ -1,4 +1,4 @@
-import { ContaminantSuggestion } from "./use-plant-suggestions";
+import { ContaminantRates } from "./use-plant-suggestions";
 import { useMemo } from "react";
 
 export type TableRowEntry = {
@@ -12,7 +12,7 @@ const labels = Array(12)
 
 export function useCalculatedRemoval(
   entries: TableRowEntry[],
-  suggestions: ContaminantSuggestion[],
+  suggestions: ContaminantRates[],
 ) {
   const suggestionMap = useMemo(
     () => new Map(suggestions.map((s) => [s.contaminant, s])),
@@ -36,13 +36,13 @@ export function useCalculatedRemoval(
 
 function removalOverTime(
   concentration: number,
-  suggestion: ContaminantSuggestion,
+  suggestion: ContaminantRates,
 ): number[] {
   return labels
     .map(
       (_, i) =>
         concentration -
-        i * (suggestion.upper_rate * (suggestion.mass_kg_m2 || 0)),
+        i * ((suggestion.upper_rate || 0) * (suggestion.mass_kg_m2 || 0)),
     )
     .map((i) => (i > 0 ? i : 0));
 }

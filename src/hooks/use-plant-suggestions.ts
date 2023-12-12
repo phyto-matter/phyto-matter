@@ -4,12 +4,15 @@ import {
   NORMALISED_PHYTO_DATA,
   PlantEntry,
   ReferenceEntry,
+  RemovalRateEntry,
 } from "../utils/get-normalised-phyto-data";
 import { uniqBy } from "lodash";
 
-export type ContaminantSuggestion = {
+export type ContaminantRates = {
   contaminantId: string;
   contaminant: string;
+  abbreviation: string;
+  category: string;
   plantId: string;
   plant: string;
   vegetation_type: string;
@@ -22,7 +25,7 @@ export type ContaminantSuggestion = {
 
 export function usePlantSuggestions(
   contaminants: string[],
-): ContaminantSuggestion[] {
+): ContaminantRates[] {
   const byContaminant = useMemo(() => {
     const grouped = new Map<string, PlantEntry[]>();
 
@@ -42,58 +45,77 @@ export function usePlantSuggestions(
       contaminants.flatMap((c) => {
         const candidates = byContaminant.get(c) || [];
 
-        const suggestions = candidates
-          .flatMap((p) =>
-            p.contaminants
-              .filter((_) => _.name === c)
-              .map((c): [PlantEntry, ContaminantEntry] => [p, c]),
-          )
-          .reduce(
-            (agg, [pla, con]) => {
-              const existing = agg[con.abbreviation];
-              const suggestion: ContaminantSuggestion = existing || {
-                contaminantId: con.id,
-                contaminant: con.name,
-                plantId: pla.id,
-                plant: pla.genus,
-                vegetation_type: pla.category,
-                tissue_type: con.tissue_type,
-                mass_kg_m2: con.mass_kg_m2,
-                lower_rate: 0,
-                upper_rate: 0,
-                references: [],
-              };
-              const allRates = con.removal_rates
-                .map((_) => _.removal_rate)
-                .concat(
-                  [suggestion.lower_rate, suggestion.upper_rate].filter(
-                    Boolean,
-                  ),
-                )
-                .sort();
-
-              return {
-                ...agg,
-                [con.abbreviation]: {
-                  ...suggestion,
-                  lower_rate: allRates.at(0) || 0,
-                  upper_rate: allRates.at(-1) || 0,
-                  references: uniqBy(
-                    [
-                      ...suggestion.references,
-                      ...con.removal_rates.map((_) => _.reference),
-                    ],
-                    "reference",
-                  ),
-                },
-              };
-            },
-            {} as { [k: string]: ContaminantSuggestion },
-          );
-
-        return Object.values(suggestions);
+        return getPlantRates(candidates, c);
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [contaminants.sort().join(), byContaminant],
   );
+}
+
+export function getPlantRates(
+  plants: PlantEntry[],
+  specificContaminant?: string,
+): ContaminantRates[] {
+  const suggestions = plants
+    .flatMap((p) =>
+      p.contaminants
+        .filter((_) => !specificContaminant || _.name === specificContaminant)
+        .flatMap((c) =>
+          c.removal_rates.map(
+            (r): [PlantEntry, ContaminantEntry, RemovalRateEntry] => [p, c, r],
+          ),
+        ),
+    )
+    .reduce(
+      (agg, [pla, con, rate]) => {
+        const existingIndex = agg[con.abbreviation]?.findIndex(
+          ({ plantId, tissue_type }) =>
+            pla.id === plantId && rate.tissue_type === tissue_type,
+        );
+        const existing =
+          existingIndex >= 0 && agg[con.abbreviation][existingIndex];
+        const suggestion: ContaminantRates = existing || {
+          contaminantId: con.id,
+          contaminant: con.name,
+          abbreviation: con.abbreviation,
+          category: con.category,
+          plantId: pla.id,
+          plant: pla.genus,
+          vegetation_type: pla.category,
+          tissue_type: rate.tissue_type,
+          mass_kg_m2: con.mass_kg_m2,
+          lower_rate: 0,
+          upper_rate: 0,
+          references: [],
+        };
+        const allRates = [
+          suggestion.lower_rate,
+          suggestion.upper_rate,
+          rate.removal_rate,
+        ]
+          .filter(Boolean)
+          .sort();
+
+        return {
+          ...agg,
+          [con.abbreviation]: [
+            ...(agg[con.abbreviation] || []).filter(
+              (_, i) => existingIndex < 0 || existingIndex !== i,
+            ),
+            {
+              ...suggestion,
+              lower_rate: allRates.length > 1 ? allRates[0] : 0,
+              upper_rate: allRates.at(-1) || 0,
+              references: uniqBy(
+                [...suggestion.references, rate.reference],
+                "reference",
+              ),
+            },
+          ],
+        };
+      },
+      {} as { [k: string]: ContaminantRates[] },
+    );
+
+  return Object.values(suggestions).flat();
 }

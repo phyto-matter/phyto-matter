@@ -96,6 +96,7 @@ export function CalculatorView() {
       sx={{ padding: 3 }}
       style={{
         paddingTop: 150,
+        paddingBottom: 20,
         minHeight: "100vh",
       }}
     >
@@ -199,8 +200,10 @@ export function CalculatorView() {
                     </TableCell>
                     <TableCell>{capitalize(suggestion.tissue_type)}</TableCell>
                     <TableCell>
-                      {suggestion.lower_rate && suggestion.upper_rate
-                        ? `${suggestion.lower_rate.toLocaleString()} - ${suggestion.upper_rate.toLocaleString()} mg/kg`
+                      {suggestion.upper_rate
+                        ? suggestion.lower_rate
+                          ? `${suggestion.lower_rate.toLocaleString()} - ${suggestion.upper_rate.toLocaleString()} mg/kg`
+                          : `${suggestion.upper_rate.toLocaleString()} mg/kg`
                         : "No data"}{" "}
                       <sup>
                         {suggestion.references.map(
