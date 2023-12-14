@@ -37,7 +37,7 @@ export function PlantsView() {
   const [searchParams, setSearchParams] = useSearchParams();
   const filters: PlantFilters = useMemo(
     () => ({
-      latin_name: searchParams.get("latin_name") || "",
+      genus: searchParams.get("genus") || "",
       common_name: searchParams.get("common_name") || "",
       contaminant: searchParams.get("contaminant") || "",
       vegetation_type: searchParams.get("vegetation_type") || "",
@@ -65,8 +65,8 @@ export function PlantsView() {
     () =>
       NORMALISED_PHYTO_DATA.filter((e) => {
         return (
-          (!filters.latin_name ||
-            lowerCase(e.genus).includes(lowerCase(filters.latin_name))) &&
+          (!filters.genus ||
+            lowerCase(e.genus).includes(lowerCase(filters.genus))) &&
           (!filters.contaminant ||
             e.contaminants.some((c) => c.name === filters.contaminant)) &&
           (!filters.hardiness_zone ||
@@ -214,8 +214,8 @@ function Controls({
           freeSolo
           options={displayData.map((option) => option.genus)}
           sx={{ width: 300, maxWidth: "100%" }}
-          onInputChange={(_, val) => updateFilters({ latin_name: val })}
-          renderInput={(params) => <TextField {...params} label="Latin Name" />}
+          onInputChange={(_, val) => updateFilters({ genus: val })}
+          renderInput={(params) => <TextField {...params} label="Genus" />}
         />
       </Grid>
       <Grid item xs={6} md={3}>

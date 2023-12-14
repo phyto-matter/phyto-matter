@@ -23,6 +23,7 @@ import {
 import { PlantDetailSeasonDescriptions } from "../../components/plant-detail-season-descriptions";
 import { PlantDetailInfo } from "../../components/plant-detail-info";
 import { getPlantRates } from "../../hooks/use-plant-suggestions";
+import { NORMALISED_MATTER_DATA } from "../../utils/get-normalised-matter-data";
 
 export function PlantDetailView() {
   const { id } = useParams();
@@ -38,6 +39,10 @@ export function PlantDetailView() {
         "reference",
       ),
     [results],
+  );
+  const materials = useMemo(
+    () => NORMALISED_MATTER_DATA.filter((_) => _.plant_genus === plant?.genus),
+    [plant],
   );
 
   if (!plant) {
@@ -188,6 +193,51 @@ export function PlantDetailView() {
                           {ref.reference}
                         </a>
                       </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="h5" gutterBottom color={phytoMatterBlackColor}>
+              Related Materials
+            </Typography>
+            <TableContainer sx={{ maxHeight: 400 }} component={Paper}>
+              <Table stickyHeader>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>
+                      <Typography
+                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
+                      >
+                        <b>Name</b>
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography
+                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
+                      >
+                        <b>Type</b>
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography
+                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
+                      >
+                        <b>Function</b>
+                      </Typography>
+                    </TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {materials.map((ref, i) => (
+                    <TableRow key={i}>
+                      <TableCell>
+                        <Link to={`/materials/${ref.id}`}>{ref.name}</Link>
+                      </TableCell>
+                      <TableCell>{ref.type.join(", ")}</TableCell>
+                      <TableCell>{ref.function.join(", ")}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

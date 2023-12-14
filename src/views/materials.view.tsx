@@ -66,7 +66,10 @@ export function MaterialsView() {
           (!filters.name ||
             lowerCase(e.name).includes(lowerCase(filters.name))) &&
           (!filters.category || e.type.includes(filters.category)) &&
-          (!filters.plant_genus || e.plant_genus === filters.plant_genus) &&
+          (!filters.plant_genus ||
+            lowerCase(e.plant_genus).includes(
+              lowerCase(filters.plant_genus),
+            )) &&
           (!filters.material_function ||
             e.function.includes(filters.material_function)) &&
           (!filters.processing || e.processing.includes(filters.processing))

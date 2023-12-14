@@ -71,11 +71,15 @@ export function MaterialDetailView() {
                       Plant
                     </Typography>
                   }
-                  secondary={capitalize(
-                    results.plant_species
-                      ? `${results.plant_genus} ${results.plant_genus}`
-                      : results.plant_genus,
-                  )}
+                  secondary={
+                    <Link to={`/plants?genus=${results.plant_genus}`}>
+                      {capitalize(
+                        results.plant_species
+                          ? `${results.plant_genus} ${results.plant_genus}`
+                          : results.plant_genus,
+                      )}
+                    </Link>
+                  }
                 />
               </ListItem>
               <ListItem>
