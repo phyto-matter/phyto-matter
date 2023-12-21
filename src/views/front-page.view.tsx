@@ -37,6 +37,7 @@ export function FrontPageView() {
           <a
             href="https://github.com/phyto-matter/phyto-matter?tab=readme-ov-file#phyto-matter"
             target="_blank"
+            rel="noreferrer"
           >
             We encourage participants and users of this tool to contact us with
             any feedback or ideas on how to develop newer versions in the
@@ -108,6 +109,7 @@ export function FrontPageView() {
           <a
             href="https://github.com/phyto-matter/phyto-matter?tab=readme-ov-file#phyto-matter"
             target="_blank"
+            rel="noreferrer"
           >
             Click here to find out how!
           </a>
@@ -157,6 +159,7 @@ export function FrontPageView() {
           <a
             href="https://github.com/phyto-matter/phyto-matter?tab=readme-ov-file#phyto-matter"
             target="_blank"
+            rel="noreferrer"
           >
             open source GitHub platform.
           </a>{" "}
