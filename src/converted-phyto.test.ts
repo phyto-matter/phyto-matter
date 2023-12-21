@@ -12,57 +12,51 @@ describe("NORMALISED_PHYTO_DATA", () => {
 
   Object.entries(bySource).forEach(([source, entries]) => {
     describe(`${source} contains valid rows`, () => {
-      describe("reference", () => {
-        test("reference is never empty", () => {
-          expect(
-            entries.every((_) => _.article_reference || _.book_reference),
-          ).toBe(true);
-        });
-        test("title is never empty", () => {
-          expect(entries.every((_) => _.article_title || _.book_title)).toBe(
-            true,
-          );
-        });
-        test("reference_link is never empty", () => {
-          expect(entries.every((_) => _.article_link || _.book_link)).toBe(
-            true,
-          );
-        });
-      });
+      entries.forEach((_, i) => {
+        const rowNumber = i + 2;
 
-      describe("plants", () => {
-        test("plant_species is never empty", () => {
-          expect(entries.every((_) => _.plant_species)).toBe(true);
+        describe(`row ${rowNumber} reference`, () => {
+          test(`reference is never empty`, () => {
+            expect(_.article_reference || _.book_reference).toBeTruthy();
+          });
+          test(`title is never empty`, () => {
+            expect(_.article_title || _.book_title).toBeTruthy();
+          });
+          test(`reference_link is never empty`, () => {
+            expect(_.article_link || _.book_link).toBeTruthy();
+          });
         });
-        test("plant_genus is never empty", () => {
-          expect(entries.every((_) => _.plant_genus)).toBe(true);
-        });
-        test("category is valid", () => {
-          expect(
-            entries.every((_) =>
-              allValid(_.plant_category, VALID_VEGETATION_TYPES),
-            ),
-          ).toBe(true);
-        });
-      });
 
-      describe("contaminants", () => {
-        test("contaminant_type is never empty", () => {
-          expect(entries.every((_) => _.contaminant_type)).toBe(true);
+        describe(`row ${rowNumber} plants`, () => {
+          test(`plant_species is never empty`, () => {
+            expect(_.plant_species).toBeTruthy();
+          });
+          test(`plant_genus is never empty`, () => {
+            expect(_.plant_genus).toBeTruthy();
+          });
+          test(`category ${_.plant_category} is valid`, () => {
+            expect(allValid(_.plant_category, VALID_VEGETATION_TYPES)).toBe(
+              true,
+            );
+          });
         });
-        test("contaminant is never empty", () => {
-          expect(entries.every((_) => _.contaminant)).toBe(true);
-        });
-        test("contaminant_abbreviation is never empty", () => {
-          expect(entries.every((_) => _.contaminant_abbreviation)).toBe(true);
-        });
-      });
 
-      describe("removal_rates", () => {
-        test("removal_rate is numeric", () => {
-          expect(
-            entries.every((_) => !Number.isNaN(Number(_.removal_rate || 0))),
-          ).toBe(true);
+        describe(`row ${rowNumber} contaminants`, () => {
+          test("contaminant_type is never empty", () => {
+            expect(_.contaminant_type).toBeTruthy();
+          });
+          test("contaminant is never empty", () => {
+            expect(_.contaminant).toBeTruthy();
+          });
+          test("contaminant_abbreviation is never empty", () => {
+            expect(_.contaminant_abbreviation).toBeTruthy();
+          });
+        });
+
+        describe("removal_rates", () => {
+          test("removal_rate is numeric", () => {
+            expect(!Number.isNaN(Number(_.removal_rate || 0))).toBe(true);
+          });
         });
       });
     });
