@@ -16,41 +16,37 @@ describe("NORMALISED_MATTER_DATA", () => {
 
   Object.entries(bySource).forEach(([source, entries]) => {
     describe(`${source} contains valid rows`, () => {
-      describe("materials", () => {
-        test("plant_genus is never empty", () => {
-          expect(entries.every((_) => _.plant_genus)).toBe(true);
-        });
-        test("name is never empty", () => {
-          expect(entries.every((_) => _.material_name)).toBe(true);
-        });
-        test("type is valid", () => {
-          expect(
-            entries.every((_) => allValidOrEmpty(_.type, VALID_MATERIAL_TYPES)),
-          ).toBe(true);
-        });
-        test("processing is valid", () => {
-          expect(
-            entries.every((_) =>
-              allValidOrEmpty(_.processing, VALID_PROCESSING),
-            ),
-          ).toBe(true);
-        });
-        test("function is valid", () => {
-          expect(
-            entries.every((_) => allValidOrEmpty(_.function, VALID_FUNCTIONS)),
-          ).toBe(true);
-        });
-      });
+      entries.forEach((_, i) => {
+        const rowNumber = i + 2;
 
-      describe("projects", () => {
-        test("project_title is never empty", () => {
-          expect(entries.every((_) => _.project_title)).toBe(true);
+        describe(`row ${rowNumber} materials`, () => {
+          test(`name is never empty`, () => {
+            expect(_.material_name).toBeTruthy();
+          });
+          test(`plant_genus is not empty`, () => {
+            expect(_.plant_genus).toBeTruthy();
+          });
+          test(`type ${_.type} is valid`, () => {
+            expect(allValidOrEmpty(_.type, VALID_MATERIAL_TYPES)).toBe(true);
+          });
+          test(`processing ${_.processing} is valid`, () => {
+            expect(allValidOrEmpty(_.processing, VALID_PROCESSING)).toBe(true);
+          });
+          test(`function ${_.function} is valid`, () => {
+            expect(allValidOrEmpty(_.function, VALID_FUNCTIONS)).toBe(true);
+          });
         });
-        test("project_author is never empty", () => {
-          expect(entries.every((_) => _.project_author)).toBe(true);
-        });
-        test("project_link is never empty", () => {
-          expect(entries.every((_) => _.project_link)).toBe(true);
+
+        describe(`row ${rowNumber} projects`, () => {
+          test(`project_title is never empty`, () => {
+            expect(_.project_title).toBeTruthy();
+          });
+          test(`project_author is never empty`, () => {
+            expect(_.project_author).toBeTruthy();
+          });
+          test(`project_link is never empty`, () => {
+            expect(_.project_link).toBeTruthy();
+          });
         });
       });
     });

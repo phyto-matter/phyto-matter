@@ -31,6 +31,8 @@ export enum VALID_FUNCTIONS {
   reinforcement = "reinforcement",
   decor = "decor",
   paint = "paint",
+  detailsAndPaint = "details and paint",
+  none = "none",
 }
 export enum VALID_VEGETATION_TYPES {
   herbaceous = "herbaceous",
