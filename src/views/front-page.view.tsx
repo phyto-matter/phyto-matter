@@ -136,19 +136,16 @@ export function FrontPageView() {
         </Typography>
         <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
           The authors would like to thank all of the professionals, volunteers
-          and participants who were involved in the Phyto-matter project. The
-          work was funded by SLU Holding and Sparbanken Skåne (partly through
-          the Innovation Award 2023) which resulted in the short film by
-          Filmbruket, this website and the two reports “Phyto” and “Matter”
-          explaining the background, motivations and conclusions from
-          Phyto-matter . Thank you to those who contributed with their time and
-          knowledge on the topics of phytoremediation; man in Orrefors, New York
-          lady, someone else and materials making: clay-guru Johannes Riesterer,
-          Moa from Mareld, everyone in “Lerbygge i Norden” and Justine Bell. All
-          of your insights have contributed in different ways. Thank you Nora
-          Disewji and Hugo Bove, without you there would be no user interface
+          and participants who has been involved in the Phyto-matter project so
+          far. The work was funded by SLU Holding and Sparbanken Skåne (partly
+          through the Innovation Award 2023) which resulted in the short film by
+          Filmbruket, this website and the open source GitHub platform. Thank
+          you to those who contributed with their time and knowledge on the
+          topics of phytoremediation and materials making. All of your insights
+          have contributed in different ways. Thank you developer geniuses Hugo
+          Bove and Nora Disewji, without you there would be no user interface
           and no one outside of the university would understand anything about
-          this project. Thank you Jitka Svensson, our university supervisor.
+          this project.
         </Typography>
         <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
           Especially thankful are we to our data contributors, researchers and
