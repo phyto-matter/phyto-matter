@@ -34,8 +34,15 @@ export function FrontPageView() {
           decisions on site. We expect research to evolve and uncover more and
           more valuable insights over time. As Phyto-matter provides answers to
           some of the current challenges, many (or more?) questions also arise.
-          We encourage participants and users of this tool to contact us with
-          any feedback or ideas on how to develop newer versions in the future.
+          <a
+            href="https://github.com/phyto-matter/phyto-matter?tab=readme-ov-file#phyto-matter"
+            target="_blank"
+            rel="noreferrer"
+          >
+            We encourage participants and users of this tool to contact us with
+            any feedback or ideas on how to develop newer versions in the
+            future.
+          </a>
         </Typography>
         <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
           All references and example projects/materials are based on their own
@@ -99,6 +106,15 @@ export function FrontPageView() {
           user-friendly upload system GitHub Pull Requests.
         </Typography>
         <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
+          <a
+            href="https://github.com/phyto-matter/phyto-matter?tab=readme-ov-file#phyto-matter"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Click here to find out how!
+          </a>
+        </Typography>
+        <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
           We have contacted the researchers, practices and initiatives featured
           in the tool to request permission to reproduce or link to their work.
           If we have missed any, please do get in touch so that we can resolve
@@ -136,19 +152,23 @@ export function FrontPageView() {
         </Typography>
         <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
           The authors would like to thank all of the professionals, volunteers
-          and participants who were involved in the Phyto-matter project. The
-          work was funded by SLU Holding and Sparbanken Skåne (partly through
-          the Innovation Award 2023) which resulted in the short film by
-          Filmbruket, this website and the two reports “Phyto” and “Matter”
-          explaining the background, motivations and conclusions from
-          Phyto-matter . Thank you to those who contributed with their time and
-          knowledge on the topics of phytoremediation; man in Orrefors, New York
-          lady, someone else and materials making: clay-guru Johannes Riesterer,
-          Moa from Mareld, everyone in “Lerbygge i Norden” and Justine Bell. All
-          of your insights have contributed in different ways. Thank you Nora
-          Disewji and Hugo Bove, without you there would be no user interface
-          and no one outside of the university would understand anything about
-          this project. Thank you Jitka Svensson, our university supervisor.
+          and participants who has been involved in the Phyto-matter project so
+          far. The work was funded by SLU Holding and Sparbanken Skåne (partly
+          through the Innovation Award 2023) which resulted in the short film by
+          Filmbruket, this website and the{" "}
+          <a
+            href="https://github.com/phyto-matter/phyto-matter?tab=readme-ov-file#phyto-matter"
+            target="_blank"
+            rel="noreferrer"
+          >
+            open source GitHub platform.
+          </a>{" "}
+          Thank you to those who contributed with their time and knowledge on
+          the topics of phytoremediation and materials making. All of your
+          insights have contributed in different ways. Thank you developer
+          geniuses Hugo Bove and Nora Disewji, without you there would be no
+          user interface and no one outside of the university would understand
+          anything about this project.
         </Typography>
         <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
           Especially thankful are we to our data contributors, researchers and
