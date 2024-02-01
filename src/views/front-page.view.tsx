@@ -1,10 +1,20 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 
 export function FrontPageView() {
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+  const isMediumDevice = useMediaQuery(
+    "only screen and (min-width : 769px) and (max-width : 992px)",
+  );
+
+  let marginDeviceSize =
+    isSmallDevice || isMediumDevice
+      ? { ml: 10, mr: 10, mt: 5 }
+      : { ml: 40, mr: 40, mt: 5 };
+
   return (
     <>
       <Container sx={{ pt: 40, height: "100vh" }}>
-        <Typography sx={{ ml: 40, mr: 40 }}>
+        <Typography sx={marginDeviceSize}>
           Are you interested in remediating soils with plants (phyto) and making
           local plant-based materials (matter) on your site? Phyto-matter is an
           open-source platform that connects research and practice to improve
@@ -16,7 +26,7 @@ export function FrontPageView() {
       <Box sx={{ pt: 30, height: "100vh" }}>
         <iframe
           width="100%"
-          height="100%"
+          height={isSmallDevice ? "50%" : "100%"}
           src="https://www.youtube.com/embed/TVF67QVVcT0?si=-ACUhMKJAmzlVObZ"
           title="PhytoMatter"
           frameBorder="0"
@@ -25,7 +35,7 @@ export function FrontPageView() {
         ></iframe>
       </Box>
       <Container sx={{ pt: 30, minHeight: "100vh" }}>
-        <Typography sx={{ ml: 40, mr: 40 }}>
+        <Typography sx={marginDeviceSize}>
           This tool aims to help take meaningful action in current soil cleaning
           and materials making practice in urban development, according to
           circular and regenerative design principles. This tool is intended to
@@ -44,7 +54,7 @@ export function FrontPageView() {
             future.
           </a>
         </Typography>
-        <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
+        <Typography sx={marginDeviceSize}>
           All references and example projects/materials are based on their own
           local conditions, as they must and should be. None of the information
           found here can be directly translated into another site, but local
@@ -55,7 +65,8 @@ export function FrontPageView() {
       <Container sx={{ pt: 30, minHeight: "100vh" }}>
         <img
           style={{
-            height: "65vh",
+            height: "auto",
+            maxWidth: "100%",
             margin: "0 auto",
             display: "block",
           }}
@@ -65,12 +76,12 @@ export function FrontPageView() {
         />
       </Container>
       <Container sx={{ pt: 30, minHeight: "100vh" }}>
-        <Typography sx={{ ml: 40, mr: 40 }}>
+        <Typography sx={marginDeviceSize}>
           Press PLANTS to see what plants are suitable for cleaning what
           contaminants - how they do it (phyto processes) together with the more
           regular horticultural qualities of plants relevant in design.
         </Typography>
-        <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
+        <Typography sx={marginDeviceSize}>
           Under CONTAMINANTS you can find more information on contaminants
           present in soils, basic information about them and related plants that
           will help cleaning up the soil.
@@ -79,7 +90,8 @@ export function FrontPageView() {
       <Container sx={{ pt: 30, minHeight: "100vh" }}>
         <img
           style={{
-            height: "65vh",
+            height: "auto",
+            maxWidth: "100%",
             margin: "0 auto",
             display: "block",
           }}
@@ -89,23 +101,23 @@ export function FrontPageView() {
         />
       </Container>
       <Container sx={{ pt: 30, minHeight: "100vh" }}>
-        <Typography sx={{ ml: 40, mr: 40 }}>
+        <Typography sx={marginDeviceSize}>
           MATERIALS is a growing collection of plant based projects and
           practices, a reference library to help you find inspiration and the
           accurate understanding of how to make plant based materials on your
           site.
         </Typography>
-        <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
+        <Typography sx={marginDeviceSize}>
           The CALCULATOR helps you estimate a timeline for phytoremediation of
           your site based on your plant selection together with suggestions for
           plant based materials to make, targeting your selected contaminants.
         </Typography>
-        <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
+        <Typography sx={marginDeviceSize}>
           Do you want to contribute? We welcome researchers and designers adding
           information to the open source knowledge pool using the very
           user-friendly upload system GitHub Pull Requests.
         </Typography>
-        <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
+        <Typography sx={marginDeviceSize}>
           <a
             href="https://github.com/phyto-matter/phyto-matter?tab=readme-ov-file#phyto-matter"
             target="_blank"
@@ -114,7 +126,7 @@ export function FrontPageView() {
             Click here to find out how!
           </a>
         </Typography>
-        <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
+        <Typography sx={marginDeviceSize}>
           We have contacted the researchers, practices and initiatives featured
           in the tool to request permission to reproduce or link to their work.
           If we have missed any, please do get in touch so that we can resolve
@@ -122,10 +134,10 @@ export function FrontPageView() {
         </Typography>
       </Container>
       <Container sx={{ pt: 30, minHeight: "100vh" }}>
-        <Typography sx={{ ml: 40, mr: 40 }} variant="h5">
+        <Typography sx={marginDeviceSize} variant="h5">
           Disclaimer!
         </Typography>
-        <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
+        <Typography sx={marginDeviceSize}>
           The authors of this site assume no responsibility or liability for any
           errors or omissions in the content of this site. The information
           contained in this site is provided on an &quot;as is&quot; basis with
@@ -134,23 +146,23 @@ export function FrontPageView() {
           While we have taken every precaution to ensure that the content of
           this site is both current and accurate, errors can occur.
         </Typography>
-        <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
+        <Typography sx={marginDeviceSize}>
           This platform is intended to function as a starting point only, plants
           based systems for remediation should not be applied without the help
           and experience of a professional in this field.
         </Typography>
-        <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
+        <Typography sx={marginDeviceSize}>
           Local site and soil conditions, hydrology and other aspects will
           greatly influence the outcome of a project, getting to know your local
           site conditions is the most important part of any circular project.
         </Typography>
-        <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>Good luck!</Typography>
+        <Typography sx={marginDeviceSize}>Good luck!</Typography>
       </Container>
       <Container sx={{ pt: 30, minHeight: "100vh" }}>
-        <Typography sx={{ ml: 40, mr: 40 }} variant="h5">
+        <Typography sx={marginDeviceSize} variant="h5">
           Acknowledgements
         </Typography>
-        <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
+        <Typography sx={marginDeviceSize}>
           The authors would like to thank all of the professionals, volunteers
           and participants who has been involved in the Phyto-matter project so
           far. The work was funded by SLU Holding and Sparbanken Skåne (partly
@@ -170,7 +182,7 @@ export function FrontPageView() {
           user interface and no one outside of the university would understand
           anything about this project.
         </Typography>
-        <Typography sx={{ ml: 40, mr: 40, mt: 5 }}>
+        <Typography sx={marginDeviceSize}>
           Especially thankful are we to our data contributors, researchers and
           experimental individuals who continue providing data and insights to
           this tool.
