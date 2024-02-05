@@ -4,10 +4,13 @@ import {
   ButtonProps,
   Container,
   Grid,
+  Menu,
+  MenuItem,
   styled,
+  useMediaQuery,
 } from "@mui/material";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 const StyledButton = styled(Button)<ButtonProps>((theme) => ({
   variant: "text",
@@ -18,13 +21,26 @@ const StyledButton = styled(Button)<ButtonProps>((theme) => ({
   backgroundPosition: "center",
   backgroundSize: "cover",
   "&:hover": {
-    backgroundColor: "white",
+    backgroundColor: "transparent",
   },
 }));
 
 export function TopMenu() {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  let checkDeviceSize = isSmallDevice ? "space-between" : "center";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -43,7 +59,7 @@ export function TopMenu() {
       }}
     >
       <Container>
-        <Grid container spacing={2} alignItems="center" justifyContent="center">
+        <Grid container alignItems="center" justifyContent={checkDeviceSize}>
           <Grid item xs={3}>
             <Link to="/">
               <img
@@ -53,43 +69,108 @@ export function TopMenu() {
               />
             </Link>
           </Grid>
-          <Grid item xs={2}>
-            <StyledButton
-              disableRipple
-              onClick={() => navigate("/plants")}
-              style={{
-                width: 100,
-                backgroundImage: location.pathname.startsWith("/plants")
-                  ? "url(/icons/plants-green.png)"
-                  : "url(/icons/plants-title.png)",
-              }}
-            ></StyledButton>
-          </Grid>
-          <Grid item xs={3}>
-            <StyledButton
-              disableRipple
-              onClick={() => navigate("/contaminants")}
-              style={{
-                width: 180,
-                backgroundImage: location.pathname.startsWith("/contaminants")
-                  ? "url(/icons/contam-yellow-title.png)"
-                  : "url(/icons/contam-title.png)",
-              }}
-            ></StyledButton>
-          </Grid>
-          <Grid item xs={3}>
-            <StyledButton
-              disableRipple
-              onClick={() => navigate("/materials")}
-              style={{
-                width: 130,
-                backgroundImage: location.pathname.startsWith("/materials")
-                  ? "url(/icons/materials-brown-title.png)"
-                  : "url(/icons/materials-title.png)",
-              }}
-            ></StyledButton>
-          </Grid>
-          <Grid item xs={1}>
+          {isSmallDevice ? (
+            <Grid item xs={2}>
+              <StyledButton
+                aria-controls={open ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
+                style={{ width: 100 }}
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "gainsboro",
+                  },
+                }}
+              >
+                Menu
+              </StyledButton>
+              <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+                <MenuItem onClick={handleClose} style={{ height: 60 }}>
+                  <StyledButton
+                    disableRipple
+                    onClick={() => navigate("/plants")}
+                    style={{
+                      width: 100,
+                      backgroundImage: location.pathname.startsWith("/plants")
+                        ? "url(/icons/plants-green.png)"
+                        : "url(/icons/plants-title.png)",
+                    }}
+                  ></StyledButton>
+                </MenuItem>
+                <MenuItem onClick={handleClose} style={{ height: 60 }}>
+                  <StyledButton
+                    disableRipple
+                    onClick={() => navigate("/contaminants")}
+                    style={{
+                      width: 180,
+                      backgroundImage: location.pathname.startsWith(
+                        "/contaminants",
+                      )
+                        ? "url(/icons/contam-yellow-title.png)"
+                        : "url(/icons/contam-title.png)",
+                    }}
+                  ></StyledButton>
+                </MenuItem>
+                <MenuItem onClick={handleClose} style={{ height: 60 }}>
+                  <StyledButton
+                    disableRipple
+                    onClick={() => navigate("/materials")}
+                    style={{
+                      width: 130,
+                      backgroundImage: location.pathname.startsWith(
+                        "/materials",
+                      )
+                        ? "url(/icons/materials-brown-title.png)"
+                        : "url(/icons/materials-title.png)",
+                    }}
+                  ></StyledButton>
+                </MenuItem>
+              </Menu>
+            </Grid>
+          ) : (
+            <>
+              <Grid item xs={2}>
+                <StyledButton
+                  disableRipple
+                  onClick={() => navigate("/plants")}
+                  style={{
+                    width: 100,
+                    backgroundImage: location.pathname.startsWith("/plants")
+                      ? "url(/icons/plants-green.png)"
+                      : "url(/icons/plants-title.png)",
+                  }}
+                ></StyledButton>
+              </Grid>
+              <Grid item xs={3}>
+                <StyledButton
+                  disableRipple
+                  onClick={() => navigate("/contaminants")}
+                  style={{
+                    width: 180,
+                    backgroundImage: location.pathname.startsWith(
+                      "/contaminants",
+                    )
+                      ? "url(/icons/contam-yellow-title.png)"
+                      : "url(/icons/contam-title.png)",
+                  }}
+                ></StyledButton>
+              </Grid>
+              <Grid item xs={3}>
+                <StyledButton
+                  disableRipple
+                  onClick={() => navigate("/materials")}
+                  style={{
+                    width: 130,
+                    backgroundImage: location.pathname.startsWith("/materials")
+                      ? "url(/icons/materials-brown-title.png)"
+                      : "url(/icons/materials-title.png)",
+                  }}
+                ></StyledButton>
+              </Grid>
+            </>
+          )}
+          <Grid item xs={3} sm={1}>
             <StyledButton
               disableRipple
               onClick={() => navigate("/calculator")}
