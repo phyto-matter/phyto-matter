@@ -17,10 +17,10 @@ describe("NORMALISED_PHYTO_DATA", () => {
 
         describe(`row ${rowNumber} reference`, () => {
           test(`reference is never empty`, () => {
-            expect(_.article_reference || _.book_reference).toBeTruthy();
+            expect(_.reference).toBeTruthy();
           });
-          test(`title is never empty`, () => {
-            expect(_.article_title || _.book_title).toBeTruthy();
+          test(`text title is never empty`, () => {
+            expect(_.text_title).toBeTruthy();
           });
           test(`reference_link is never empty`, () => {
             expect(_.article_link || _.book_link).toBeTruthy();

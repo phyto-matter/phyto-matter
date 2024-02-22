@@ -96,10 +96,10 @@ function mapContaminants(entries: any[]): ContaminantEntry[] {
       removal_rate: e.removal_rate,
       notes: e.notes,
       tissue_type: e.plant_tissue.trim(),
-      title: e.book_title || e.article_title,
-      reference: e.book_reference || e.article_reference,
+      title: e.text_title,
+      reference: e.reference,
       link: e.book_link || e.article_link,
-      reference_type: e.book_title ? "book" : "article",
+      reference_type: e.book_link ? "book" : "article",
       mass_kg_m2: e.mass_kg_m_2,
       image: e.contaminant_image,
     }))
