@@ -15,7 +15,8 @@ import {
   Grid,
 } from "@mui/material";
 import LayersIcon from "@mui/icons-material/Layers";
-import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+
 import HardwareIcon from "@mui/icons-material/Hardware";
 import WaterfallChartIcon from "@mui/icons-material/WaterfallChart";
 import LandscapeIcon from "@mui/icons-material/Landscape";
@@ -44,7 +45,7 @@ export function PlantDetailInfo({ plant }: { plant: PlantEntry }) {
                   <span>
                     <span>{plant.soil_ph} </span>
                     <Tooltip title={SoilDescription} placement="bottom-start">
-                      <QuestionMarkIcon style={{ height: 11, width: 11 }} />
+                      <HelpOutlineIcon style={{ height: 11, width: 11 }} />
                     </Tooltip>
                   </span>
                 }
@@ -73,7 +74,7 @@ export function PlantDetailInfo({ plant }: { plant: PlantEntry }) {
                       title={HardinessDescription}
                       placement="bottom-start"
                     >
-                      <QuestionMarkIcon style={{ height: 11, width: 11 }} />
+                      <HelpOutlineIcon style={{ height: 11, width: 11 }} />
                     </Tooltip>
                   </span>
                 }
@@ -102,7 +103,7 @@ export function PlantDetailInfo({ plant }: { plant: PlantEntry }) {
                       title={MoistureDescription}
                       placement="bottom-start"
                     >
-                      <QuestionMarkIcon style={{ height: 11, width: 11 }} />
+                      <HelpOutlineIcon style={{ height: 11, width: 11 }} />
                     </Tooltip>
                   </span>
                 }

@@ -17,6 +17,7 @@ import { capitalize, uniqBy } from "lodash";
 
 import { phytoMatterYellowColor } from "../../global-constants";
 import { getPlantRates } from "../../hooks/use-plant-suggestions";
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 export function ContaminantDetailView() {
   const { id } = useParams();
@@ -129,6 +130,9 @@ export function ContaminantDetailView() {
                       <b>Type</b>
                     </TableCell>
                     <TableCell>
+                      <b>Reference</b>
+                    </TableCell>
+                    <TableCell>
                       <b>Source</b>
                     </TableCell>
                   </TableRow>
@@ -140,8 +144,11 @@ export function ContaminantDetailView() {
                       <TableCell>{ref.title}</TableCell>
                       <TableCell>{ref.type}</TableCell>
                       <TableCell>
+                        {ref.reference}
+                      </TableCell>
+                      <TableCell>
                         <a href={ref.link} target="_blank" rel="noreferrer">
-                          {ref.reference}
+                          Link  <OpenInNewIcon style={{ height: 11, width: 11 }}/>
                         </a>
                       </TableCell>
                     </TableRow>

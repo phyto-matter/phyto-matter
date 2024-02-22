@@ -24,6 +24,7 @@ import { PlantDetailSeasonDescriptions } from "../../components/plant-detail-sea
 import { PlantDetailInfo } from "../../components/plant-detail-info";
 import { getPlantRates } from "../../hooks/use-plant-suggestions";
 import { NORMALISED_MATTER_DATA } from "../../utils/get-normalised-matter-data";
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 export function PlantDetailView() {
   const { id } = useParams();
@@ -177,6 +178,13 @@ export function PlantDetailView() {
                       <Typography
                         style={{ color: phytoMatterBlackColor, fontSize: 14 }}
                       >
+                        <b>Reference</b>
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography
+                        style={{ color: phytoMatterBlackColor, fontSize: 14 }}
+                      >
                         <b>Source</b>
                       </Typography>
                     </TableCell>
@@ -189,8 +197,11 @@ export function PlantDetailView() {
                       <TableCell>{ref.title}</TableCell>
                       <TableCell>{ref.type}</TableCell>
                       <TableCell>
-                        <a href={ref.link} target="_blank" rel="noreferrer">
                           {ref.reference}
+                      </TableCell>
+                      <TableCell>
+                        <a href={ref.link} target="_blank" rel="noreferrer">
+                          Link <OpenInNewIcon style={{ height: 11, width: 11 }}/>
                         </a>
                       </TableCell>
                     </TableRow>
